@@ -4,7 +4,8 @@ These libraries go hand-in-hand with the [VFFS Demo PLC](https://github.com/Beck
 
 This sample is created by [Beckhoff Automation LLC.](https://www.beckhoff.com/en-us/), and is provided as-is under the Zero-Clause BSD license.
 
-Associated Function Block documentation can be found in the project wiki.
+Associated Function Block documentation can be found in the project wiki. https://github.com/Beckhoff-USA-Community/SPT-Libraries/wiki
+
 
 # How to get support
 
