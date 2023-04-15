@@ -17,9 +17,9 @@ Should you have any questions regarding the provided sample code, please contact
 2. Open the Library Repository<br>
 ![image](https://user-images.githubusercontent.com/18381949/232176085-f3e0c4d4-55e7-43ea-8b0a-e522097ed7e2.png)<br>
 3. Click Edit Locations...<br>
-![image](https://user-images.githubusercontent.com/18381949/232176094-19207cc8-6025-499f-bf4c-b67a868b016a.png)<br>
+![image](https://user-images.githubusercontent.com/18381949/232176435-aff683b1-04ab-4db1-bed3-7efa4debf4ac.png)<br>
 4. Click Add...<br>
-![image](https://user-images.githubusercontent.com/18381949/232176099-71ab50a5-edb9-4515-a275-06798085bdfa.png)<br>
+![image](https://user-images.githubusercontent.com/18381949/232176449-675073a3-5fab-42a4-b277-17c6c57d82a9.png)<br>
 5. Browse to the folder where you cloned this repository and give the PLC Library Repository a name (e.g. SPT Libraries).  **NOTE** The location MUST point to the \Library Repository folder under the repo root!<br>
-![image](https://user-images.githubusercontent.com/18381949/232176139-73b25709-1d7a-47f6-be59-96358e02096f.png)<br>
+![image](https://user-images.githubusercontent.com/18381949/232176459-5c628467-8b3a-430a-b546-1e111d481e27.png)<br>
 6. Future updates to the SPT libraries will automatically propogate into TwinCAT XAE by fetching this repo.
