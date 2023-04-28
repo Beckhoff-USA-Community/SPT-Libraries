@@ -1,0 +1,2199 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="index.html">
+      
+      
+        <link rel="next" href="stationprogrammingnotes.html">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.8">
+    
+    
+      
+        <title>Quickstart - SPT Application Framework Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ded33207.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arial:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Arial";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/style.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#quickstart" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="SPT Application Framework Documentation" class="md-header__button md-logo" aria-label="SPT Application Framework Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SPT Application Framework Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Quickstart
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Beckhoff-USA-Community/SPT-Libraries" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SPT-Libraries
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index.html" class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../setup.html" class="md-tabs__link">
+      Setup
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../DesignGuide/index.html" class="md-tabs__link">
+      Design Guide
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../SPT_Base_Types/index.html" class="md-tabs__link">
+        SPT Base Types
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../SPT_Components/index.html" class="md-tabs__link">
+        SPT Components
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../SPT_Event_Logger/index.html" class="md-tabs__link">
+        SPT Event Logger
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../SPT_MotionControl/index.html" class="md-tabs__link">
+        SPT Motion Control
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../SPT_Utilities/index.html" class="md-tabs__link">
+        SPT Utilities
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../SPT_XPlanar/index.html" class="md-tabs__link">
+        SPT XPlanar
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="index.html" class="md-tabs__link md-tabs__link--active">
+        SPT XTS
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="SPT Application Framework Documentation" class="md-nav__button md-logo" aria-label="SPT Application Framework Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    SPT Application Framework Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Beckhoff-USA-Community/SPT-Libraries" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SPT-Libraries
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup.html" class="md-nav__link">
+        Setup
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DesignGuide/index.html" class="md-nav__link">
+        Design Guide
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          SPT Base Types
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          SPT Base Types
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Base_Types/index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Base_Types/interfaces.html" class="md-nav__link">
+        Interfaces
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Base_Types/functionblocks.html" class="md-nav__link">
+        Function Blocks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Base_Types/duts.html" class="md-nav__link">
+        Data Types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Base_Types/globals.html" class="md-nav__link">
+        Globals/Parameters
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Base_Types/changelog.html" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          SPT Components
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          SPT Components
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Components/index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+          Function Blocks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Function Blocks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Components/cylinders.html" class="md-nav__link">
+        Cylinders
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Components/motioncontrol.html" class="md-nav__link">
+        Motion Control
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Components/sensors.html" class="md-nav__link">
+        Sensors
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+          Examples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Components/examples/solenoidbankbase.html" class="md-nav__link">
+        FB_SolenoidBankBase
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Components/changelog.html" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          SPT Event Logger
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          SPT Event Logger
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Event_Logger/index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Event_Logger/functions.html" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Event_Logger/changelog.html" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          SPT Motion Control
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          SPT Motion Control
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_MotionControl/index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_MotionControl/interfaces.html" class="md-nav__link">
+        Interfaces
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_MotionControl/functionblocks.html" class="md-nav__link">
+        Function Blocks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_MotionControl/duts.html" class="md-nav__link">
+        Data Types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_MotionControl/globals.html" class="md-nav__link">
+        Globals/Parameters
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_MotionControl/changelog.html" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          SPT Utilities
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          SPT Utilities
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Utilities/index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Utilities/interfaces.html" class="md-nav__link">
+        Interfaces
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Utilities/functionblocks.html" class="md-nav__link">
+        Function Blocks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Utilities/functions.html" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Utilities/duts.html" class="md-nav__link">
+        Data Types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Utilities/changelog.html" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          SPT XPlanar
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          SPT XPlanar
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_XPlanar/index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_XPlanar/interfaces.html" class="md-nav__link">
+        Interfaces
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_XPlanar/functionblocks.html" class="md-nav__link">
+        Function Blocks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_XPlanar/globals.html" class="md-nav__link">
+        Globals/Parameters
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_XPlanar/changelog.html" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          SPT XTS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          SPT XTS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+          User Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_10_2">
+          <span class="md-nav__icon md-icon"></span>
+          User Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Quickstart
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="quickstart.html" class="md-nav__link md-nav__link--active">
+        Quickstart
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intial-setup" class="md-nav__link">
+    Intial Setup
+  </a>
+  
+    <nav class="md-nav" aria-label="Intial Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simulation-mode" class="md-nav__link">
+    Simulation Mode
+  </a>
+  
+    <nav class="md-nav" aria-label="Simulation Mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-twincat-project-loaded" class="md-nav__link">
+    No TwinCAT project loaded
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-xts-to-existing-twincat-project" class="md-nav__link">
+    Adding XTS to existing TwinCAT project
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hardware-in-hand" class="md-nav__link">
+    Hardware in hand
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ca-group-configration" class="md-nav__link">
+    CA Group Configration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-programming" class="md-nav__link">
+    Application Programming
+  </a>
+  
+    <nav class="md-nav" aria-label="Application Programming">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fb_machine" class="md-nav__link">
+    FB_Machine
+  </a>
+  
+    <nav class="md-nav" aria-label="FB_Machine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-overrides" class="md-nav__link">
+    Method Overrides
+  </a>
+  
+    <nav class="md-nav" aria-label="Method Overrides">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initialize" class="md-nav__link">
+    Initialize()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aborting" class="md-nav__link">
+    Aborting()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clearing" class="md-nav__link">
+    Clearing()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resetting" class="md-nav__link">
+    Resetting()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stopping" class="md-nav__link">
+    Stopping()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#main-pou" class="md-nav__link">
+    MAIN POU
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linking-process-data-to-plc" class="md-nav__link">
+    Linking process data to PLC
+  </a>
+  
+    <nav class="md-nav" aria-label="Linking process data to PLC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nc-axes" class="md-nav__link">
+    NC Axes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ca-group" class="md-nav__link">
+    CA Group
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tracing" class="md-nav__link">
+    Tracing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    Results
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#varying-configurations" class="md-nav__link">
+    Varying Configurations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-stations" class="md-nav__link">
+    Custom Stations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="stationprogrammingnotes.html" class="md-nav__link">
+        Custom Station Programming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="examplestations.html" class="md-nav__link">
+        Example Stations
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="interfaces.html" class="md-nav__link">
+        Interfaces
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="functionblocks.html" class="md-nav__link">
+        Function Blocks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="duts.html" class="md-nav__link">
+        Data Types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="globals.html" class="md-nav__link">
+        Globals/Parameters
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="changelog.html" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intial-setup" class="md-nav__link">
+    Intial Setup
+  </a>
+  
+    <nav class="md-nav" aria-label="Intial Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simulation-mode" class="md-nav__link">
+    Simulation Mode
+  </a>
+  
+    <nav class="md-nav" aria-label="Simulation Mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-twincat-project-loaded" class="md-nav__link">
+    No TwinCAT project loaded
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-xts-to-existing-twincat-project" class="md-nav__link">
+    Adding XTS to existing TwinCAT project
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hardware-in-hand" class="md-nav__link">
+    Hardware in hand
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ca-group-configration" class="md-nav__link">
+    CA Group Configration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-programming" class="md-nav__link">
+    Application Programming
+  </a>
+  
+    <nav class="md-nav" aria-label="Application Programming">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fb_machine" class="md-nav__link">
+    FB_Machine
+  </a>
+  
+    <nav class="md-nav" aria-label="FB_Machine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-overrides" class="md-nav__link">
+    Method Overrides
+  </a>
+  
+    <nav class="md-nav" aria-label="Method Overrides">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initialize" class="md-nav__link">
+    Initialize()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aborting" class="md-nav__link">
+    Aborting()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clearing" class="md-nav__link">
+    Clearing()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resetting" class="md-nav__link">
+    Resetting()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stopping" class="md-nav__link">
+    Stopping()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#main-pou" class="md-nav__link">
+    MAIN POU
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linking-process-data-to-plc" class="md-nav__link">
+    Linking process data to PLC
+  </a>
+  
+    <nav class="md-nav" aria-label="Linking process data to PLC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nc-axes" class="md-nav__link">
+    NC Axes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ca-group" class="md-nav__link">
+    CA Group
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tracing" class="md-nav__link">
+    Tracing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    Results
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#varying-configurations" class="md-nav__link">
+    Varying Configurations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-stations" class="md-nav__link">
+    Custom Stations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="quickstart">QuickStart</h1>
+<h2 id="intial-setup">Intial Setup</h2>
+<p>This process can take a few different paths, but the end goal is to have the XTS system laid out in your TwinCAT project.  This layout should include:</p>
+<ul>
+<li>Realtime Configuration</li>
+<li>PLC Task</li>
+<li>XTS Task(s) (250us cycle time)</li>
+<li>Proper core allocation</li>
+<li>TcCOM Objects</li>
+<li>XPU - Parts, Tracks, Movers</li>
+<li>InfoServer - Station definitions including stop positions</li>
+<li>NC Configuration</li>
+<li>Collision Avoidance TcCOM object<ul>
+<li>Track length matching XPU track length</li>
+</ul>
+</li>
+<li>Mover Axes with correct SoftDrive configuration/links</li>
+<li>EtherCAT configuration</li>
+<li>Motor modules as children of EtherCAT masters</li>
+<li>Masters may be disabled for execution in simulation mode</li>
+<li>Distributed clock timing checked and correct</li>
+</ul>
+<h3 id="simulation-mode">Simulation Mode</h3>
+<p>Hardware configuration for simulation mode can be easily built using the XTS Simulation Builder:</p>
+<p><img alt="image" src="232121313-883b219f-866d-4e24-a44e-e72417e4bace.png" /></p>
+<h4 id="no-twincat-project-loaded">No TwinCAT project loaded</h4>
+<p>The simulation builder includes template options for quickly building common track layouts:</p>
+<p><img alt="image" src="232121334-40dae44e-f1ca-4cf5-8348-ede38fc07023.png" /></p>
+<h4 id="adding-xts-to-existing-twincat-project">Adding XTS to existing TwinCAT project</h4>
+<p>Use Modify Projects to build a track layout by hand and add it to an existing TwinCAT project</p>
+<p><img alt="image" src="232121350-716ed7fd-be74-45cc-ae88-b4d5e00226b3.png" /></p>
+<h3 id="hardware-in-hand">Hardware in hand</h3>
+<p>If running on real XTS hardware, refer to <a href="https://infosys.beckhoff.com/content/1033/xts_installation_und_konfiguration/10483531403.html?id=5752319626197690400">InfoSys</a> for detailed configuration steps.</p>
+<h2 id="ca-group-configration">CA Group Configration</h2>
+<p>A collision avoidance group object must be added to the NC configuration:</p>
+<p><img alt="image" src="232121380-a3ac5469-f76b-4dfd-9854-b69fcaf35a81.png" /></p>
+<p><img alt="image" src="232121400-efbe566c-03f3-45b3-8b11-76d745a6fb6a.png" /></p>
+<p>CA group must be parameterized.  Rail length must match the actual XTS track length:</p>
+<p><img alt="image" src="232121417-710eeb03-6903-4c7d-989f-d3a46572d3bc.png" /></p>
+<h2 id="application-programming">Application Programming</h2>
+<p>This example will use the SPT PackML method of machine organization and programming but realize that there is no formal requirement for PackML to be involved to use the XTS component.</p>
+<p>The steps below assume the following configuration, but can be easily adapted to suit a variety of different setups:
+ - 3000 MM oval-shaped track using clothoid ends
+ - 1 Part
+ - 1 Track
+ - 10 Movers
+ - 4 Stations
+   - Station 1: Queue
+   - Station 2: SimpleStation, 1 stop position
+   - Station 3: Queue
+   - Station 4: SimpleStation, 1 stop position</p>
+<p><img alt="image" src="232121436-4307efbf-1fd1-42bf-8e25-43384e29ca2b.png" /></p>
+<p><strong>Add a PLC project and reference the required libraries:</strong>
+  - SPT Base Types
+  - SPT XTS
+  - Tc3_XTS_Utility
+  - Tc3_PackML_V2</p>
+<h3 id="fb_machine">FB_Machine</h3>
+<p>Create a function block <code>FB_Machine</code> which extends <code>FB_PackML_BaseModule</code>.  Instantiate <code>FB_Component_XPU</code> and station equipment modules.  Create configuration structures for each of the stations as well as an array for assigning the station instances to the XPU during initialization.  This function block will serve as our Machine Module, or the root of the control structure.
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code>FUNCTION_BLOCK FB_Machine EXTENDS FB_PackML_BaseModule
+VAR
+    XPU : FB_Component_XPU := (Name := &#39;XPU 1&#39;, Stations := ipStations, MoverAssignmentStorageLocation := E_MoverAssignmentRecoverySource.eMoverAssignmentRecoverySource_NoBackup);
+    Station1 : FB_XTS_QueueStation;
+    Station2 : FB_XTS_SimpleStation;
+    Station3 : FB_XTS_QueueStation;
+    Station4 : FB_XTS_SimpleStation;
+    StationConfig_Station1 : ST_XTSStationConfig;
+    StationConfig_Station2 : ST_XTSStationConfig;
+    StationConfig_Station3 : ST_XTSStationConfig;
+    StationConfig_Station4 : ST_XTSStationConfig;
+    ipStations : ARRAY[0..TcIoXtsEnvironmentParameterList.MaxXtsInfoServer * TcIoXtsEnvironmentParameterList.MaxXtsInfoStation] OF I_XTS_ApplicationStation;
+END_VAR
+</code></pre></div></td></tr></table></div></p>
+<h4 id="method-overrides">Method Overrides</h4>
+<p>We must have an initialize routine to make some assignments and to perform some setup tasks.  <code>FB_PackML_BaseModule</code> already has an <code>Initialize()</code> method that we can override.  We must also override some of the acting state methods of <code>FB_PackML_BaseModule</code> in order to modify the default behavior.  <code>Aborting()</code>, <code>Clearing()</code>, <code>Resetting()</code>, and <code>Stopping()</code> should be overriden.</p>
+<h5 id="initialize">Initialize()</h5>
+<p>Basic parameterization and assignment are done in the <code>Initialize()</code> method.  Note in particular the lines <code>StationConfig_Station1.IsAQueueStation := TRUE;</code> and <code>StationConfig_Station3.IsAQueueStation     := TRUE;</code>.  These bits indicate to the XPU component that during a cold start with no mover assignment backup data source, stations 1 and 3 are candidates for serving as a starting point where movers will be sorted and assigned to.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code>METHOD PROTECTED Initialize : BOOL;
+
+ipComponents[1] := XPU;
+ipSubModules[1] := Station1;
+ipSubModules[2] := Station2;
+ipSubModules[3] := Station3;
+ipSubModules[4] := Station4;
+ipStations[1] := Station1;
+ipStations[2] := Station2;
+ipStations[3] := Station3;
+ipStations[4] := Station4;
+Station1.Config := StationConfig_Station1;
+Station2.Config := StationConfig_Station2;
+Station3.Config := StationConfig_Station3;
+Station4.Config := StationConfig_Station4;
+StationConfig_Station1.IsAQueueStation   := TRUE;
+StationConfig_Station1.Dynamics.Velocity := 500;
+StationConfig_Station2.Dynamics.Velocity := 500;
+StationConfig_Station3.IsAQueueStation   := TRUE;
+StationConfig_Station3.Dynamics.Velocity := 500;
+StationConfig_Station4.Dynamics.Velocity := 500;
+XPU.Stations := ipStations;
+Initialize := SUPER^.Initialize();
+</code></pre></div></td></tr></table></div>
+<h5 id="aborting">Aborting()</h5>
+<p>The default behavior of <code>Aborting()</code> does not know anything about the XPU's <code>Disable()</code> method.  Here we first disable the XPU component if required and then allow the base <code>Aborting()</code> method to continue with the rest of the equipment modules and components.
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code>METHOD PROTECTED Aborting
+
+CASE SequenceState OF
+    0:
+        IF XPU.State = E_XTSState.eXTSState_Enabled OR XPU.State = E_XTSState.eXTSState_Disabling THEN
+            IF XPU.Disable() THEN
+                SequenceState := SequenceState + 10;
+            END_IF
+        ELSIF XPU.State = E_XTSState.eXTSState_Disabled OR XPU.State = E_XTSState.eXTSState_Error THEN
+            SequenceState := SequenceState + 10;
+        END_IF
+
+    10:
+        SUPER^.Aborting();
+END_CASE
+</code></pre></div></td></tr></table></div></p>
+<h5 id="clearing">Clearing()</h5>
+<p>The default behavior of <code>Clearing()</code> does not call <code>Reset()</code> on components that do not have errors.  Because mover assignment recovery is triggered by the <code>Reset()</code> method, we must make sure it is called regardless of error state.  Default behavior can resume afterward.
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>METHOD PROTECTED Clearing
+
+CASE SequenceState OF 
+    0:
+        IF XPU.Reset() THEN
+            SequenceState := SequenceState + 10;    
+        END_IF
+
+    10:
+        SUPER^.Clearing();
+END_CASE
+</code></pre></div></td></tr></table></div></p>
+<h5 id="resetting">Resetting()</h5>
+<p>Similar to the case of <code>Aborting()</code> above, the XPU has an <code>Enable()</code> method which builds the CA group, enables mover axis, etc. which much be called.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>METHOD PROTECTED Resetting
+
+CASE SequenceState OF
+    0:
+        IF XPU.Enable() THEN
+            SequenceState := SequenceState + 10;
+        END_IF
+
+    10:
+        SUPER^.Resetting();
+END_CASE
+</code></pre></div></td></tr></table></div>
+<h5 id="stopping">Stopping()</h5>
+<p>The default behavior of <code>Stopping()</code> only handles issuing a stop command to equipment modules.  We also want to disable the XPU component after reaching this state.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>METHOD PROTECTED Stopping
+VAR
+  i : UDINT;
+  SubModulesReady : BOOL := TRUE;
+END_VAR
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code>CASE SequenceState OF
+    0:
+        // Send stop command to all sub modules
+        FOR i := 1 TO NumberOfSubModules DO
+            ipSubModules[i].StateCommand := ePMLCommand_Stop;
+        END_FOR
+
+        FOR i := 1 TO NumberOfSubModules DO
+            SubModulesReady := SubModulesReady AND (ipSubModules[i].CurrentState = ePMLState_Stopped OR ipSubModules[i].CurrentState = ePMLState_Aborted);
+        END_FOR
+
+        IF SubModulesReady THEN
+            SequenceState := SequenceState + 10;
+        END_IF
+
+    10:
+        IF XPU.Disable() THEN
+            SequenceState := SequenceState + 10;
+        END_IF
+
+    20:
+        IF XPU.State = E_XTSState.eXTSState_Disabled THEN
+            SequenceState := SequenceState + 10;
+        END_IF
+
+    30:
+        StateComplete();
+END_CASE
+</code></pre></div></td></tr></table></div>
+<h3 id="main-pou">MAIN POU</h3>
+<p>Now that we have created our machine module and overridden the default behavior of <code>FB_PackML_BaseModule</code> as required, we can introduce it into the cyclic program logic.</p>
+<p>The default PLC project template in TwinCAT XAE will create a <code>MAIN</code> POU and attach it to the default PlcTask.  This will be the entry point for our program.</p>
+<p>Instantiate <code>FB_Machine</code> and <code>FB_ControlSource</code>.  <code>FB_ControlSource</code> simply provides a quick and easy means for commanding the machine module to different states and provides feedback on current machine module status.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>PROGRAM MAIN
+VAR
+    Machine : FB_Machine;
+    ControlSource : FB_ControlSource;
+END_VAR
+</code></pre></div></td></tr></table></div>
+<p>We must attach <code>ControlSource</code> to the machine module so that it knows what it's controlling.  We must also make the calls to <code>CyclicLogic()</code> for both our machine module and <code>ControlSource</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>IF _TaskInfo[1].FirstCycle THEN
+    Machine.RegisterExternalController(ControlSource);
+END_IF
+
+Machine.CyclicLogic();
+ControlSource.CyclicLogic();
+</code></pre></div></td></tr></table></div>
+<h3 id="linking-process-data-to-plc">Linking process data to PLC</h3>
+<p>At this point you should be able to build the PLC project with no errors.  Doing this also will let XAE know of any allocated variables (<code>%I*</code>/<code>%Q*</code>) in our program and allow us to link them to other TwinCAT modules.</p>
+<h4 id="nc-axes">NC Axes</h4>
+<p>The XPU component contains an array of mover function blocks (upper bound set in the <code>Tc3_XTS_Utility</code> library <code>TcIoXtsEnvironmentParameterList.MaxXtsMoversPerXpu</code>).  These must be linked to our NC axes.  Note the array starts at index 0 for internal reasons, but mover 0 is never actually used.  Start at mover 1.</p>
+<p><img alt="image" src="232121484-597b5f6a-086f-4f29-8e16-a3ba94c311d0.png" /></p>
+<h4 id="ca-group">CA Group</h4>
+<p>The XPU component also contains the necessary <code>AXES_GROUP_REF</code> which must be linked to our collision avoidance group TcCOM object.</p>
+<p><img alt="image" src="232121494-e0e1b2e1-494a-4a3f-baf5-5dd5d64dc0f8.png" /></p>
+<p><img alt="image" src="232121507-8cc8f9b8-14b4-4583-963f-b1f6d3d5bc8a.png" /></p>
+<h3 id="tracing">Tracing</h3>
+<p>The XPU component emits a great deal of debug information to the Event Logger, which can be useful for debug.  By default, this messaging is turned off in order to not bog down the development environment.  During the initial commissioning it can be re-enabled through the library parameters:</p>
+<p><img alt="image" src="232121535-e7d5538b-5854-450e-b485-14c124319b61.png" /></p>
+<p><img alt="image" src="./232121544-bae36aa7-39f1-4a60-b84b-6f79560636b1.png" /></p>
+<h3 id="results">Results</h3>
+<p>At this point we should be able to activate the configuration, restart in Run Mode, and Login to the PLC.  Adding the following variable to the Watch window gives us convenient place to monitor the progress.</p>
+<p><img alt="image" src="232121553-06722e14-2647-4ed6-9271-5b7485fae9b8.png" /></p>
+<p><code>ControlSource.MainPMLControl_Simplified.ResetPressed</code>, <code>StartPressed</code>, and <code>StopPressed</code> can be toggled manually to advance through the PackML states.  These can also be tied to buttons on a Visualization or TwinCAT HMI screen, for example.</p>
+<h3 id="varying-configurations">Varying Configurations</h3>
+<p>In this example, Stations 2 &amp; 4 are type <code>FB_XTS_SimpleStation</code>.  This example function block includes a property <code>SimulatedProcessTime</code> which controls a timer which begins counting when all movers have arrived at their stop position(s) and upon expiration signals the station to release all movers to the next neighbor.  A variety of processes can be simulated by varying this time setpoint, as well as defining multiple stop positions using the XTS Configurator.</p>
+<p>Stations 1 &amp; 3 are type <code>FB_XTS_QueueStation</code>.  This example function block includes a property <code>MaxNumberOfMovers</code> which controls how many movers are allowed into the station's mover buffer at one time.  Note that even though the XTS Configurator allows for multiple stop positions to be defined, <code>FB_XTS_QueueStation</code> will only command movers to move to the first stop position.  Any other stop positions are ignored.</p>
+<h3 id="custom-stations">Custom Stations</h3>
+<p><code>FB_XTS_SimpleStation</code> and <code>FB_XTS_QueueStation</code> are provided <strong>for reference only</strong>.  They represent the most basic types of station logic that may be part of an XTS system.  Custom station logic can be implemented from scratch, or with help from inheriting <code>FB_XTS_StationBase</code>.  <code>FB_XTS_StationBase</code> is an <code>ABSTRACT</code> function block which contains the basic components that one would use to implement a custom station type.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.51198bba.min.js"></script>
+      
+    
+  </body>
+</html>

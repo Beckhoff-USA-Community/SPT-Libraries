@@ -1,0 +1,2000 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="functionblocks.html">
+      
+      
+        <link rel="next" href="globals.html">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.8">
+    
+    
+      
+        <title>Data Types - SPT Application Framework Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ded33207.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arial:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Arial";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/style.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#duts" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="SPT Application Framework Documentation" class="md-header__button md-logo" aria-label="SPT Application Framework Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SPT Application Framework Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Data Types
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Beckhoff-USA-Community/SPT-Libraries" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SPT-Libraries
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index.html" class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../setup.html" class="md-tabs__link">
+      Setup
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../DesignGuide/index.html" class="md-tabs__link">
+      Design Guide
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../SPT_Base_Types/index.html" class="md-tabs__link">
+        SPT Base Types
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../SPT_Components/index.html" class="md-tabs__link">
+        SPT Components
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../SPT_Event_Logger/index.html" class="md-tabs__link">
+        SPT Event Logger
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../SPT_MotionControl/index.html" class="md-tabs__link">
+        SPT Motion Control
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../SPT_Utilities/index.html" class="md-tabs__link">
+        SPT Utilities
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../SPT_XPlanar/index.html" class="md-tabs__link">
+        SPT XPlanar
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="index.html" class="md-tabs__link md-tabs__link--active">
+        SPT XTS
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="SPT Application Framework Documentation" class="md-nav__button md-logo" aria-label="SPT Application Framework Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    SPT Application Framework Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Beckhoff-USA-Community/SPT-Libraries" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SPT-Libraries
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup.html" class="md-nav__link">
+        Setup
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DesignGuide/index.html" class="md-nav__link">
+        Design Guide
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          SPT Base Types
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          SPT Base Types
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Base_Types/index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Base_Types/interfaces.html" class="md-nav__link">
+        Interfaces
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Base_Types/functionblocks.html" class="md-nav__link">
+        Function Blocks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Base_Types/duts.html" class="md-nav__link">
+        Data Types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Base_Types/globals.html" class="md-nav__link">
+        Globals/Parameters
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Base_Types/changelog.html" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          SPT Components
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          SPT Components
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Components/index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+          Function Blocks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Function Blocks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Components/cylinders.html" class="md-nav__link">
+        Cylinders
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Components/motioncontrol.html" class="md-nav__link">
+        Motion Control
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Components/sensors.html" class="md-nav__link">
+        Sensors
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+          Examples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Components/examples/solenoidbankbase.html" class="md-nav__link">
+        FB_SolenoidBankBase
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Components/changelog.html" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          SPT Event Logger
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          SPT Event Logger
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Event_Logger/index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Event_Logger/functions.html" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Event_Logger/changelog.html" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          SPT Motion Control
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          SPT Motion Control
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_MotionControl/index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_MotionControl/interfaces.html" class="md-nav__link">
+        Interfaces
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_MotionControl/functionblocks.html" class="md-nav__link">
+        Function Blocks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_MotionControl/duts.html" class="md-nav__link">
+        Data Types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_MotionControl/globals.html" class="md-nav__link">
+        Globals/Parameters
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_MotionControl/changelog.html" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          SPT Utilities
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          SPT Utilities
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Utilities/index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Utilities/interfaces.html" class="md-nav__link">
+        Interfaces
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Utilities/functionblocks.html" class="md-nav__link">
+        Function Blocks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Utilities/functions.html" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Utilities/duts.html" class="md-nav__link">
+        Data Types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Utilities/changelog.html" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          SPT XPlanar
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          SPT XPlanar
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_XPlanar/index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_XPlanar/interfaces.html" class="md-nav__link">
+        Interfaces
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_XPlanar/functionblocks.html" class="md-nav__link">
+        Function Blocks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_XPlanar/globals.html" class="md-nav__link">
+        Globals/Parameters
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_XPlanar/changelog.html" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          SPT XTS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          SPT XTS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+          User Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_2">
+          <span class="md-nav__icon md-icon"></span>
+          User Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quickstart.html" class="md-nav__link">
+        Quickstart
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="stationprogrammingnotes.html" class="md-nav__link">
+        Custom Station Programming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="examplestations.html" class="md-nav__link">
+        Example Stations
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="interfaces.html" class="md-nav__link">
+        Interfaces
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="functionblocks.html" class="md-nav__link">
+        Function Blocks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Data Types
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="duts.html" class="md-nav__link md-nav__link--active">
+        Data Types
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enums" class="md-nav__link">
+    ENUMs
+  </a>
+  
+    <nav class="md-nav" aria-label="ENUMs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#e_applicationstationstate" class="md-nav__link">
+    E_ApplicationStationState
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e_colors_argb" class="md-nav__link">
+    E_Colors_ARGB
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e_moverassignmentrecoverysource" class="md-nav__link">
+    E_MoverAssignmentRecoverySource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e_xtsstate" class="md-nav__link">
+    E_XTSState
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structs" class="md-nav__link">
+    STRUCTs
+  </a>
+  
+    <nav class="md-nav" aria-label="STRUCTs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#st_movedynamics" class="md-nav__link">
+    ST_MoveDynamics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#st_xtsstationconfig" class="md-nav__link">
+    ST_XTSStationConfig
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="globals.html" class="md-nav__link">
+        Globals/Parameters
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="changelog.html" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enums" class="md-nav__link">
+    ENUMs
+  </a>
+  
+    <nav class="md-nav" aria-label="ENUMs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#e_applicationstationstate" class="md-nav__link">
+    E_ApplicationStationState
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e_colors_argb" class="md-nav__link">
+    E_Colors_ARGB
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e_moverassignmentrecoverysource" class="md-nav__link">
+    E_MoverAssignmentRecoverySource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e_xtsstate" class="md-nav__link">
+    E_XTSState
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structs" class="md-nav__link">
+    STRUCTs
+  </a>
+  
+    <nav class="md-nav" aria-label="STRUCTs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#st_movedynamics" class="md-nav__link">
+    ST_MoveDynamics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#st_xtsstationconfig" class="md-nav__link">
+    ST_XTSStationConfig
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="duts">DUTs</h1>
+<h2 id="enums">ENUMs</h2>
+<h3 id="e_applicationstationstate">E_ApplicationStationState</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>{attribute &#39;qualified_only&#39;}
+{attribute &#39;strict&#39;}
+TYPE E_ApplicationStationState : (
+        eApplicationStationState_Init          := 0,
+        eApplicationStationState_GetMovers     := 1,
+        eApplicationStationState_InProcess     := 2,
+        eApplicationStationState_ReleaseMovers := 4
+    ) DWORD;
+END_TYPE
+</code></pre></div></td></tr></table></div>
+<h3 id="e_colors_argb">E_Colors_ARGB</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span></pre></div></td><td class="code"><div><pre><span></span><code>{attribute &#39;qualified_only&#39;}
+TYPE E_Colors_ARGB : (
+        Darkred              := 16#FF8B0000, // rgb(139,0,0)
+        Brown                := 16#FFA52A2A, // rgb(165,42,42)
+        Firebrick            := 16#FFB22222, // rgb(178,34,34)
+        Crimson              := 16#FFDC143C, // rgb(220,20,60)
+        Red                  := 16#FFFF0000, // rgb(255,0,0)
+        Tomato               := 16#FFFF6347, // rgb(255,99,71)
+        Coral                := 16#FFFF7F50, // rgb(255,127,80)
+        Indianred            := 16#FFCD5C5C, // rgb(205,92,92)
+        Lightcoral           := 16#FFF08080, // rgb(240,128,128)
+        Darksalmon           := 16#FFE9967A, // rgb(233,150,122)
+        Salmon               := 16#FFFA8072, // rgb(250,128,114)
+        Lightsalmon          := 16#FFFFA07A, // rgb(255,160,122)
+        Orangered            := 16#FFFF4500, // rgb(255,69,0)
+        Darkorange           := 16#FFFF8C00, // rgb(255,140,0)
+        Orange               := 16#FFFFA500, // rgb(255,165,0)
+        Gold                 := 16#FFFFD700, // rgb(255,215,0)
+        Darkgoldenrod        := 16#FFB8860B, // rgb(184,134,11)
+        Goldenrod            := 16#FFDAA520, // rgb(218,165,32)
+        Palegoldenrod        := 16#FFEEE8AA, // rgb(238,232,170)
+        Darkkhaki            := 16#FFBDB76B, // rgb(189,183,107)
+        Khaki                := 16#FFF0E68C, // rgb(240,230,140)
+        Olive                := 16#FF808000, // rgb(128,128,0)
+        Yellow               := 16#FFFFFF00, // rgb(255,255,0)
+        Yellowgreen          := 16#FF9ACD32, // rgb(154,205,50)
+        Darkolivegreen       := 16#FF556B2F, // rgb(85,107,47)
+        Olivedrab            := 16#FF6B8E23, // rgb(107,142,35)
+        Lawngreen            := 16#FF7CFC00, // rgb(124,252,0)
+        Chartreuse           := 16#FF7FFF00, // rgb(127,255,0)
+        Greenyellow          := 16#FFADFF2F, // rgb(173,255,47)
+        Darkgreen            := 16#FF006400, // rgb(0,100,0)
+        Green                := 16#FF008000, // rgb(0,128,0)
+        Forestgreen          := 16#FF228B22, // rgb(34,139,34)
+        Lime                 := 16#FF00FF00, // rgb(0,255,0)
+        Limegreen            := 16#FF32CD32, // rgb(50,205,50)
+        Lightgreen           := 16#FF90EE90, // rgb(144,238,144)
+        Palegreen            := 16#FF98FB98, // rgb(152,251,152)
+        Darkseagreen         := 16#FF8FBC8F, // rgb(143,188,143)
+        Mediumspringgreen    := 16#FF00FA9A, // rgb(0,250,154)
+        Springgreen          := 16#FF00FF7F, // rgb(0,255,127)
+        Seagreen             := 16#FF2E8B57, // rgb(46,139,87)
+        Mediumaquamarine     := 16#FF66CDAA, // rgb(102,205,170)
+        Mediumseagreen       := 16#FF3CB371, // rgb(60,179,113)
+        Lightseagreen        := 16#FF20B2AA, // rgb(32,178,170)
+        Darkslategray        := 16#FF2F4F4F, // rgb(47,79,79)
+        Teal                 := 16#FF008080, // rgb(0,128,128)
+        Darkcyan             := 16#FF008B8B, // rgb(0,139,139)
+        Aqua                 := 16#FF00FFFF, // rgb(0,255,255)
+        Lightcyan            := 16#FFE0FFFF, // rgb(224,255,255)
+        Darkturquoise        := 16#FF00CED1, // rgb(0,206,209)
+        Turquoise            := 16#FF40E0D0, // rgb(64,224,208)
+        Mediumturquoise      := 16#FF48D1CC, // rgb(72,209,204)
+        Paleturquoise        := 16#FFAFEEEE, // rgb(175,238,238)
+        Aquamarine           := 16#FF7FFFD4, // rgb(127,255,212)
+        Powderblue           := 16#FFB0E0E6, // rgb(176,224,230)
+        Cadetblue            := 16#FF5F9EA0, // rgb(95,158,160)
+        Steelblue            := 16#FF4682B4, // rgb(70,130,180)
+        Cornflowerblue       := 16#FF6495ED, // rgb(100,149,237)
+        Deepskyblue          := 16#FF00BFFF, // rgb(0,191,255)
+        Dodgerblue           := 16#FF1E90FF, // rgb(30,144,255)
+        Lightblue            := 16#FFADD8E6, // rgb(173,216,230)
+        Skyblue              := 16#FF87CEEB, // rgb(135,206,235)
+        Lightskyblue         := 16#FF87CEFA, // rgb(135,206,250)
+        Midnightblue         := 16#FF191970, // rgb(25,25,112)
+        Navy                 := 16#FF000080, // rgb(0,0,128)
+        Darkblue             := 16#FF00008B, // rgb(0,0,139)
+        Mediumblue           := 16#FF0000CD, // rgb(0,0,205)
+        Blue                 := 16#FF0000FF, // rgb(0,0,255)
+        Royalblue            := 16#FF4169E1, // rgb(65,105,225)
+        Blueviolet           := 16#FF8A2BE2, // rgb(138,43,226)
+        Indigo               := 16#FF4B0082, // rgb(75,0,130)
+        Darkslateblue        := 16#FF483D8B, // rgb(72,61,139)
+        Slateblue            := 16#FF6A5ACD, // rgb(106,90,205)
+        Mediumslateblue      := 16#FF7B68EE, // rgb(123,104,238)
+        Mediumpurple         := 16#FF9370DB, // rgb(147,112,219)
+        Darkmagenta          := 16#FF8B008B, // rgb(139,0,139)
+        Darkviolet           := 16#FF9400D3, // rgb(148,0,211)
+        Darkorchid           := 16#FF9932CC, // rgb(153,50,204)
+        Mediumorchid         := 16#FFBA55D3, // rgb(186,85,211)
+        Purple               := 16#FF800080, // rgb(128,0,128)
+        Thistle              := 16#FFD8BFD8, // rgb(216,191,216)
+        Plum                 := 16#FFDDA0DD, // rgb(221,160,221)
+        Violet               := 16#FFEE82EE, // rgb(238,130,238)
+        Magenta              := 16#FFFF00FF, // rgb(255,0,255)
+        Orchid               := 16#FFDA70D6, // rgb(218,112,214)
+        Mediumvioletred      := 16#FFC71585, // rgb(199,21,133)
+        Palevioletred        := 16#FFDB7093, // rgb(219,112,147)
+        Deeppink             := 16#FFFF1493, // rgb(255,20,147)
+        Hotpink              := 16#FFFF69B4, // rgb(255,105,180)
+        Lightpink            := 16#FFFFB6C1, // rgb(255,182,193)
+        Pink                 := 16#FFFFC0CB, // rgb(255,192,203)
+        Antiquewhite         := 16#FFFAEBD7, // rgb(250,235,215)
+        Beige                := 16#FFF5F5DC, // rgb(245,245,220)
+        Bisque               := 16#FFFFE4C4, // rgb(255,228,196)
+        Blanchedalmond       := 16#FFFFEBCD, // rgb(255,235,205)
+        Wheat                := 16#FFF5DEB3, // rgb(245,222,179)
+        Cornsilk             := 16#FFFFF8DC, // rgb(255,248,220)
+        Lemonchiffon         := 16#FFFFFACD, // rgb(255,250,205)
+        LightGoldenRodYellow := 16#FFFAFAD2, // rgb(250,250,210)
+        LightYellow          := 16#FFFFFFE0, // rgb(255,255,224)
+        SaddleBrown          := 16#FF8B4513, // rgb(139,69,19)
+        Sienna               := 16#FFA0522D, // rgb(160,82,45)
+        Chocolate            := 16#FFD2691E, // rgb(210,105,30)
+        Peru                 := 16#FFCD853F, // rgb(205,133,63)
+        SandyBrown           := 16#FFF4A460, // rgb(244,164,96)
+        BurlyWood            := 16#FFDEB887, // rgb(222,184,135)
+        RosyBrown            := 16#FFBC8F8F, // rgb(188,143,143)
+        Moccasin             := 16#FFFFE4B5, // rgb(255,228,181)
+        NavajoWhite          := 16#FFFFDEAD, // rgb(255,222,173)
+        PeachPuff            := 16#FFFFDAB9, // rgb(255,218,185)
+        MistyRose            := 16#FFFFE4E1, // rgb(255,228,225)
+        LavenderBlush        := 16#FFFFF0F5, // rgb(255,240,245)
+        Linen                := 16#FFFAF0E6, // rgb(250,240,230)
+        OldLace              := 16#FFFDF5E6, // rgb(253,245,230)
+        PapayaWhip           := 16#FFFFEFD5, // rgb(255,239,213)
+        Seashell             := 16#FFFFF5EE, // rgb(255,245,238)
+        MintCream            := 16#FFF5FFFA, // rgb(245,255,250)
+        SlateGray            := 16#FF708090, // rgb(112,128,144)
+        LightSlateGray       := 16#FF778899, // rgb(119,136,153)
+        LightSteelBlue       := 16#FFB0C4DE, // rgb(176,196,222)
+        Lavender             := 16#FFE6E6FA, // rgb(230,230,250)
+        FloralWhite          := 16#FFFFFAF0, // rgb(255,250,240)
+        AliceBlue            := 16#FFF0F8FF, // rgb(240,248,255)
+        GhostWhite           := 16#FFF8F8FF, // rgb(248,248,255)
+        HoneyDew             := 16#FFF0FFF0, // rgb(240,255,240)
+        Ivory                := 16#FFFFFFF0, // rgb(255,255,240)
+        Azure                := 16#FFF0FFFF, // rgb(240,255,255)
+        Snow                 := 16#FFFFFAFA, // rgb(255,250,250)
+        Black                := 16#FF000000, // rgb(0,0,0)
+        DimGray              := 16#FF696969, // rgb(105,105,105)
+        Gray                 := 16#FF808080, // rgb(128,128,128)
+        DarkGray             := 16#FFA9A9A9, // rgb(169,169,169)
+        Silver               := 16#FFC0C0C0, // rgb(192,192,192)
+        LightGray            := 16#FFD3D3D3, // rgb(211,211,211)
+        Gainsboro            := 16#FFDCDCDC, // rgb(220,220,220)
+        WhiteSmoke           := 16#FFF5F5F5, // rgb(245,245,245)
+        White                := 16#FFFFFFFF  // rgb(255,255,255)
+    ) UDINT;
+END_TYPE
+</code></pre></div></td></tr></table></div>
+<h3 id="e_moverassignmentrecoverysource">E_MoverAssignmentRecoverySource</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>{attribute &#39;qualified_only&#39;}
+{attribute &#39;strict&#39;}
+TYPE E_MoverAssignmentRecoverySource : (
+        eMoverAssignmentRecoverySource_NoBackup   := 0,
+        eMoverAssignmentRecoverySource_NOVRAM     := 1,
+        eMoverAssignmentRecoverySource_Persistent := 2
+    );
+END_TYPE
+</code></pre></div></td></tr></table></div>
+<h3 id="e_xtsstate">E_XTSState</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code>{attribute &#39;qualified_only&#39;}
+{attribute &#39;strict&#39;}
+{attribute &#39;to_string&#39;}
+TYPE E_XTSState : (
+        eXTSState_Disabling := 0,
+        eXTSState_Disabled  := 1,
+        eXTSState_Enabling  := 2,
+        eXTSState_Enabled   := 4,
+        eXTSState_Error     := 8,
+        eXTSState_Reset     := 16
+    ) DWORD;
+END_TYPE
+</code></pre></div></td></tr></table></div>
+<h2 id="structs">STRUCTs</h2>
+<h3 id="st_movedynamics">ST_MoveDynamics</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>TYPE ST_MoveDynamics :
+    STRUCT
+        Velocity     : LREAL := 200;
+        Acceleration : LREAL := MC_DEFAULT;
+        Deceleration : LREAL := MC_DEFAULT;
+        Jerk         : LREAL := MC_DEFAULT;
+    END_STRUCT
+END_TYPE
+</code></pre></div></td></tr></table></div>
+<h3 id="st_xtsstationconfig">ST_XTSStationConfig</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>TYPE ST_XTSStationConfig :
+    STRUCT
+        IsAQueueStation : BOOL; //Can accept movers on cold start recovery (station limits will be ignored!!)
+        OverrideGap     : BOOL;
+        Gap             : LREAL;
+        Dynamics        : ST_MoveDynamics;
+    END_STRUCT
+END_TYPE
+</code></pre></div></td></tr></table></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.51198bba.min.js"></script>
+      
+    
+  </body>
+</html>
