@@ -1,11 +1,11 @@
 # About This Repository
 
-To see a working sample machine build with this framework, please see our [VFFS Demo PLC](https://github.com/Beckhoff-USA-Community/PackML_PLC_Example){:target="_blank"}.
+To see a working sample machine build with this framework, please see our [VFFS Demo PLC](https://github.com/Beckhoff-USA-Community/PackML_PLC_Example).
 
 This sample is created by [Beckhoff Automation LLC](https://www.beckhoff.com/en-us/), and is provided as-is under the Zero-Clause BSD license.
 
 # Documentation
-Please visit our [documentation page](https://beckhoff-usa-community.github.io/SPT-Libraries/index.html){:target="_blank"} for detailed information on the contents of this framework as well as thoughts on architecture of machine programs.
+Please visit our [documentation page](https://beckhoff-usa-community.github.io/SPT-Libraries/index.html) for detailed information on the contents of this framework as well as thoughts on architecture of machine programs.
 
 # How to get support
 Should you have any questions regarding the provided sample code, please contact your local Beckhoff support team. Contact information can be found on the [official Beckhoff website](https://www.beckhoff.com/en-us/support/).
