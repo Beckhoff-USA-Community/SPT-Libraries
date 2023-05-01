@@ -2467,7 +2467,45 @@ END_IF
 </div>
 <h2 id="home-routines">Home Routines</h2>
 <h3 id="fb_homeroutine_abshoming">FB_HomeRoutine_AbsHoming</h3>
-<p><strong>TODO</strong></p>
+<pre class="hljs"><code>FUNCTION_BLOCK FINAL FB_HomeRoutine_AbsHoming EXTENDS FB_CyclicFB IMPLEMENTS I_MotionSequence
+</code></pre>
+<p mlp="34">Use with multi-turn absolute encoder to make current position read as 0.0 using position bias parameter of the NC encoder object.  A persistent variable of the type ST_AbsHomeParameters must be created along with the FB declaration.  The persistent variable will store the desired value through power cycles.</p>
+<pre class="hljs"><code>VAR PERSISTENT
+    AbsHomingParms	: ST_AbsHomeParameters;
+END_VAR
+VAR
+    AbsHoming		: FB_HomeRoutine_AbsHoming;
+END_VAR
+</code></pre>
+<p mlp="36">The initialization code of the application should set the home method and the reference to the parameters variable.</p>
+<pre class="hljs"><code>Axis.HomeMethod:=AbsHoming;
+AbsHoming.Parameters REF= AbsHomingParms;
+</code></pre>
+<p mlp="38">In the Maintenence mode, Execute State, the axis should be manually placed in the desired zero position.  An HMI command can trigger the AbsHoming.Execute method a single time to update the position bias parameter.</p>
+<pre class="hljs"><code>IF AbsHomeCmd THEN
+	AbsHoming.Execute();
+	AbsHomeCmd:=FALSE;
+END_IF
+</code></pre>
+<h3 id="user-content-abs-homing-properties" mlp="40">Abs Homing Properties</h3>
+<table mlp="41">
+<thead mlp="42">
+<tr mlp="43">
+<th><strong>Property</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Access</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody mlp="44">
+<tr mlp="45">
+<td>Parameters</td>
+<td>ST_AbsHomeParameters</td>
+<td>RW</td>
+<td>Get/Set parameter structure</td>
+</tr>
+</tbody>
+</table>
 <h3 id="fb_homeroutine_hardstop">FB_HomeRoutine_HardStop</h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>FUNCTION_BLOCK FINAL FB_HomeRoutine_HardStop EXTENDS FB_CyclicFB IMPLEMENTS I_MotionSequence
 </code></pre></div></td></tr></table></div>

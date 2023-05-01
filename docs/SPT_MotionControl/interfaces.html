@@ -2067,7 +2067,6 @@
 </table>
 <h2 id="i_camslaveaxis">I_CamSlaveAxis</h2>
 <p>(extends <code>I_BasicAxis</code>)</p>
-<p><strong>TODO</strong></p>
 <p>Defines basic required functionality for a basic NC axis plus camming functions.</p>
 <h3 id="properties_2">Properties</h3>
 <table>
@@ -2079,34 +2078,85 @@
 <th><strong>Description</strong></th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<tbody mlp="20">
+<tr mlp="21">
+<td>Master</td>
+<td>REFERENCE TO AXIS_REF</td>
+<td>RW</td>
+<td>Get/Set the master axis</td>
+</tr>
+<tr mlp="22">
+<td>CamParameters</td>
+<td>REFERENCE TO ST_CamParameters</td>
+<td>RW</td>
+<td>Get/Set the parameter structure for cam definition, options, etc.  <strong>MUST BE SET USING REF=</strong></td>
+</tr>
+<tr mlp="23">
+<td>RunningTable</td>
+<td>UDINT</td>
+<td>RO</td>
+<td>Returns the index within <code>CamParameters.CamTable</code> is currently running</td>
+</tr>
+<tr mlp="24">
+<td>SyncPos</td>
+<td>LREAL</td>
+<td>RO</td>
+<td>Returns the slave position that corresponds to either the current master position (<code>FindSyncPos()</code>) or a specified master position (<code>FindSlavePosition()</code>), depending on which method was called</td>
+</tr>
+<tr mlp="25">
+<td>InSync</td>
+<td>BOOL</td>
+<td>RO</td>
+<td>Get synchronization status of this axis</td>
 </tr>
 </tbody>
 </table>
-<h3 id="methods_2">Methods</h3>
-<table>
-<thead>
-<tr>
+<h3 id="methods_2" mlp="26">Methods</h3>
+<table mlp="27">
+<thead mlp="28">
+<tr mlp="29">
 <th><strong>Method</strong></th>
 <th><strong>Return Type</strong></th>
+<th><strong>Access</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-<td></td>
+<tbody mlp="30">
+<tr mlp="31">
+<td>ChangeMode</td>
+<td>BOOL</td>
+<td>PUBLIC</td>
+<td>Establish coupling with master axes</td>
 </tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
+<tr mlp="32">
+<td>FindSlavePos</td>
+<td>BOOL</td>
+<td>PUBLIC</td>
+<td>Loads a cam table and reports the corresponding slave position (via <code>SyncPos</code>) when the master is at <code>CamParameters.MasterPos</code></td>
+</tr>
+<tr mlp="33">
+<td>FindSyncPos</td>
+<td>BOOL</td>
+<td>PUBLIC</td>
+<td>Loads a cam table and reports the corresponding slave position (via <code>SyncPos</code>) according to the master's current position</td>
+</tr>
+<tr mlp="34">
+<td>StartCouple</td>
+<td>BOOL</td>
+<td>PUBLIC</td>
+<td>Couple the slave to the master without performing any sync move</td>
+</tr>
+<tr mlp="35">
+<td>StartSync</td>
+<td>BOOL</td>
+<td>PUBLIC</td>
+<td>Couple the slave to the master after performing an initial synchronization move to align the slave with the current master position</td>
+</tr>
+<tr mlp="36">
+<td>UpdateTable</td>
+<td>BOOL</td>
+<td>PUBLIC</td>
+<td>Online update of the current cam's point definitions</td>
 </tr>
 </tbody>
 </table>
