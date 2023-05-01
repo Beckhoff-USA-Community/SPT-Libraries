@@ -1,14 +1,12 @@
 # About This Repository
+These libraries go hand-in-hand with the [VFFS Demo PLC](https://github.com/Beckhoff-USA-Community/PackML_PLC_Example).
 
-To see a working sample machine build with this framework, please see our [VFFS Demo PLC](https://github.com/Beckhoff-USA-Community/PackML_PLC_Example).
+This sample is created by [Beckhoff Automation LLC.](https://www.beckhoff.com/en-us/), and is provided as-is under the Zero-Clause BSD license.
 
-This sample is created by [Beckhoff Automation LLC](https://www.beckhoff.com/en-us/), and is provided as-is under the Zero-Clause BSD license.
+## How to get support
+For SPT framework support, raise an [issue](https://github.com/Beckhoff-USA-Community/SPT-Libraries/issues/new/choose){:target="_blank"} here.
 
-# Documentation
-Please visit our [documentation page](https://beckhoff-usa-community.github.io/SPT-Libraries/index.html) for detailed information on the contents of this framework as well as thoughts on architecture of machine programs.
-
-# How to get support
-Should you have any questions regarding the provided sample code, please contact your local Beckhoff support team. Contact information can be found on the [official Beckhoff website](https://www.beckhoff.com/en-us/support/).
+For general TwinCAT and Beckhoff Product support, please contact your local [Beckhoff Support](https://www.beckhoff.com/support/){:target="_blank"}.
 
 # Adding this repo as a TwinCAT PLC Library Repository
 1. Clone this repository to your PC
