@@ -4,9 +4,9 @@ These libraries go hand-in-hand with the [VFFS Demo PLC](https://github.com/Beck
 This sample is created by [Beckhoff Automation LLC.](https://www.beckhoff.com/en-us/), and is provided as-is under the Zero-Clause BSD license.
 
 ## How to get support
-For SPT framework support, raise an [issue](https://github.com/Beckhoff-USA-Community/SPT-Libraries/issues/new/choose){:target="_blank"} here.
+For SPT framework support, raise an [issue](https://github.com/Beckhoff-USA-Community/SPT-Libraries/issues/new/choose) here.
 
-For general TwinCAT and Beckhoff Product support, please contact your local [Beckhoff Support](https://www.beckhoff.com/support/){:target="_blank"}.
+For general TwinCAT and Beckhoff Product support, please contact your local [Beckhoff Support](https://www.beckhoff.com/support/).
 
 # Adding this repo as a TwinCAT PLC Library Repository
 1. Clone this repository to your PC
