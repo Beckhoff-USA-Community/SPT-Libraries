@@ -15,7 +15,7 @@
         <link rel="next" href="duts.html">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.8">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.9">
     
     
       
@@ -23,10 +23,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ded33207.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.85bb2934.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a6bdf11c.min.css">
       
       
 
@@ -1068,6 +1068,19 @@
     FB_HomeRoutine_AbsHoming
   </a>
   
+    <nav class="md-nav" aria-label="FB_HomeRoutine_AbsHoming">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#properties_1" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1079,7 +1092,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#properties_1" class="md-nav__link">
+  <a href="#properties_2" class="md-nav__link">
     Properties
   </a>
   
@@ -1099,7 +1112,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#properties_2" class="md-nav__link">
+  <a href="#properties_3" class="md-nav__link">
     Properties
   </a>
   
@@ -1798,6 +1811,19 @@
     FB_HomeRoutine_AbsHoming
   </a>
   
+    <nav class="md-nav" aria-label="FB_HomeRoutine_AbsHoming">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#properties_1" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1809,7 +1835,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#properties_1" class="md-nav__link">
+  <a href="#properties_2" class="md-nav__link">
     Properties
   </a>
   
@@ -1829,7 +1855,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#properties_2" class="md-nav__link">
+  <a href="#properties_3" class="md-nav__link">
     Properties
   </a>
   
@@ -2543,12 +2569,59 @@ END_IF
 </div>
 <h2 id="home-routines">Home Routines</h2>
 <h3 id="fb_homeroutine_abshoming">FB_HomeRoutine_AbsHoming</h3>
-<p><strong>TODO</strong></p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>FUNCTION_BLOCK FINAL FB_HomeRoutine_AbsHoming EXTENDS FB_CyclicFB IMPLEMENTS I_MotionSequence
+</code></pre></div></td></tr></table></div>
+Use with multi-turn absolute encoder to make current position read as 0.0 using position bias parameter of the NC encoder object.  A persistent variable of the type ST_AbsHomeParameters must be created along with the FB declaration.  The persistent variable will store the desired value through power cycles.
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>VAR PERSISTENT
+    AbsHomingParms  : ST_AbsHomeParameters;
+END_VAR
+VAR
+    AbsHoming       : FB_HomeRoutine_AbsHoming;
+END_VAR
+</code></pre></div></td></tr></table></div>
+The initialization code of the application should set the home method and the reference to the parameters variable.
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>Axis.HomeMethod:=AbsHoming;
+AbsHoming.Parameters REF= AbsHomingParms;
+</code></pre></div></td></tr></table></div>
+In the Maintenence mode, Execute State, the axis should be manually placed in the desired zero position.  An HMI command can trigger the AbsHoming.Execute method a single time to update the position bias parameter.
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>IF AbsHomeCmd THEN
+    AbsHoming.Execute();
+    AbsHomeCmd:=FALSE;
+END_IF
+</code></pre></div></td></tr></table></div></p>
+<h4 id="properties_1">Properties</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Property</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Access</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Parameters</td>
+<td>ST_AbsHomeParameters</td>
+<td>RW</td>
+<td>Get/Set parameter structure</td>
+</tr>
+</tbody>
+</table>
 <h3 id="fb_homeroutine_hardstop">FB_HomeRoutine_HardStop</h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>FUNCTION_BLOCK FINAL FB_HomeRoutine_HardStop EXTENDS FB_CyclicFB IMPLEMENTS I_MotionSequence
 </code></pre></div></td></tr></table></div>
 <p>Sets torque limit and moves axis at a set velocity toward specified end of travel.  When a mechanical interference is detected via increasing position lag, sets home to interference position.</p>
-<h4 id="properties_1">Properties</h4>
+<h4 id="properties_2">Properties</h4>
 <table>
 <thead>
 <tr>
@@ -2577,7 +2650,7 @@ END_IF
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>FUNCTION_BLOCK FINAL FB_HomeRoutine_SetPosition EXTENDS FB_CyclicFB IMPLEMENTS I_MotionSequence
 </code></pre></div></td></tr></table></div>
 <p>Sets current axis position equal to <code>HomePosition</code> property.</p>
-<h4 id="properties_2">Properties</h4>
+<h4 id="properties_3">Properties</h4>
 <table>
 <thead>
 <tr>
@@ -2649,7 +2722,7 @@ END_IF
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.51198bba.min.js"></script>
+      <script src="../assets/javascripts/bundle.fac441b0.min.js"></script>
       
     
   </body>

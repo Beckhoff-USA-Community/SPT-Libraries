@@ -15,7 +15,7 @@
         <link rel="next" href="functionblocks.html">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.8">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.9">
     
     
       
@@ -23,10 +23,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ded33207.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.85bb2934.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a6bdf11c.min.css">
       
       
 
@@ -988,60 +988,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#i_camslaveaxis" class="md-nav__link">
-    I_CamSlaveAxis
-  </a>
-  
-    <nav class="md-nav" aria-label="I_CamSlaveAxis">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#properties_2" class="md-nav__link">
-    Properties
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#methods_2" class="md-nav__link">
-    Methods
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#i_motionsequence" class="md-nav__link">
-    I_MotionSequence
-  </a>
-  
-    <nav class="md-nav" aria-label="I_MotionSequence">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#properties_3" class="md-nav__link">
-    Properties
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#methods_3" class="md-nav__link">
-    Methods
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1639,60 +1585,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#i_camslaveaxis" class="md-nav__link">
-    I_CamSlaveAxis
-  </a>
-  
-    <nav class="md-nav" aria-label="I_CamSlaveAxis">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#properties_2" class="md-nav__link">
-    Properties
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#methods_2" class="md-nav__link">
-    Methods
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#i_motionsequence" class="md-nav__link">
-    I_MotionSequence
-  </a>
-  
-    <nav class="md-nav" aria-label="I_MotionSequence">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#properties_3" class="md-nav__link">
-    Properties
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#methods_3" class="md-nav__link">
-    Methods
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2065,9 +1957,8 @@
 </tr>
 </tbody>
 </table>
-<h2 id="i_camslaveaxis">I_CamSlaveAxis</h2>
+<h1 id="i_camslaveaxis">I_CamSlaveAxis</h1>
 <p>(extends <code>I_BasicAxis</code>)</p>
-<p><strong>TODO</strong></p>
 <p>Defines basic required functionality for a basic NC axis plus camming functions.</p>
 <h3 id="properties_2">Properties</h3>
 <table>
@@ -2081,35 +1972,46 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>Master</td>
+<td>REFERENCE TO AXIS_REF</td>
+<td>RW</td>
+<td>Get/Set the master axis</td>
+</tr>
+<tr>
+<td>CamParameters</td>
+<td>REFERENCE TO ST_CamParameters</td>
+<td>RW</td>
+<td>Get/Set the parameter structure for cam definition, options, etc.  <strong>MUST BE SET USING REF=</strong></td>
+</tr>
+<tr>
+<td>RunningTable</td>
+<td>UDINT</td>
+<td>RO</td>
+<td>Returns the index within <code>CamParameters.CamTable</code> is currently running</td>
+</tr>
+<tr>
+<td>SyncPos</td>
+<td>LREAL</td>
+<td>RO</td>
+<td>Returns the slave position that corresponds to either the current master position (<code>FindSyncPos()</code>) or a specified master position (<code>FindSlavePosition()</code>), depending on which method was called</td>
+</tr>
+<tr>
+<td>InSync</td>
+<td>BOOL</td>
+<td>RO</td>
+<td>Get synchronization status of this axis</td>
 </tr>
 </tbody>
 </table>
 <h3 id="methods_2">Methods</h3>
-<table>
-<thead>
-<tr>
-<th><strong>Method</strong></th>
-<th><strong>Return Type</strong></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<p>|<strong>Method</strong>|<strong>Return Type</strong>|<strong>Description</strong>|
+|--|--|--|--|
+|ChangeMode|BOOL|Establish coupling with master axes|
+|FindSlavePos|BOOL|Loads a cam table and reports the corresponding slave position (via <code>SyncPos</code>) when the master is at <code>CamParameters.MasterPos</code>|
+|FindSyncPos|BOOL|Loads a cam table and reports the corresponding slave position (via <code>SyncPos</code>) according to the master's current position|
+|StartCouple|BOOL|Couple the slave to the master without performing any sync move|
+|StartSync|BOOL|Couple the slave to the master after performing an initial synchronization move to align the slave with the current master position|
+|UpdateTable|BOOL|Online update of the current cam's point definitions|</p>
 <h2 id="i_motionsequence">I_MotionSequence</h2>
 <p>(extends <code>I_BaseFB</code>)</p>
 <p>Defines basic required functionality for external sequence of any sort.</p>
@@ -2189,7 +2091,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.51198bba.min.js"></script>
+      <script src="../assets/javascripts/bundle.fac441b0.min.js"></script>
       
     
   </body>
