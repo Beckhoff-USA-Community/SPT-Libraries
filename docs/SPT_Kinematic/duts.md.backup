@@ -1,0 +1,73 @@
+# DUTs
+## ENUMs
+### E_AcsJoint
+````
+{attribute 'qualified_only'}
+TYPE E_AcsJoint :
+(
+	Joint_1 := 1,
+	Joint_2 := 2,
+	Joint_3 := 3,
+	Joint_4 := 4,
+	Joint_5 := 5,
+	Joint_6 := 6
+);
+END_TYPE
+````
+
+### E_McsAxis
+````
+{attribute 'qualified_only'}
+TYPE E_McsAxis :
+(
+	X := 1,
+	Y := 2,
+	Z := 3,
+	Rot1 := 4, // C1, Rx,..
+	Rot2 := 5, // C2, Ry,..
+	Rot3 := 6 // C3, Rz,..
+);
+END_TYPE
+````
+
+## STRUCTs
+### ST_KinematicPosition
+````
+TYPE ST_KinematicPosition :
+STRUCT
+	ACS : ARRAY[1..8] OF LREAL;
+	MCS : ARRAY[1..8] OF LREAL;
+END_STRUCT
+END_TYPE
+````
+### ST_KinematicMotionParameter
+````
+TYPE ST_KinematicMotionParameter :
+STRUCT
+	Acs : ARRAY[1..KINEMATIC_CONSTANTS.DEGREES_OF_FREEDOM] OF ST_KinematicMotionParameterValues;
+	Mcs : ARRAY[1..KINEMATIC_CONSTANTS.DEGREES_OF_FREEDOM] OF ST_KinematicMotionParameterValues;
+END_STRUCT
+END_TYPE
+````
+### ST_KinematicMotionParameterValues
+````
+TYPE ST_KinematicMotionParameterValues :
+STRUCT
+	Position			: LREAL;
+	Acceleration 		: LREAL;
+	Deceleration 		: LREAL;
+	Jerk		 		: LREAL;
+END_STRUCT
+END_TYPE
+````
+### ST_KinematicComponentAmp_CmGroupState
+````
+TYPE ST_KinematicMotionParameterValues :
+STRUCT
+	Position			: LREAL;
+	Acceleration 		: LREAL;
+	Deceleration 		: LREAL;
+	Jerk		 		: LREAL;
+END_STRUCT
+END_TYPE
+````

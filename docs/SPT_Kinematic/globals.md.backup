@@ -1,0 +1,16 @@
+# Globals/Parameters
+## Parameters
+### Parameters_XTS
+|**Parameter**|**Type**|**Default**|**Description**|
+|--|--|--|--|
+|  |  |  | 
+
+
+## GVLs
+### KINEMATIC_CONSTANTS
+````
+{attribute 'qualified_only'}
+VAR_GLOBAL CONSTANT
+	DEGREES_OF_FREEDOM 							: UINT := (TO_UINT(E_KinematicDOF.eKinematicDOF_Max)-1);
+END_VAR
+````

@@ -1,0 +1,63 @@
+# Interfaces
+## I_KinematicGroup
+The Kinematic Group manages the basic function of the Kinematic Transformations Library. It builds and manipulates the Kinematic Object.
+
+### Properties
+|**Property**|**Type**|**Access**|**Description**|
+|--|--|--|--|
+|KinematicStatus|E_KinStatus|R|Get the current Kinematic Object Status|
+|KinMetaInfo|U_KinMetaInfo|R/W|Get/Set the current Kinematic Object Configuration for Forward Transformation|
+|OidKinTrafo|UDINT|R/W|Get/Set the Object Id of the Kinematic Object|
+
+!!! Warning
+	The OidKinTrafo requires to be set during initialization of the PLC code.
+
+### Methods
+|**Method**|**Return Type**|**Description**|
+|--|--|--|
+|BuildKinGroup|BOOL|Returns `TRUE` Command was accepted|
+|DissolveKinGroup|BOOL|Returns `TRUE` Command was accepted|
+
+## I_Kinematic
+Interface implements basic robotic functions for the Kinematic Object.
+
+### Properties
+|**Property**|**Type**|**Access**|**Description**|
+|--|--|--|--|
+|ActPosition|ST_KinematicPosition|R|Returns current position of ACS and MCS Drives|
+|Enabled|BOOL|R|Returns `True` if the Robotic System is enabled|
+|InPosition|BOOL|R|Returns `True` if the Robotic System is at Target Position with all its Axis|
+|Moving|BOOL|R|Returns `True` if one or more Axis is moving. Limits are set in the NC Axis Object|
+|DegreesOfFreedomConfigured|E_KinematicDOF|R/W|Get/Set the Degrees of Freedom configuration of the Kinematic |
+|Override|LREAL|W|Set Override for Robotic System|
+|TargetMotionParameter|ST_KinematicMotionParameter|R/W|Get/Set the motion Parameter of ACS and MCS Axis (Acceleration, Deceleration, Jerk, Position)|
+
+### Methods
+|**Method**|**Return Type**|**Description**|
+|--|--|--|
+|Disable|BOOL|Returns `TRUE` Command was accepted|
+|Enable|BOOL|Returns `TRUE` Command was accepted|
+|JogCartesianAxis|BOOL|Returns `TRUE` Command was accepted|
+|JogJoint|BOOL|Returns `TRUE` Command was accepted|
+|Stop|BOOL|Returns `TRUE` Command was accepted|
+
+## I_KinematicCm
+Interface Implements Coordinated Motion functions.
+
+### Properties
+|**Property**|**Type**|**Access**|**Description**|
+|--|--|--|--|
+|CmState|ST_KinematicComponentAmp_CmGroupState|R|Get current state of coordinated motion Group|
+|CmIdentGroup|ARRAY[1..KINEMATIC_CONSTANTS.DEGREES_OF_FREEDOM] OF IDENT_IN_GROUP_REF|W|Set allocation of Group axes to the depending cartesian Axis e.g. `MCS_X`|
+
+
+### Methods
+|**Method**|**Return Type**|**Description**|
+|--|--|--|
+|AddCircularMoveToPath|BOOL|Returns `TRUE` when the move was added -> up to 30 adds per cycle possible|
+|AddLinearMoveToPath|BOOL|Returns `TRUE` when the move was added -> up to 30 adds per cycle possible|
+|DisableCmGroup|BOOL|Returns `TRUE` Command was accepted|
+|EnableCmGroup|BOOL|Returns `TRUE` Command was accepted|
+|StartMovePath|BOOL|Returns `TRUE` Command was accepted|
+|UngroupCmGroup|BOOL|Returns `TRUE` Command was accepted|
+
