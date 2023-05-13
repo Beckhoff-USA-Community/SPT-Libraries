@@ -1,0 +1,1675 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.12">
+    
+    
+      
+        <title>What is PackML? - SPT Application Framework Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.85bb2934.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a6bdf11c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arial:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Arial";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/style.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-2KSSSWXJ36"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-2KSSSWXJ36",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-2KSSSWXJ36",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#what-is-packml" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="SPT Application Framework Documentation" class="md-header__button md-logo" aria-label="SPT Application Framework Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SPT Application Framework Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              What is PackML?
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Beckhoff-USA-Community/SPT-Libraries" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SPT-Libraries
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index.html" class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../setup.html" class="md-tabs__link">
+      Setup
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../DesignGuide/index.html" class="md-tabs__link">
+      Design Guide
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../SPT_Base_Types/index.html" class="md-tabs__link">
+        SPT Base Types
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../SPT_Components/index.html" class="md-tabs__link">
+        SPT Components
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../SPT_Event_Logger/index.html" class="md-tabs__link">
+        SPT Event Logger
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../SPT_MotionControl/index.html" class="md-tabs__link">
+        SPT Motion Control
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../SPT_Utilities/index.html" class="md-tabs__link">
+        SPT Utilities
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../SPT_XPlanar/index.html" class="md-tabs__link">
+        SPT XPlanar
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../SPT_XTS/index.html" class="md-tabs__link">
+        SPT XTS
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="SPT Application Framework Documentation" class="md-nav__button md-logo" aria-label="SPT Application Framework Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    SPT Application Framework Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Beckhoff-USA-Community/SPT-Libraries" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SPT-Libraries
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup.html" class="md-nav__link">
+        Setup
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DesignGuide/index.html" class="md-nav__link">
+        Design Guide
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          SPT Base Types
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          SPT Base Types
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Base_Types/index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Base_Types/interfaces.html" class="md-nav__link">
+        Interfaces
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Base_Types/functionblocks.html" class="md-nav__link">
+        Function Blocks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Base_Types/duts.html" class="md-nav__link">
+        Data Types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Base_Types/globals.html" class="md-nav__link">
+        Globals/Parameters
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Base_Types/changelog.html" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          SPT Components
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          SPT Components
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Components/index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+          Function Blocks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Function Blocks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Components/cylinders.html" class="md-nav__link">
+        Cylinders
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Components/motioncontrol.html" class="md-nav__link">
+        Motion Control
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Components/sensors.html" class="md-nav__link">
+        Sensors
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+          Examples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Components/examples/solenoidbankbase.html" class="md-nav__link">
+        FB_SolenoidBankBase
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Components/changelog.html" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          SPT Event Logger
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          SPT Event Logger
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Event_Logger/index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Event_Logger/functions.html" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Event_Logger/changelog.html" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          SPT Motion Control
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          SPT Motion Control
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_MotionControl/index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_MotionControl/interfaces.html" class="md-nav__link">
+        Interfaces
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_MotionControl/functionblocks.html" class="md-nav__link">
+        Function Blocks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_MotionControl/duts.html" class="md-nav__link">
+        Data Types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_MotionControl/globals.html" class="md-nav__link">
+        Globals/Parameters
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_MotionControl/changelog.html" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          SPT Utilities
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          SPT Utilities
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Utilities/index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Utilities/interfaces.html" class="md-nav__link">
+        Interfaces
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Utilities/functionblocks.html" class="md-nav__link">
+        Function Blocks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Utilities/functions.html" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Utilities/duts.html" class="md-nav__link">
+        Data Types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Utilities/changelog.html" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          SPT XPlanar
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          SPT XPlanar
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_XPlanar/index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_XPlanar/interfaces.html" class="md-nav__link">
+        Interfaces
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_XPlanar/functionblocks.html" class="md-nav__link">
+        Function Blocks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_XPlanar/globals.html" class="md-nav__link">
+        Globals/Parameters
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_XPlanar/changelog.html" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          SPT XTS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          SPT XTS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_XTS/index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+          User Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_2">
+          <span class="md-nav__icon md-icon"></span>
+          User Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_XTS/quickstart.html" class="md-nav__link">
+        Quickstart
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_XTS/stationprogrammingnotes.html" class="md-nav__link">
+        Custom Station Programming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_XTS/examplestations.html" class="md-nav__link">
+        Example Stations
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_XTS/interfaces.html" class="md-nav__link">
+        Interfaces
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_XTS/functionblocks.html" class="md-nav__link">
+        Function Blocks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_XTS/duts.html" class="md-nav__link">
+        Data Types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_XTS/globals.html" class="md-nav__link">
+        Globals/Parameters
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_XTS/changelog.html" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#machine-module-equipment-modules-and-components" class="md-nav__link">
+    Machine Module, Equipment Modules, and Components
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-the-modes-defined-by-packml" class="md-nav__link">
+    What are the Modes defined by PackML?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-packml-state-machine" class="md-nav__link">
+    What is the PackML state machine?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-and-status-down-and-up" class="md-nav__link">
+    Command and Status, down and up
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="what-is-packml">What is PackML?</h1>
+<p>According to the OMAC website - PackML is an automation standard developed by the OMAC and adopted by ISA as TR88.00.02 that makes it easier to transfer and retrieve consistent machine data. The primary goals of PackML are to encourage a common “look and feel” across a plant floor, and to enable and encourage industry innovation.</p>
+<p>What are the building blocks of PackML?</p>
+<figure>
+<p><img alt="Alt text" src="PackMLMMEMC.png" />
+  </p>
+<figcaption>Module Hierarchy</figcaption>
+</figure>
+<h2 id="machine-module-equipment-modules-and-components">Machine Module, Equipment Modules, and Components</h2>
+<p>A manufacturing line will consist of multiple machines; for our purposes, a machine is defined by the presence of a single PLC. Each machine is made up of 0 or more equipment modules. Most machines will contain several equipment modules, but it is important to understand that a machine does not have to have any equipment modules. An equipment module is typically recognized by a single process of a machine. This could be some sort of de-stacker or infeed, a bag filler, or a palletizing system. Each equipment module is made up of components. These components are typically the hardware that work together as a single piece of equipment on the machine. For example, the cylinders, valves, and heating elements required to seal a bag, or the servo motors and actuators within a section of a distribution conveyor.</p>
+<h2 id="what-are-the-modes-defined-by-packml">What are the Modes defined by PackML?</h2>
+<p>The PackML standard defines 4 modes, but also allows for the user to define their own. The defined modes are Invalid, Production, Maintenance, and Manual. A complete machine can be developed with only the use of the Production Mode. However, the other modes can be used to best describe the group of possible states. It could be that a Manual Mode does not include the Suspended and Held paths, and the Maintenance Mode includes the Held path but not the Suspended path. These choices are completely left to the developer and how they choose to design the machine. There are a total of 32 possible modes, these can be used for a variety of scenarios such as a test mode that has a defined Complete command to leave the Execute state after a test is completed, or a warmup mode could be created to keep the machine in the Execute state until it’s ready.</p>
+<h2 id="what-is-the-packml-state-machine">What is the PackML state machine?</h2>
+<p>PackML defines modes of operation and the possible states within each mode. A complete machine can be developed using only the production mode. The states are grouped into areas defined by their functionality. Typically, a machine will power on and go through the Aborting state to Aborted, these same states can be used for fault handling. Understanding the diagram and the areas is important. When a machine is in Execute there are four possible paths. A Suspend command will be issued when an upstream or downstream dependency is not met. This could be the previous Equipment module has run out of material or possibly faulted. The other 3 paths are Hold, Abort, and Stop. The Hold and Stop commands are issued by the operator, while the Abort command is given by the code. There are two types of states, Acting and Wait. The ‘ing’ states are the Acting states. Aborting, Clearing, Stopping, Holding, etc. These states are entered because a command was given to do so. An Estop might cause an Abort command to be issued that will place the state machine into Aborting, or when the operator presses the Start button the command will be given for the state machine to move to the Starting state. Each of these acting states is followed by a StateComplete that is determined by the code and then transitions to a Wait state such as Stopped, Idle or Held. The Execute state is the exception to this as it is defined as an Acting state, but uses the StateComplete of the Starting state to enter and requires a command to leave.</p>
+<figure>
+<p><img alt="Alt text" src="PackMLStates.png" />
+  </p>
+<figcaption>PackML States</figcaption>
+</figure>
+<p>Changing modes can only be done in certain states. Stopped, Aborted, Completed, and Held. If a mode change is required the machine must be in one of the states, and the mode that is being requested must also have this state. And while the states available within a mode can be defined there are a minimum set of required states that every mode must support. Aborted, Stopped, Idle, and Execute. Of these states only Aborted and Stopped allow for a mode change.</p>
+<figure>
+<p><img alt="Alt text" src="PackMLCmdStat.png" />
+  </p>
+<figcaption>PackML Command and Status</figcaption>
+</figure>
+<h2 id="command-and-status-down-and-up">Command and Status, down and up</h2>
+<p>The Machine Module will be the commander of all its Equipment Modules, and it will also respond as needed when an Equipment Module reports an error. During normal operation the code in the Machine Module will send a state change command to each of the Equipment Modules, and they will report back to the Machine Module once the requested state has been reached. When a fault occurs the equipment module will handle the fault according to how it is programmed to do so. Typically, this would involve commanding itself into the Aborted state. The Machine Module will detect this state change and respond accordingly. It could be that other Equipment Modules need to be Suspended while waiting for the faulted module to be cleared, or it could be that some modules need to also fault or suspend due to dependencies on the module that originated the fault. By using the Machine Module as the commander and coordinator of the events the design of the machine code can be very flexible.</p>
+<h1 id="what-is-the-spt-framework">What is the SPT Framework?</h1>
+<p>The SPT framework utilizes the PackML libraries in order to allow for a defined set of states in which the control code can be organized. A key element of developing machine control is ensuring that the correct commands are given at the proper time and coordinated with the other parts of the machine. It is also important to ensure that commands are not given at an incorrect time.</p>
+<h2 id="libraries">Libraries</h2>
+<p>The functionality of PackML state machine requires the Tc3_PackML_V2 library. The SPT Framework is built on top of this library to aid in rapid code development. The 4 SPT libraries are SPT Base Types, SPT Components, SPT Event Logger, and SPT Utilities. The SPT Base Types library contains the core of the SPT Framework, the function blocks contained within will be extended to allow the machine code to interact with the PackML state machine. The SPT Components library holds some prewritten components for various sensors and actuators, including servos. The SPT Utilities library contains small pieces of code that are often repeated in the development of larger projects; for example: Analog Scaling, Data Buffers, and Comparators. Lastly the SPT Event Logger is a wrapper around the Tc3_EventLogger that is tailored to be used within the SPT Framework.</p>
+<h2 id="cyclic-logic-vs-single-method-calls">Cyclic Logic vs Single Method Calls</h2>
+<p>The framework uses Methods to call specific pieces of the code, such M_ExtendCylider or M_ResetAxis. These methods can be called once as needed, or multiple times until the requested command has completed or faulted. Additionally, the framework uses methods to call commands during specific states. For example, any code that needs to be executed while a Module is in the Resetting state can be placed in the Resetting method and it will be called at the proper time.
+The framework also makes use of Cyclic method calls to update the parts of the code that are responsible for monitoring changes, such as alarms, faults, and state changes made by other methods. These also provide a way to cyclically call and update all of the Modules and Components that have been registered to a higher-level module.</p>
+<h2 id="does-a-component-need-an-em">Does a Component need an EM?</h2>
+<p>So far, the hierarchy has been explained as Machine Module, Equipment Module, and Component. A Machine is made up of one or more pieces of Equipment, and Equipment is made up of Components. But it could be that a Machine itself has a component, such as a stack light, that indicates the overall status of the machine. Therefore, it is important to be aware that an Equipment module is not always required, and a Machine Module can have a direct connection to a Component.</p>
+<h2 id="what-is-a-submodule">What is a Submodule?</h2>
+<p>The PackML standard defines only Machine, Equipment, and Component. However there has occasionally been a need or a request to organize machines with multiple levels of Equipment Modules. To accommodate this the SPT Framework uses the term Submodule instead of Equipment Module. This allows for some flexibility in the layout of the architecture so that a Machine can have one or more Submodule (and 0 or more Components), and then a Submodule can also have one or more Submodules and 0 or more Components. In theory there is no end to the number levels that can be obtained with this architecture. However, the use of more than 3 levels (MM, EM, and Component) is highly discouraged and should only be used when having a Submodule of a Submodule truly is the best option.</p>
+<h2 id="inheriting-the-base-classes">Inheriting the base classes</h2>
+<p>When creating a Module or Component they must inherit the functionality of the base classes in the SPT Framework libraries. FB_PackML_BaseModule will be inherited by the Machine Module and all submodules. FB_ComponentBase will be inherited by all components. This will allow all of the modules and components to have everything they need to interact with the PackML state machine and the SPT Framework.</p>
+<h2 id="registering-an-em-or-component-with-its-higher-level-module">Registering an EM or Component with its higher-level Module</h2>
+<p>In order for the Cyclic updates to happen properly, a SubModule or Component must be registered with its higher-level Machine Module, or Submodule. The Variable name of each, that is declared must be passed into an array that will initialize it with the module.</p>
+<h2 id="creating-the-array-of-interfaces-for-submodules-and-components">Creating the array of interfaces for submodules and components</h2>
+<p>Registering Modules and Components is done using an array of interfaces. Within each Machine and Submodule there will exist the declaration of the SubModules and Components of that Module. Each of these instance variables will be used as the initial value of an index within the array.
+For example, this Machine Module contains three Equipment Modules referred to as SubModules in the code.</p>
+<p>FUNCTION_BLOCK FB_Machine EXTENDS FB_PackML_BaseModule
+// Sub Modules
+PullWheels : FB_PullWheel;
+Sealer : FB_Sealer;
+Unwind : FB_Unwind;
+//Initial List of SubModules
+ipSubModules_Init : ARRAY[1..Parameters_PackML_Base.MAX_NO_OF_SUBMODULES] OF I_PackML_BaseModule := [PullWheels, Sealer, Unwind];</p>
+<p>The three modules (PullWheels, Sealer, and Unwind) are all function blocks that extend the FB_PackML_BaseModule which Implements the I_PackML_BaseModule; therefore, they can be passed into the array of I_PackML_BaseModule as initial values. Understanding how this works internally is not important, what is important is remembering to place each instance variable name in the array initialization.
+When creating components, the same process is used, the only difference is that the components Extend FB_ComponentBase which Implements I_ComponentBase and the array is of type I_ComponentBase.</p>
+<p>FUNCTION_BLOCK FB_PullWheel EXTENDS FB_PackML_BaseModule
+LeftPullWheel : FB_Component_BasicSlaveAxis := (Name := 'Left');
+ipComponents_Init : ARRAY[1..Parameters_PackML_Base.MAX_NO_OF_COMPONENTS] OF I_ComponentBase := [LeftPullWheel];</p>
+<h2 id="deciding-which-states-are-needed">Deciding which states are needed</h2>
+<p>It is not required that all states be called from the machine module or submodule. For example, if a submodule has no work to perform in the Clearing state, then there is no need to call that method. When designing the architecture of the code it will be important to define which states are required for each submodule. Once the states have been decided and the functionality that will exist in each state defined then the methods can be added to override the methods of the base class.</p>
+<h2 id="overriding-methods-of-the-base-class">Overriding methods of the base class</h2>
+<p>The SPT Framework contains a complete set of function blocks to run the state machine. FB_PackML_BaseModule has a method for each of the PackML states. Each of these methods has the code needed progress the state machine. When adding a new Equipment module that will extend FB_PackML_BaseModule, call the same methods with their unique code and call the method in the base using SUPER^.Method() or SUPER^.Resetting within your Resetting method. The use of SUPER will call the method of the base class and run the code that exists there. The typical implementation would call SUPER at the end of the method in the EM. If a method is not needed by an Equipment Module, then there is no need for the EM to call that method. At the Machine module level unless you need to override the method, DON’T. Just let the CyclicLogic method handle it. Additionally, while it is common to override the CyclicLogic method when inheriting from a library in the base class, it is not required to do so. If you do not override the CyclicLogic method the underlying code for the method will be executed.</p>
+<h2 id="when-to-call-statecomplete-vs-supermethod">When to call StateComplete() vs Super^.Method()</h2>
+<p>The Acting states are exited when the StateComplete method is called. This is done in base class for you when you call SUPER^.Method(). It could be that you wish to call the StateComplete method from the EM, and that can also be done. The waiting states are exited when a change state command is given, for example ipModule.ChangeState(Tc3_PackML_V2.E_PMLCommand.ePMLCommand_Stop) or ChangeState(E_PMLCommand.ePMLCommand_Unsuspend)</p>
+<h2 id="initializing">Initializing</h2>
+<p>Each Machine and Equipment module has a CyclicLogic method, and that method should call the method of the base class using Super^.CyclicLogic(). An Initialize method is also required. The first lines of code in the CyclicLogic method are to call to the Initialize method if it has not completed.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>METHOD PUBLIC Cyclic Logic
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>IF NOT _InitComplete THEN
+    _InitComplete := Initialize();
+    RETURN;
+END_IF
+</code></pre></div></td></tr></table></div>
+<p>The Initialize method is used to register the submodules and components to the internals of the framework. A CASE statement is used to ensure that everything happens in the proper order.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>METHOD PROTECTED Initialize
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code>Initialize := FALSE;
+CASE DescendantSequenceState OF
+    0:
+        // Define the interfaces to the different subunits (Must take place before SUPER^.initialize call)
+        FOR i := 1 TO SPT_BaseTypes.Parameters_PackML_Base.MAX_NO_OF_SUBMODULES DO
+            ipSubModules[i] := ipSubModules_Init[i];
+        END_FOR
+
+        FOR i := 1 TO SPT_BaseTypes.Parameters_PackML_Base.MAX_NO_OF_COMPONENTS DO
+            ipComponents[i] := ipComponents_Init[i];
+        END_FOR
+
+        _LogModeChanges         := FALSE;
+        _LogStateChanges        := FALSE;
+        DescendantSequenceState := DescendantSequenceState + 10;
+</code></pre></div></td></tr></table></div>
+<p>The SUPER^.Initialize method must also be called as the last step of the CASE statement.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>    30:
+        //Call the Super
+        IF SUPER^.Initialize() THEN
+            DescendantSequenceState := DescendantSequenceState + 10;
+        END_IF
+    40:
+        Initialize := TRUE;
+END_CASE
+</code></pre></div></td></tr></table></div>
+<h1 id="what-is-a-control-source">What is a Control Source</h1>
+<p>A control source is used to provide a connection from outside of the PLC code to the State Machine. This could be through physical buttons, an HMI, or an OPC connection to another machine. The base library (SPT Base Types) contains an instance of FB_ControlSource. This function block can be overridden as needed. The most important part for implementation is to provide code for the Cyclic Logic method. The Cyclic Logic method contains 3 major parts.</p>
+<ol>
+<li>The R_TRIG that captures the incoming command.</li>
+<li>The monitoring of the permissives that will allow or prevent a state change based on the current or other machine conditions.</li>
+<li>The monitoring of the commands and permissives to call the ChangeState method with the proper state.</li>
+</ol>
+<h2 id="registering-the-control-source-with-the-machine-module">Registering the Control Source with the Machine Module</h2>
+<p>The Initialization method of the Main POU needs to register a control source with the Machine Module. 
+In the below example ControlSource_HMI is the instance name of the control source function block, and VFFSDemo is the instance name of the Machine Module function block.</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>    ControlSource_HMI : FB_ControlSource;
+    VFFSDemo          : FB_Machine := (Name := &#39;VFFS Demo&#39;);
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>    IF NOT ControlSource_HMI.Registered THEN
+        VFFSDemo.RegisterExternalController(ControlSource_HMI);
+    END_IF
+</code></pre></div></td></tr></table></div></p>
+<h1 id="testing-the-code-and-the-state-machine">Testing the code and the state machine</h1>
+<p>At this point it should be possible to Activate Configuration, Restart TwinCAT in Run Mode, and test the code for proper functionality.</p>
+<p>Once the PLC is running you can login and check a few online values.
+Within MAIN, expand the declaration of your FB_Machine and check the values of the following variables:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>_CurrentMode        ePMLUnitMode_Production
+_CurrentState       ePMLState_Aborted
+NumberOfSubModules  //This value should be equal to the number of Submodules declared within your instance of FB_Machine. If not then check the declaration of the ipSubModules_Init ARRAY
+NumberOfComponents  //This value should be equal to the number of Components declared within your instance of FB_Machine. If not then check the declaration of the ipComponents_Init ARRAY
+InitComplete        TRUE
+</code></pre></div></td></tr></table></div>
+Once those values have been confirmed you can use your Control Source the test the state machine.</p>
+<h1 id="adding-parameters-recipe-values">Adding Parameters / Recipe Values</h1>
+<p>Parameters and Recipe values can be declared and passed to SubModules or Components through the use of Properties. Starting with a local variable of a Component that is read adn written by a Property, the Component can then use the local variable name as if it was the actual value. When a SubModule creates an instance of the Component the SubModule is then responsible for setting the value of the Property in the Component. </p>
+<h1 id="adding-more-equipment-modules-submodules">Adding more Equipment Modules (SubModules)</h1>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>Create a new function block that Extends FB_PackML_BaseModule
+Add the Local variables and Properties needed for parameters
+Add the Methods needed for the Acting and Waiting states
+Add the Cyclic Logic method if needed
+Add the Initialize Method
+Within the EM declare any Components and add them to the  ipComponents_Init ARRAY
+Within MAIN, declare an instance of the new EM and add it to the ipSubModules_Init ARRAY
+</code></pre></div></td></tr></table></div>
+<h1 id="creating-components">Creating Components</h1>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>Create a new function block that Extends FB_ComponentBase
+Add the Local variables and Properties needed for parameters
+Add methods as required to perform the function of the component
+Add the Cyclic Logic method if needed
+Add and events or alarm logic
+Add the Component to a SubModule, register it, and implement it within the SubModule, including ant parameters that need to be passed to it.
+</code></pre></div></td></tr></table></div>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c2be25ad.min.js"></script>
+      
+    
+  </body>
+</html>

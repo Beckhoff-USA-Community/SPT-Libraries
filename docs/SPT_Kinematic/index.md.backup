@@ -1,0 +1,124 @@
+# Overview
+Integration of Beckhoff Kinematic Transformation TF511x into SPT-Framework.
+
+Implementation of kinematic possible from DOF*=2 to DOF*=6.
+
+The Kinematic implementation consists out of 3 Parts:
+
+**Kinematic Group** - Connects ACS (Physical drives, J1,J2,..) through the Kinematic transformation Objects to the MCS (virtual drives XYZ,...)
+
+**Component Kinematic Base** - The Kinematic base component contains the framework implementation in addition to basic functions of the kinematic. Here is also where the connected Kinematic is defined e.g. Delta or Scara.
+
+**Kinematic Motion Amp** - Amp (**A**dvanced **M**otion **P**ackage) Implements extended  motion funcions for the selected kinematic - uses the Beckhoff Amp for XYZC coordinated movements. 
+
+!!! Warning 
+	This Object is limited to DOF=4. For DOF>4 Object Camming has to be used.
+
+!!! Info
+	DOF = **D**egrees **o**f **F**reedom
+
+Kinematic Camming To be announced.
+
+## Class Diagram
+
+``` mermaid
+classDiagram
+    FB_ComponentKinematicBase <|-- FB_KinematicGroup
+    FB_ComponentKinematicBase <|.. I_Kinematic
+    FB_KinematicGroup <|.. I_KinematicGroup
+    FB_KinematicGroup <|-- FB_ComponentBase
+    FB_KinematicMotionCamming <|-- FB_ComponentKinematicBase
+    FB_ComponentKinematicMotionAmp <|-- FB_ComponentKinematicBase
+    FB_KinematicMotionAmpBase <|-- FB_CyclicFB
+    FB_KinematicMotionAmpBase <|.. I_KinematicCm
+    FB_ComponentKinematicMotionAmp <|.. I_KinematicCm
+    FB_ComponentKinematicMotionAmp *-- FB_KinematicMotionAmpBase
+    class FB_KinematicGroup{
+            KinematicAxisIds
+
+            ResetKinGroup()
+        }
+    class I_KinematicGroup{
+        <<Interface>>
+        KinematicStatus
+        KinMetaInfo
+        OidKinTrafo
+
+        SetKinematicParameter()
+
+        BuildKinGroup()
+        DisolveKInGroup()
+    }
+    class FB_ComponentKinematicBase{
+            AcsAxis(1.._DegreesOfFreedomConfigured)
+            McsAxis(1.._DegreesOfFreedomConfigured) 
+        }
+    class I_Kinematic{
+        <<Interface>>
+            Override
+            Enabled
+            InPosition
+            Moving
+            ActPosition
+            DegreesOfFreedomConfigured
+
+            Diable()
+            Enable()
+            JogCartesianAxis(Axisx,Forward,Backward,JogMode)
+            JogJoint(Jointx,Forward,Backward,JogMode)
+            Stop()
+        }
+    class I_KinematicCm{
+        <<Interface>>
+
+        CmIdentGroup
+        CmState
+        
+        AddCircularMoveToPath()
+        AddLinearMoveToPath()
+        DisableCmGroup()
+        EnableCmGroup()
+        StartMovePath()
+        UngroupCmGroup()
+    }
+    class FB_KinematicMotionAmpBase{
+        CmAxisCount
+        CmAxisRef
+        CmIdentGroup
+
+        Reset()
+        SetOverride()
+        Stop()
+    }
+```
+
+## State Diagrams
+**Joint Operations**
+```mermaid
+stateDiagram-v2
+    [*] --> Robot
+
+    Robot --> Enabled : Enable()
+    Enabled --> Robot : Diable()
+    Enabled --> JointMoving : JogJointAxis()
+
+```
+**Cartesian Operations**
+```mermaid
+stateDiagram-v2
+    [*] --> Robot
+
+    Robot --> Enabled : Enable()
+    Enabled --> Robot : Diable()
+
+    
+    Robot --> CartesianMode : Enable()
+
+    Enabled --> CartesianMode : BuildKinGroup()
+    CartesianMode --> Enabled : DissolveKinGroup()
+
+    CartesianMode --> Robot : Disable()
+
+    CartesianMode --> CartesianAxisMoving : JogCartesianAxis()
+
+```

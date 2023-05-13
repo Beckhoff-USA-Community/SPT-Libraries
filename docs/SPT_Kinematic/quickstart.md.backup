@@ -1,0 +1,64 @@
+# QuickStart
+## Intial Setup
+
+This manual requires a basic understanding of the SPT-Library functions.
+Beckhoff Kinematic Transformation package needs to be installed along with the Advanced Motion Package.
+
+
+[Kinematic Transformation Download](https://www.beckhoff.com/en-us/products/automation/twincat-3-kinematic-transformation/)
+
+[Advanced Motion Package Download](https://www.beckhoff.com/en-us/products/automation/twincat/tfxxxx-twincat-3-functions/tf5xxx-tc3-motion-control/tf5420.html)
+
+
+!!! Note
+	Kinematic transformation available up to L3. L4 which contains more than 4 Axis is available via your Beckhoff Sales contact upon request and Project.
+
+
+## Step By Step setup
+### 1. Add Kinematic to Project 
+
+Add NC-Channel for Kinematic Transformation to your Project.
+
+!!! Note 
+	The following pictures are functioning as example, adjustment is needed if different Kinematic is needed.
+![image](AddChannel.png)
+
+Add desired Kinematic to the NC-Channel of your Project.
+![](AddKinematic.png)
+
+
+### 2. Add Kinematic to Project
+
+Depending on Point (1) add the appropriate number of ACS and MCS Axis to your Motion Project.
+Recommended is the organization in Folders for ACS and MCS.
+
+![](AddAxis.png)
+
+ACS = Axis Coordinate System (Joint 1, Joint 2,..)
+
+MCS = Machine Coordinate System (X,Y,Z,Rotation Axis 1,..)
+
+
+### 3. Create Component of `FB_KinematicMotionAmpBase`
+
+Create Component instanz in the desired EM or Machine of the SPT Framework.
+Configure the Name of the Kinematic and the desired Degrees of Freedom. E.g. 3D-Delta Type 1 (P_3C) = `E_KinematicDOF.eKinematicDOF_3`
+![](declaration.png)
+
+Add oid from the Kinematic object to the configruation:
+![](SetupFB.png)
+
+
+### 4. Link FB Component to the Created Objects
+![](LinkAxis.png)
+![](LinkKinematic.png)
+
+### 5. Add Connections to SPT-HMI Template
+![](HmiLin.png)
+![](Hmi.png)
+
+**Congratulations!**
+You can now Enable and Jog your Kinematic via the Template HMI locally on you PC.
+
+
+## Example Code
