@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="duts.html">
+        <link rel="prev" href="DesignGuide.html">
       
       
-        <link rel="next" href="changelog.html">
+        <link rel="next" href="SPT%20Framework.html">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
     
     
       
-        <title>Globals/Parameters - SPT Application Framework Documentation</title>
+        <title>PackML Overview - SPT Application Framework Documentation</title>
       
     
     
@@ -85,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#globalsparameters" class="md-skip">
+        <a href="#what-is-packml" class="md-skip">
           Skip to content
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Globals/Parameters
+              PackML Overview
             
           </span>
         </div>
@@ -228,13 +228,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../Getting_Started/setup.html" class="md-tabs__link">
+      <a href="setup.html" class="md-tabs__link md-tabs__link--active">
         Getting Started
       </a>
     </li>
@@ -340,15 +342,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="index.html" class="md-tabs__link md-tabs__link--active">
+      <a href="../SPT_XTS/index.html" class="md-tabs__link">
         SPT XTS
       </a>
     </li>
@@ -420,14 +420,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
       
       
       
@@ -436,7 +438,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Getting Started
@@ -449,7 +451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Getting_Started/setup.html" class="md-nav__link">
+      <a href="setup.html" class="md-nav__link">
         Setup
       </a>
     </li>
@@ -463,7 +465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Getting_Started/DesignGuide.html" class="md-nav__link">
+      <a href="DesignGuide.html" class="md-nav__link">
         Design Guide
       </a>
     </li>
@@ -475,11 +477,96 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../Getting_Started/PackML%20Overview.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          PackML Overview
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="PackML%20Overview.html" class="md-nav__link md-nav__link--active">
         PackML Overview
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-packml" class="md-nav__link">
+    What is PackML?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#machine-module-equipment-modules-and-components" class="md-nav__link">
+    Machine Module, Equipment Modules, and Components
+  </a>
+  
+    <nav class="md-nav" aria-label="Machine Module, Equipment Modules, and Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-modes-defined-by-packml" class="md-nav__link">
+    What are the Modes defined by PackML?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-packml-state-machine" class="md-nav__link">
+    What is the PackML state machine?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deciding-which-states-are-needed" class="md-nav__link">
+    Deciding which states are needed
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-modes" class="md-nav__link">
+    Custom Modes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-and-status-down-and-up" class="md-nav__link">
+    Command and Status, down and up
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -491,7 +578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Getting_Started/SPT%20Framework.html" class="md-nav__link">
+      <a href="SPT%20Framework.html" class="md-nav__link">
         SPT Framework
       </a>
     </li>
@@ -505,7 +592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Getting_Started/SPT%20Event%20Logger.html" class="md-nav__link">
+      <a href="SPT%20Event%20Logger.html" class="md-nav__link">
         SPT Event Logger
       </a>
     </li>
@@ -1251,16 +1338,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
       
       
       
@@ -1269,7 +1354,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9">
           <span class="md-nav__icon md-icon"></span>
           SPT XTS
@@ -1282,7 +1367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="index.html" class="md-nav__link">
+      <a href="../SPT_XTS/index.html" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -1323,7 +1408,7 @@
   
   
     <li class="md-nav__item">
-      <a href="quickstart.html" class="md-nav__link">
+      <a href="../SPT_XTS/quickstart.html" class="md-nav__link">
         Quickstart
       </a>
     </li>
@@ -1337,7 +1422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="stationprogrammingnotes.html" class="md-nav__link">
+      <a href="../SPT_XTS/stationprogrammingnotes.html" class="md-nav__link">
         Custom Station Programming
       </a>
     </li>
@@ -1351,7 +1436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="examplestations.html" class="md-nav__link">
+      <a href="../SPT_XTS/examplestations.html" class="md-nav__link">
         Example Stations
       </a>
     </li>
@@ -1372,7 +1457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="interfaces.html" class="md-nav__link">
+      <a href="../SPT_XTS/interfaces.html" class="md-nav__link">
         Interfaces
       </a>
     </li>
@@ -1386,7 +1471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="functionblocks.html" class="md-nav__link">
+      <a href="../SPT_XTS/functionblocks.html" class="md-nav__link">
         Function Blocks
       </a>
     </li>
@@ -1400,7 +1485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="duts.html" class="md-nav__link">
+      <a href="../SPT_XTS/duts.html" class="md-nav__link">
         Data Types
       </a>
     </li>
@@ -1412,85 +1497,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Globals/Parameters
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="globals.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../SPT_XTS/globals.html" class="md-nav__link">
         Globals/Parameters
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-    <nav class="md-nav" aria-label="Parameters">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parameters_xts" class="md-nav__link">
-    Parameters_XTS
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gvls" class="md-nav__link">
-    GVLs
-  </a>
-  
-    <nav class="md-nav" aria-label="GVLs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#xts" class="md-nav__link">
-    XTS
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1502,7 +1513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="changelog.html" class="md-nav__link">
+      <a href="../SPT_XTS/changelog.html" class="md-nav__link">
         Changelog
       </a>
     </li>
@@ -1533,8 +1544,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1543,16 +1552,30 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#parameters" class="md-nav__link">
-    Parameters
+  <a href="#what-is-packml" class="md-nav__link">
+    What is PackML?
   </a>
   
-    <nav class="md-nav" aria-label="Parameters">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#machine-module-equipment-modules-and-components" class="md-nav__link">
+    Machine Module, Equipment Modules, and Components
+  </a>
+  
+    <nav class="md-nav" aria-label="Machine Module, Equipment Modules, and Components">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_xts" class="md-nav__link">
-    Parameters_XTS
+  <a href="#what-are-the-modes-defined-by-packml" class="md-nav__link">
+    What are the Modes defined by PackML?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-packml-state-machine" class="md-nav__link">
+    What is the PackML state machine?
   </a>
   
 </li>
@@ -1563,22 +1586,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gvls" class="md-nav__link">
-    GVLs
-  </a>
-  
-    <nav class="md-nav" aria-label="GVLs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#xts" class="md-nav__link">
-    XTS
+  <a href="#deciding-which-states-are-needed" class="md-nav__link">
+    Deciding which states are needed
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#custom-modes" class="md-nav__link">
+    Custom Modes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-and-status-down-and-up" class="md-nav__link">
+    Command and Status, down and up
+  </a>
   
 </li>
       
@@ -1597,98 +1621,97 @@
                   
 
 
-<h1 id="globalsparameters">Globals/Parameters</h1>
-<h2 id="parameters">Parameters</h2>
-<h3 id="parameters_xts">Parameters_XTS</h3>
-<table>
-<thead>
-<tr>
-<th><strong>Parameter</strong></th>
-<th><strong>Type</strong></th>
-<th><strong>Default</strong></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ALLOW_UNLINKED_MOVER_NC_AXES</td>
-<td>BOOL</td>
-<td>FALSE</td>
-<td>Allows internal FB_XTS_Mover FBs to skip checking for linked NC axes during initialization</td>
-</tr>
-<tr>
-<td>ENABLE_DEBUG_TRACING</td>
-<td>BOOL</td>
-<td>FALSE</td>
-<td>Allow debug messages to be emitted to trace log</td>
-</tr>
-<tr>
-<td>STATIONCOLOR_DEFAULT_GETMOVERS</td>
-<td><a href="duts.html#e_colors_argb" target="_blank">E_Colors_ARGB</a></td>
-<td>E_Colors_ARGB.Yellow</td>
-<td>XTS Viewer station color during GetMovers state</td>
-</tr>
-<tr>
-<td>STATIONCOLOR_DEFAULT_INPROCESS</td>
-<td><a href="duts.html#e_colors_argb" target="_blank">E_Colors_ARGB</a></td>
-<td>E_Colors_ARGB.Red</td>
-<td>XTS Viewer station color during InProcess state</td>
-</tr>
-<tr>
-<td>STATIONCOLOR_DEFAULT_RELEASEMOVERS</td>
-<td><a href="duts.html#e_colors_argb" target="_blank">E_Colors_ARGB</a></td>
-<td>E_Colors_ARGB.Green</td>
-<td>XTS Viewer station color during ReleaseMovers state</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition warning">
-<p class="admonition-title">XPU generates a lot of trace messages</p>
-<p><code>FB_Component_XPU</code> generates a great deal of trace messages when <code>ENABLE_DEBUG_TRACING</code> is <code>TRUE</code>.  Eventually (after many thousands of messages) this can cause instability in XAE/Visual Studio due in part to the Errors List window also receiving these messages.</p>
-<p><strong>These trace messages are very helpful for debugging systems but should be disabled in production.</strong></p>
-</div>
-<h2 id="gvls">GVLs</h2>
-<h3 id="xts">XTS</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code>{attribute &#39;qualified_only&#39;}
-VAR_GLOBAL
-    Environment              : Tc3_XTS_Utility.FB_TcIoXtsEnvironment;
-    XTSEnvironmentConfig     : ST_XtsEnvironmentConfiguration := (bEnableInitXPU := TRUE, bEnableInitCaGroup := TRUE, bEnableInitInfoServer := TRUE);
-    InitializationInProgress : BOOL;
-    InitializationComplete   : BOOL;
-    XPUCount                 : UINT;
-    XPUOIDs                  : REFERENCE TO ARRAY[1..TcIoXtsEnvironmentParameterList.MaxXtsProcessingUnits] OF OTCID;
-    InfoServerCount          : UINT;
-    InfoServerOIDs           : REFERENCE TO ARRAY[1..TcIoXtsEnvironmentParameterList.MaxXtsInfoServer] OF OTCID;
-    InfoStationCounts        : ARRAY[1..TcIoXtsEnvironmentParameterList.MaxXtsInfoServer] OF UDINT;
-    ipInfoServer             : ARRAY[1..TcIoXtsEnvironmentParameterList.MaxXtsInfoServer] OF I_TcIoXtsInfoServer;
-    ipInfoStations           : ARRAY[1..TcIoXtsEnvironmentParameterList.MaxXtsInfoServer, 1..TcIoXtsEnvironmentParameterList.MaxXtsInfoStation] OF I_TcIoXtsInfoServerInfoStation;
-    CAGroupCount             : UINT;
-    CAGroupOIDs              : REFERENCE TO ARRAY[1..TcIoXtsEnvironmentParameterList.MaxXtsCaGroup] OF OTCID;
-END_VAR
-</code></pre></div></td></tr></table></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>See also: <a href="https://infosys.beckhoff.com/english.php?content=../content/1033/tc3_xts_utility/12463048971.html&amp;id=" target="_blank">FB_TcIoXtsEnvironment</a>, <a href="https://infosys.beckhoff.com/content/1033/tc3_xts_utility/12463057035.html?id=5193217696454009146" target="_blank">ST_XtsEnvironmentConfiguration</a>, <a href="https://infosys.beckhoff.com/content/1033/tc3_xts_utility/12472823051.html?id=1144155624371449456" target="_blank">I_TcIoXtsInfoServer</a>, <a href="https://infosys.beckhoff.com/content/1033/tc3_xts_utility/12472979851.html?id=1604359643187037616" target="_blank">I_TcIoXtsInfoServerInfoStation</a>.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Do not modify these variables!</p>
-<p>The variables in the <code>XTS</code> GVL are used internally by <code>FB_Component_XPU</code>.  Changing the values of any of these variables will only end in disaster or at best instability.</p>
-</div>
+  <h1>PackML Overview</h1>
+
+<h2 id="what-is-packml">What is PackML?</h2>
+<p>According to the OMAC website - PackML is an automation standard developed by the OMAC and adopted by ISA as TR88.00.02 that makes it easier to transfer and retrieve consistent machine data. The primary goals of PackML are to encourage a common “look and feel” across a plant floor, and to enable and encourage industry innovation.</p>
+<p>What are the building blocks of PackML?</p>
+<figure>
+<p><img alt="Alt text" src="assets/PackMLMMEMC.png" />
+  </p>
+<figcaption>Module Hierarchy</figcaption>
+</figure>
+<h2 id="machine-module-equipment-modules-and-components">Machine Module, Equipment Modules, and Components</h2>
+<p>A manufacturing line will consist of multiple machines; for our purposes, a machine is defined by the presence of a single PLC. Each machine is made up of 0 or more equipment modules. Most machines will contain several equipment modules, but it is important to understand that a machine does not have to have any equipment modules. An equipment module is typically recognized by a single process of a machine. This could be some sort of de-stacker or infeed, a bag filler, or a palletizing system. Each equipment module is made up of components. These components are typically the hardware that work together as a single piece of equipment on the machine. For example, the cylinders, valves, and heating elements required to seal a bag, or the servo motors and actuators within a section of a distribution conveyor.</p>
+<h3 id="what-are-the-modes-defined-by-packml">What are the Modes defined by PackML?</h3>
+<p>The PackML standard defines 4 modes, but also allows for the user to define their own. The defined modes are Invalid, Production, Maintenance, and Manual. A complete machine can be developed with only the use of the Production Mode. However, the other modes can be used to best describe the group of possible states. It could be that a Manual Mode does not include the Suspended and Held paths, and the Maintenance Mode includes the Held path but not the Suspended path. These choices are completely left to the developer and how they choose to design the machine. There are a total of 32 possible modes, these can be used for a variety of scenarios such as a test mode that has a defined Complete command to leave the Execute state after a test is completed, or a warmup mode could be created to keep the machine in the Execute state until it’s ready.</p>
+<h3 id="what-is-the-packml-state-machine">What is the PackML state machine?</h3>
+<p>PackML defines modes of operation and the possible states within each mode. A complete machine can be developed using only the production mode. The states are grouped into areas defined by their functionality. Typically, a machine will power on and go through the Aborting state to Aborted, these same states can be used for fault handling. Understanding the diagram and the areas is important. When a machine is in Execute there are four possible paths. A Suspend command will be issued when an upstream or downstream dependency is not met. This could be the previous Equipment module has run out of material or possibly faulted. The other 3 paths are Hold, Abort, and Stop. The Hold and Stop commands are issued by the operator, while the Abort command is given by the code. There are two types of states, Acting and Wait. The ‘ing’ states are the Acting states. Aborting, Clearing, Stopping, Holding, etc. These states are entered because a command was given to do so. An Estop might cause an Abort command to be issued that will place the state machine into Aborting, or when the operator presses the Start button the command will be given for the state machine to move to the Starting state. Each of these acting states is followed by a StateComplete that is determined by the code and then transitions to a Wait state such as Stopped, Idle or Held. The Execute state is the exception to this as it is defined as an Acting state, but uses the StateComplete of the Starting state to enter and requires a command to leave.</p>
+<figure>
+<p><img alt="Alt text" src="assets/PackMLStates.png" />
+  </p>
+<figcaption>PackML States</figcaption>
+</figure>
+<p>Changing modes can only be done in certain states. Stopped, Aborted, Completed, and Held. If a mode change is required the machine must be in one of the states, and the mode that is being requested must also have this state. And while the states available within a mode can be defined there are a minimum set of required states that every mode must support. Aborted, Stopped, Idle, and Execute. Of these states only Aborted and Stopped allow for a mode change.</p>
+<h2 id="deciding-which-states-are-needed">Deciding which states are needed</h2>
+<p>It is not required that all states be called from the machine module or submodule. For example, if a submodule has no work to perform in the Clearing state, then there is no need to call that method. When designing the architecture of the code it will be important to define which states are required for each submodule. Once the states have been decided and the functionality that will exist in each state defined then the methods can be added to override the methods of the base class.</p>
+<h2 id="custom-modes">Custom Modes</h2>
+<p>A common argument on why not to use TR88.00.02 is often stated, there’s too much there’s too many states and I don’t need all of them.  There are too many states, too many tags and either I have a lot of other modes, or only one mode of operation.  A feature of TR88.00.02 that is often overlooked is custom modes.  There’s a minimum set of tags, and a minimum set of states.  This is intended by the standard to make the system as lightweight as possible. </p>
+<p>My layout starts like this and lets see what we can remove </p>
+<figure>
+<p><img alt="Alt text" src="assets/figure6.png" />
+  </p>
+<figcaption>PackML Full State Machine</figcaption>
+</figure>
+<p>To determine what modes are necessary we can start asking questions </p>
+<p>Is “Complete” required?<br />
+Is there a situation where I have multiple items in process need to run out before stopping?<br />
+No this machine operates on one “item” at a time, its either empty or has one. 
+OK get rid of completing and complete they make no sense </p>
+<p>Do I need suspend? 
+Does the machine have sensors to determine if it is starved from upstream or blocked downstream? No
+Can the machine stay in Execute when empty?   Yes
+Suspend is not necessary, the machine can sit in execute or be stopped<br />
+Remove Suspending/Suspended/Unsuspending </p>
+<p>Do I need Held? 
+Is there anything the operator must do to keep the machine in execute? 
+IE if the operator does not refill something the machine will run out and stop? No there is nothing to be re-filled/replaced/removed while in operation. 
+No held is required, the machine can always sit in execute 
+If there are things to be refilled/replaced, then Held would be required as the machine cannot stay in Execute if the operator has not performed a task. </p>
+<p>We’re getting down to a pretty small state machine now, basically down to as many states as manual has.   </p>
+<figure>
+<p><img alt="Alt text" src="assets/figure7.png" />
+  </p>
+<figcaption>PackML Limited State Machine</figcaption>
+</figure>
+<p>There’s still some work to be done </p>
+<p>Is Aborting required? 
+Are there any things I need to “ramp down” or can I simply shut everything off? 
+If so, aborting isn’t needed go to abort shut everything off </p>
+<p>Is Stopping required? 
+If I don’t need aborting I most likely don’t needs stopping, again is there a specific sequence that takes some time to complete? If not, stopping can be removed </p>
+<p>Is Resetting required? 
+Do certain devices have to start up in a certain sequence? 
+Can I simply “enable them” in Idle and leave them enabled?
+If I can </p>
+<p>Clearing? 
+Is there a sequence that has to happen in clearing or can I sit in Stopped and perform the clear? </p>
+<p>If this is all that’s necessary we’re down to the minimum set of states </p>
+<figure>
+<p><img alt="Alt text" src="assets/figure8.png" />
+  </p>
+<figcaption>PackML Minimum State Machine</figcaption>
+</figure>
+<p>States and 4 commands between states is the smallest allowed machine configuration this would be ideal for an inspection system </p>
+<p>If the machine is a vison inspection system nothing more is needed.  Turn the machine on and it’s in aborted.  Clear any faults on the screen and its in stopped.<br />
+Reset to go to idle and enable the motor for the belt 
+Start to get to execute and run the belt.  Nothing more is required. </p>
+<p>The machine sits in Execute waiting for parts/pieces to arrive, when they arrive, they are processed.  No parts, no problem sits in execute.  More states are not necessary, but fewer states is problematic.  It is important to differentiate between a requested stop and an error/unrequested stop.  It is also desirable to have an Idle state with components enabled but no motion.  Abort and Stop mean different things to the line controller.  On an Abort, the line controller may need to abort machines up/downstream but on a stop it may simply put them into stop or suspend. </p>
+<p>Even though there are only 4 states a second mode other that producing may be required.  For example, there’s a calibration mode, where a series of self tests are completed.  Accidentally receiving parts in this calibration mode could be very problematic and almost certainly result in a false calibration.   Sure in Execute an “if calibrate, stop motor” is possible, but the whole idea of states and modes is to ensure there is no accidental way to perform a function from one mode that must not happen in another mode.  Switching to a calibration mode, helps to ensure different code is called and sequences for the calibration function cannot occur during production and production cannot occur during calibration.  </p>
+<p>A labelling machine likely needs at least one more state, Held.  Labels/Ink are not infinite and often require refilling from an operator.  As indicated earlier, stop and particularly abort mean different things to the line controller.  A labeller that is without label cannot be in execute but it also does not require to enter stopped state, a held state should be used here.  The machine is “held” when it is out of labels, but when refilled can immediately restart operation without running through resetting.  A suspend may still not be required as if no products show up no labels are place.  </p>
+<p>If machine should offer a low power state that if no products are arriving or an output buffer is full, then a suspend state is beneficial the machine can enter/exit suspending without operator intervention. </p>
+<p>Add as many states/modes as necessary to fulfil all machine functions but states can be eliminated when they are not necessary. 
+1.1.1   Internal modes 
+For sub devices, such as equipment modules and components it may be desirable to make even smaller state modes.  The minimum state set is for machine modes at the top layer.  Below that, TR88.00.02 has no influence.  It makes sense to use modes and states with equipment modules but an even smaller subset of states can be used. </p>
+<p>For example Aborted Idle Execute Completed might be enough.  If faulted, Clear to get to idle, to perform a function Start and execute, when the function is finished go to completed, to trigger another sequence reset to get back to idle. </p>
+<p>Why can’t I simply have Idle, Execute and aborted?  Prior to the 2022 version of the standard this was problematic.   Execute automatically completes and issues a state change, if completed doesn’t exist, it goes right back to ide.  Sounds like it does exactly what I want, however:   When you command start, you are in idle, and when you check again you are in idle.  Now the question is, is the device in Idle because it performed the function or is it in idle because execute has not started yet?  In TR88.00.02-2022 this was addressed getting out of Execute can now be accomplished with the command complete.  This now gives the full handshake necessary.  Command Start, Wait for execute, Command Complete, wait for Idle, and then command start again.  Aborted, Execute Idle will function without any other handshakes required, switching the command from Start to Complete and the state changes from Idle to Execute completes the handshake.  State Idle with Command complete means the last cycle finished.  </p>
+<figure>
+<p><img alt="Alt text" src="assets/PackMLCmdStat.png" />
+  </p>
+<figcaption>PackML Command and Status</figcaption>
+</figure>
+<h2 id="command-and-status-down-and-up">Command and Status, down and up</h2>
+<p>The Machine Module will be the commander of all its Equipment Modules, and it will also respond as needed when an Equipment Module reports an error. During normal operation the code in the Machine Module will send a state change command to each of the Equipment Modules, and they will report back to the Machine Module once the requested state has been reached. When a fault occurs the equipment module will handle the fault according to how it is programmed to do so. Typically, this would involve commanding itself into the Aborted state. The Machine Module will detect this state change and respond accordingly. It could be that other Equipment Modules need to be Suspended while waiting for the faulted module to be cleared, or it could be that some modules need to also fault or suspend due to dependencies on the module that originated the fault. By using the Machine Module as the commander and coordinator of the events the design of the machine code can be very flexible.</p>
 
 
   
