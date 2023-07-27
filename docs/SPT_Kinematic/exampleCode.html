@@ -15,7 +15,7 @@
         <link rel="next" href="interfaces.html">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.17">
+      <meta name="generator" content="mkdocs-1.5.0, mkdocs-material-9.1.20">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.eebd395e.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ecc896b0.min.css">
@@ -1091,6 +1091,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#example-4-execute-movement-coordinated-motion-with-amp-and-switch-path-during-motion" class="md-nav__link">
+    Example 4 - Execute Movement Coordinated Motion with AMP and switch Path during motion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#example-scope-for-amp" class="md-nav__link">
     Example Scope for AMP
   </a>
@@ -1878,6 +1885,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#example-4-execute-movement-coordinated-motion-with-amp-and-switch-path-during-motion" class="md-nav__link">
+    Example 4 - Execute Movement Coordinated Motion with AMP and switch Path during motion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#example-scope-for-amp" class="md-nav__link">
     Example Scope for AMP
   </a>
@@ -2400,6 +2414,307 @@ END_VAR
                 StateTasksComplete := TRUE;
         END_CASE
 </code></pre></div></td></tr></table></div>
+<h3 id="example-4-execute-movement-coordinated-motion-with-amp-and-switch-path-during-motion">Example 4 - Execute Movement Coordinated Motion with AMP and switch Path during motion</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span></pre></div></td><td class="code"><div><pre><span></span><code>        CASE SequenceState OF
+            0: // Enable Motion Group
+                IF DeltaKinematic.EnableCmGroup() THEN
+                    SequenceState := 5;
+                END_IF
+
+            5: // Enabled -&gt; Coordinated Motion State Diagram
+                IF DeltaKinematic.CmState.GroupStandby THEN
+                    SequenceState := 10;
+                END_IF
+
+            10: // Create Path 1
+                DeltaKinematic.ClearPath();
+
+                // Start Point
+                _idx                                       := 1;
+                DeltaPoints[_idx].McsPosition[E_McsAxis.X] := 0;
+                DeltaPoints[_idx].McsPosition[E_McsAxis.Y] := 0;
+                DeltaPoints[_idx].McsPosition[E_McsAxis.Z] := -687;
+                DeltaPoints[_idx].Velocity                 := 50.0;
+                DeltaPoints[_idx].Acceleration             := 150.0;
+                DeltaPoints[_idx].Deceleration             := 25.0;
+                DeltaPoints[_idx].Jerk                     := 1500.0;
+                DeltaPoints[_idx].BufferMode               := MC_BUFFER_MODE.mcAborting;
+                DeltaPoints[_idx].TransitionMode           := MC_TRANSITION_MODE.mcTransModeNone;
+                DeltaPoints[_idx].TransitionParameter[1]   := 0;
+                DeltaPoints[_idx].TransitionParameter[2]   := 0;
+                DeltaPoints[_idx].TransitionParameterCount := 0;
+                DeltaPoints[_idx].InvokeId                 := 10;
+
+                // Radius Point 1
+                _idx                                       := 2;
+                DeltaPoints[_idx].McsPosition[E_McsAxis.X] := 50;
+                DeltaPoints[_idx].McsPosition[E_McsAxis.Y] := 0;
+                DeltaPoints[_idx].McsPosition[E_McsAxis.Z] := -687;
+                DeltaPoints[_idx].Velocity                 := 50.0;
+                DeltaPoints[_idx].Acceleration             := 150.0;
+                DeltaPoints[_idx].Deceleration             := 25.0;
+                DeltaPoints[_idx].Jerk                     := 1500.0;
+                DeltaPoints[_idx].BufferMode               := MC_BUFFER_MODE.mcBlendingPrevious;
+                DeltaPoints[_idx].TransitionMode           := MC_TRANSITION_MODE.mcTransModeCornerDistanceAdvanced;
+                DeltaPoints[_idx].TransitionParameter[1]   := 10;
+                DeltaPoints[_idx].TransitionParameter[2]   := 20;
+                DeltaPoints[_idx].TransitionParameterCount := 2;
+                DeltaPoints[_idx].InvokeId                 := 20;
+
+                // Radius Point 2
+                _idx                                       := 3;
+                DeltaPoints[_idx].McsPosition[E_McsAxis.X] := 200;
+                DeltaPoints[_idx].McsPosition[E_McsAxis.Y] := 0;
+                DeltaPoints[_idx].McsPosition[E_McsAxis.Z] := -687;
+                DeltaPoints[_idx].Velocity                 := 50.0;
+                DeltaPoints[_idx].Acceleration             := 150.0;
+                DeltaPoints[_idx].Deceleration             := 25.0;
+                DeltaPoints[_idx].Jerk                     := 1500.0;
+                DeltaPoints[_idx].BufferMode               := MC_BUFFER_MODE.mcBlendingPrevious;
+                DeltaPoints[_idx].TransitionMode           := MC_TRANSITION_MODE.mcTransModeCornerDistanceAdvanced;
+                DeltaPoints[_idx].TransitionParameter[1]   := 10;
+                DeltaPoints[_idx].TransitionParameter[2]   := 20;
+                DeltaPoints[_idx].TransitionParameterCount := 2;
+                DeltaPoints[_idx].InvokeId                 := 30;
+
+                // Final Point
+                _idx                                       := 4;
+                DeltaPoints[_idx].McsPosition[E_McsAxis.X] := 300;
+                DeltaPoints[_idx].McsPosition[E_McsAxis.Y] := 0;
+                DeltaPoints[_idx].McsPosition[E_McsAxis.Z] := -687;
+                DeltaPoints[_idx].Velocity                 := 50.0;
+                DeltaPoints[_idx].Acceleration             := 150.0;
+                DeltaPoints[_idx].Deceleration             := 25.0;
+                DeltaPoints[_idx].Jerk                     := 1500.0;
+                DeltaPoints[_idx].BufferMode               := MC_BUFFER_MODE.mcBlendingPrevious;
+                DeltaPoints[_idx].TransitionMode           := MC_TRANSITION_MODE.mcTransModeCornerDistanceAdvanced;
+                DeltaPoints[_idx].TransitionParameter[1]   := 10;
+                DeltaPoints[_idx].TransitionParameter[2]   := 20;
+                DeltaPoints[_idx].TransitionParameterCount := 2;
+                DeltaPoints[_idx].InvokeId                 := 40;
+
+                // Build Path
+                DeltaKInematic.Points := DeltaPoints;
+                DeltaKinematic.AddLinearMoveToPath(1);
+                DeltaKinematic.AddLinearMoveToPath(2);
+                DeltaKinematic.AddLinearMoveToPath(3);
+                DeltaKinematic.AddLinearMoveToPath(4);
+                SequenceState := 20;
+
+            20: // Execute Path 1
+                IF DeltaKinematic.StartMovePath(ChangePath := TRUE) THEN
+                    SequenceState := 30;
+                END_IF
+
+            30: // Wait Moving
+                IF DeltaKinematic.CmState.GroupMoving AND DeltaKinematic.busy THEN
+                    SequenceState := 40;
+                END_IF
+
+            40: // Wait for Path Done   
+                IF NOT DeltaKinematic.CmState.GroupMoving AND NOT DeltaKinematic.busy THEN
+                    SequenceState := 10; // repeat path
+                END_IF
+
+                IF Interrupt AND DeltaKinematic.CmState.McToPlcCm.InvokeId = 30 THEN
+                    Interrupt     := FALSE;
+                    SequenceState := 50;
+                END_IF
+
+            50: //
+                DeltaKinematic.ClearPath();
+
+                // Redirect
+                _idx                                       := 5;
+                DeltaPoints[_idx].McsPosition[E_McsAxis.X] := -55;
+                DeltaPoints[_idx].McsPosition[E_McsAxis.Y] := 0;
+                DeltaPoints[_idx].McsPosition[E_McsAxis.Z] := -687;
+                DeltaPoints[_idx].Velocity                 := 80.0;
+                DeltaPoints[_idx].Acceleration             := 150.0;
+                DeltaPoints[_idx].Deceleration             := 25.0;
+                DeltaPoints[_idx].Jerk                     := 1500.0;
+                DeltaPoints[_idx].BufferMode               := MC_BUFFER_MODE.mcAborting;
+                DeltaPoints[_idx].TransitionMode           := MC_TRANSITION_MODE.mcTransModeNone;
+                DeltaPoints[_idx].TransitionParameter[1]   := 0;
+                DeltaPoints[_idx].TransitionParameter[2]   := 0;
+                DeltaPoints[_idx].TransitionParameterCount := 0;
+                DeltaPoints[_idx].InvokeId                 := 50;
+
+                // Redirect
+                _idx                                       := 6;
+                DeltaPoints[_idx].McsPosition[E_McsAxis.X] := -60;
+                DeltaPoints[_idx].McsPosition[E_McsAxis.Y] := 0;
+                DeltaPoints[_idx].McsPosition[E_McsAxis.Z] := -687;
+                DeltaPoints[_idx].Velocity                 := 5.0;
+                DeltaPoints[_idx].Acceleration             := 150.0;
+                DeltaPoints[_idx].Deceleration             := 25.0;
+                DeltaPoints[_idx].Jerk                     := 1500.0;
+                DeltaPoints[_idx].BufferMode               := MC_BUFFER_MODE.mcBlendingPrevious;
+                DeltaPoints[_idx].TransitionMode           := MC_TRANSITION_MODE.mcTransModeCornerDistanceAdvanced;
+                DeltaPoints[_idx].TransitionParameter[1]   := 10;
+                DeltaPoints[_idx].TransitionParameter[2]   := 20;
+                DeltaPoints[_idx].TransitionParameterCount := 2;
+                DeltaPoints[_idx].InvokeId                 := 60;
+
+                // Build Path
+                DeltaKInematic.Points := DeltaPoints;
+                DeltaKinematic.AddLinearMoveToPath(5);
+                DeltaKinematic.AddLinearMoveToPath(6);
+                SequenceState := 20;
+
+            999: // Done
+                ;
+        END_CASE
+</code></pre></div></td></tr></table></div>
 <h3 id="example-scope-for-amp">Example Scope for AMP</h3>
 <p><img alt="" src="AmpMovement.png" /></p>
 <h2 id="camming">Camming</h2>
@@ -2783,10 +3098,10 @@ Not visible in this example. </p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.b425cdc4.min.js"></script>
+      <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
   </body>
