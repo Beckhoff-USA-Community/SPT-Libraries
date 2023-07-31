@@ -1,7 +1,7 @@
 # About This Repository
 These libraries go hand-in-hand with the [VFFS Demo PLC](https://github.com/Beckhoff-USA-Community/PackML_PLC_Example).
 
-This sample is created by [Beckhoff Automation LLC.](https://www.beckhoff.com/en-us/), and is provided as-is under the Zero-Clause BSD license.
+This sample is created by [Beckhoff Automation LLC.](https://www.beckhoff.com/en-us/), and is provided as-is under the MIT license.
 
 # Documentation
 Please visit our [documentation page](https://beckhoff-usa-community.github.io/SPT-Libraries/) for detailed information on the contents of this framework as well as thoughts on architecture of machine programs.
