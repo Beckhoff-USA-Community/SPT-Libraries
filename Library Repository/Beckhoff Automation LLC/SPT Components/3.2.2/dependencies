@@ -1,0 +1,14 @@
+#SPT Base Types
+#SPT Event Logger
+#SPT Motion Control
+#SPT Utilities
+#Tc2_DataExchange
+#Tc2_EtherCAT
+#Tc2_MC2
+#Tc2_Standard
+#Tc2_System
+#Tc2_Utilities
+#Tc3_EventLogger
+#Tc3_Module
+#Tc3_PackML_V2
+#TcUnit
