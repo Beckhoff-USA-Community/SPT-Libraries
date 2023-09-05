@@ -2779,7 +2779,7 @@ END_VAR
 
             40: // Wait for Path Done   
                 IF NOT DeltaKinematic.CmState.GroupMoving AND NOT DeltaKinematic.busy THEN
-                    SequenceState := 20; // repeat path
+                    SequenceState := 10; // repeat path
                 END_IF
 
             999: // Done
