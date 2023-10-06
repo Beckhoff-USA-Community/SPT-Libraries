@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.4">
     
     
       
@@ -24,10 +24,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.d451bc0e.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.bd3936ea.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.a5377069.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css">
       
       
 
@@ -732,6 +732,40 @@
   <a href="#define-the-functionality" class="md-nav__link">
     Define the Functionality
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#style-guide" class="md-nav__link">
+    Style Guide
+  </a>
+  
+    <nav class="md-nav" aria-label="Style Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#naming-conventions-prefixes" class="md-nav__link">
+    Naming Conventions - Prefixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naming-conventions-variable-names" class="md-nav__link">
+    Naming Conventions - Variable Names
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-variables-as-properties" class="md-nav__link">
+    Local Variables as properties
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2589,6 +2623,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#style-guide" class="md-nav__link">
+    Style Guide
+  </a>
+  
+    <nav class="md-nav" aria-label="Style Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#naming-conventions-prefixes" class="md-nav__link">
+    Naming Conventions - Prefixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naming-conventions-variable-names" class="md-nav__link">
+    Naming Conventions - Variable Names
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-variables-as-properties" class="md-nav__link">
+    Local Variables as properties
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2974,6 +3042,101 @@ Create a Document/Spreadsheet that does the following: </p>
 <p>Laying out the functionality for each Module takes time, it may take a couple of days or a week or more depending on the complexity of the machine.  However, when completed the project timeline will be more accurate, it will save days/weeks of effort at the end of the project when time is most precious.  The phrase "If we knew that, we would have done this instead" is a huge problem before run off.  Now comes the debate, re-do a major component, which will prevent the machine from running until it is completed, or try to somehow shoehorn in the extra functionality. Usually, the shoehorn method is employed until it's finally determined that the block must be re-built, and even more time is lost. </p>
 <p>Producing mode is important but the customer only complains when the machine is not producing.  The end user paid for production mode, every minute the machine is not in production mode is costing money, getting the machine back into production quickly is where the money is.  </p>
 <p>There will be a sequence to start up the machine and there will be different functionality in different modes of operation.  Commissioning, Maintenance, unsticking things after a jam, there's a lot of functionality needed that is not "automatic production".  No problem, build a Mode handling and a state machine to help ensure functions from Manual mode are not accidentally triggered in Automatic mode.  There are now two options, come up with your own Mode and State sequencing system, or follow a standard.  For those who build/have their own Mode/State handling system, that is perfectly acceptable.  Doing it your own way comes with the task of building/debugging your system, documenting your mode/state handling system, and teaching your system to other programmers, service people, and the end user.  Having the ability to say this machine conforms to ISA TR88.00.02 makes things a lot simpler. The TR88.00.02 Implementation guide from OMAC describes the implementation of TR88 very well. </p>
+<h2 id="style-guide">Style Guide</h2>
+<p>The style guide for the SPT framework follows the rules setup in the static analysis.  </p>
+<h3 id="naming-conventions-prefixes">Naming Conventions - Prefixes</h3>
+<h4 id="instance-variables">Instance Variables</h4>
+<p>Only instances of pointers and interfaces use a prefix in the SPT Style guide. </p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Prefix</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pointer</td>
+<td>p</td>
+<td><code>pTest : POINTER TO INT;</code></td>
+</tr>
+<tr>
+<td>Interface</td>
+<td>ip</td>
+<td><code>ipComponent : I_ComponentBase;</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="datatypes">Datatypes</h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Prefix</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Function Block</td>
+<td>FB_</td>
+<td><code>FUNCTION_BLOCK FB_BasicAxis EXTENDS FB_CyclicFB IMPLEMENTS I_BasicAxis</code></td>
+</tr>
+<tr>
+<td>Function</td>
+<td>F_</td>
+<td><code>FUNCTION F_CreateAllEventsInClass</code></td>
+</tr>
+<tr>
+<td>Interface</td>
+<td>I_</td>
+<td><code>I_BaseFB</code></td>
+</tr>
+<tr>
+<td>Structure</td>
+<td>ST_</td>
+<td><code>TYPE ST_ComponentBase_HMI :</code></td>
+</tr>
+<tr>
+<td>Enumeration</td>
+<td>E_</td>
+<td><code>TYPE E_AlarmResponse :</code></td>
+</tr>
+<tr>
+<td>Union</td>
+<td>U_</td>
+<td><code>Union U_WordToBit :</code></td>
+</tr>
+<tr>
+<td>Alias</td>
+<td>T_</td>
+<td><code>TYPE T_Message : STRING[50];</code></br><code>END_TYPE</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="naming-conventions-variable-names">Naming Conventions - Variable Names</h3>
+<ul>
+<li>Pascal Case <ul>
+<li>All starting words are capitalized except where p or ip are used as prefixes</li>
+<li>Each new compound word is capitallized</li>
+</ul>
+</li>
+<li>NO Hungarian notation!!!</li>
+<li>Use whole words instead of acronyms or shortned words when possible</li>
+</ul>
+<details class="example">
+<summary>Example</summary>
+<p>The variable <code>LPotSw</code> means nothing to a new set of eyes.<br />
+Whereas the variable <code>PositiveOvertravelSwitch_Left</code> does mean something to a new set of eyes.</p>
+</details>
+<h3 id="local-variables-as-properties">Local Variables as properties</h3>
+<p>Where local variables are to be used outside of a function block, we create the variable name in the function block with an underscore prefix.  Then the name of the property get/set is the variable name without the underscore.</p>
+<p>Example:</p>
+<p><img alt="Alt text" src="assets/FB_MachineTree.png" /></p>
+<p><img alt="Alt text" src="assets/FB_MachineDefinition.png" /></p>
+<p><img alt="Alt text" src="assets/PackTagsProperty.png" /></p>
+<p><img alt="Alt text" src="assets/PackTagsGet.png" /></p>
 
 
   
@@ -3013,10 +3176,11 @@ Create a Document/Spreadsheet that does the following: </p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.726fbb30.min.js"></script>
+      <script src="../assets/javascripts/bundle.94c44541.min.js"></script>
       
     
   </body>
