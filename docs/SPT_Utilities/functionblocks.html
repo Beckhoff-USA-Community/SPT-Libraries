@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.35e1ed30.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.4b4a2bd9.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css">
@@ -1817,6 +1817,88 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#any-buffers" class="md-nav__link">
+    ANY Buffers
+  </a>
+  
+    <nav class="md-nav" aria-label="ANY Buffers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#base" class="md-nav__link">
+    Base
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buffer-any" class="md-nav__link">
+    Buffer ANY
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fifo-any" class="md-nav__link">
+    FIFO ANY
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lifo-any" class="md-nav__link">
+    LIFO ANY
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ring-any" class="md-nav__link">
+    Ring ANY
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#any-array" class="md-nav__link">
+    ANY Array
+  </a>
+  
+    <nav class="md-nav" aria-label="ANY Array">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#class-diagram_4" class="md-nav__link">
+    Class Diagram
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_3" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods_8" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2495,6 +2577,88 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#any-buffers" class="md-nav__link">
+    ANY Buffers
+  </a>
+  
+    <nav class="md-nav" aria-label="ANY Buffers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#base" class="md-nav__link">
+    Base
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buffer-any" class="md-nav__link">
+    Buffer ANY
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fifo-any" class="md-nav__link">
+    FIFO ANY
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lifo-any" class="md-nav__link">
+    LIFO ANY
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ring-any" class="md-nav__link">
+    Ring ANY
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#any-array" class="md-nav__link">
+    ANY Array
+  </a>
+  
+    <nav class="md-nav" aria-label="ANY Array">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#class-diagram_4" class="md-nav__link">
+    Class Diagram
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_3" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods_8" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2689,6 +2853,355 @@ END_VAR
 </tr>
 </tbody>
 </table>
+<h2 id="any-buffers">ANY Buffers</h2>
+<h3 id="base">Base</h3>
+<p>This is a set of utilities that are used with an array of any datatype.  </p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BUFFER</td>
+<td>Elements can be added until full, simpel buffer with FULL detection and reset functionality</td>
+</tr>
+<tr>
+<td>FIFO</td>
+<td>(aka RING without overwrite) Elements can be added until full, oldest added element can be fetched, the buffer is constantly looped like a ring buffer for best efficiency</td>
+</tr>
+<tr>
+<td>LIFO</td>
+<td>(aka STACK) Elements can be added until full, newest added element can be fetched</td>
+</tr>
+<tr>
+<td>RING</td>
+<td>Elements can be added, oldest element can be fetched, when full when written, the oldest element is OVERWRITTEN</td>
+</tr>
+<tr>
+<td>ARRAY</td>
+<td>Elements can be added, removed, exchanged at a certain location in the array</td>
+</tr>
+</tbody>
+</table>
+<h4 id="class-diagram">Class Diagram</h4>
+<p>The buffer style functions all extend from FB_AnyBase.  This holds the common use of each buffer type.  The ARRAY type stands on its own.</p>
+<pre class="mermaid"><code>classDiagram
+
+class FB_AnyBase{
+    _LowerBoundary : DINT
+    _UpperBoundary : DINT
+    _Enable        : BOOL
+    _Empty         : BOOL
+    _Full          : BOOL
+
+    CheckBoundary()
+}
+
+FB_BaseFB&lt;|--FB_AnyBase</code></pre>
+<h4 id="properties_2">Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LowerBoundary</td>
+<td>DINT</td>
+<td>This is the lower boundary of the array being used</td>
+</tr>
+<tr>
+<td>UpperBoundary</td>
+<td>DINT</td>
+<td>This is the upper boundary of the array being used</td>
+</tr>
+<tr>
+<td>Enable</td>
+<td>BOOL</td>
+<td>This will enable the methods</td>
+</tr>
+<tr>
+<td>Empty</td>
+<td>BOOL</td>
+<td>Is the buffer type empty</td>
+</tr>
+<tr>
+<td>Full</td>
+<td>BOOL</td>
+<td>Is the buffer type full</td>
+</tr>
+</tbody>
+</table>
+<h4 id="methods_3">Methods</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CheckBoundary</td>
+<td>BOOL</td>
+<td>This will check the boundaries entered to make sure they are good</td>
+</tr>
+</tbody>
+</table>
+<h4 id="trace">Trace</h4>
+<p>Anytime the properties that are used are not good, a message is sent to the event system using the FB_BaseFB Trace method and the _Error bit is set.  Depending on the type of function, traces are sent if object is _FULL when trying to add data.</p>
+<h3 id="buffer-any">Buffer ANY</h3>
+<p>Elements can be added until full, simple buffer with FULL detection and reset functionality </p>
+<p>This object does not give the user the ability to read the array.  This would be done outside this functionality.</p>
+<h4 id="class-diagram_1">Class Diagram</h4>
+<pre class="mermaid"><code>classDiagram
+
+FB_BaseFB&lt;|--FB_AnyBase
+
+class FB_BufferAny{
+    Push()
+    Reset()   
+}
+
+FB_AnyBase&lt;|--FB_BufferAny</code></pre>
+<h4 id="methods_4">Methods</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Push</td>
+<td>BOOL</td>
+<td>This will add data into the array at the next index.  It will cause an _ERROR when it is already _FULL</td>
+</tr>
+<tr>
+<td>Reset</td>
+<td>BOOL</td>
+<td>This will empty the array and put the index to the beginning</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fifo-any">FIFO ANY</h3>
+<p>(aka RING without overwrite) Elements can be added until full, oldest added element can be fetched, the buffer is constantly looped like a ring buffer for best efficiency</p>
+<h4 id="class-diagram_2">Class Diagram</h4>
+<pre class="mermaid"><code>classDiagram
+
+
+FB_BaseFB&lt;|--FB_AnyBase
+
+class FB_FIFOAny{
+    Push()
+    Pop()
+    Reset()   
+}
+
+FB_AnyBase&lt;|--FB_FIFOAny</code></pre>
+<h4 id="methods_5">Methods</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Push</td>
+<td>BOOL</td>
+<td>This will add data into the array at the next index.  It will cause an _ERROR when it is already _FULL</td>
+</tr>
+<tr>
+<td>Pop</td>
+<td>BOOL</td>
+<td>This will extract the oldest data in the array.  It will cause an _ERROR if called when _EMPTY</td>
+</tr>
+<tr>
+<td>Reset</td>
+<td>BOOL</td>
+<td>This will empty the array and put the index to the beginning</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lifo-any">LIFO ANY</h3>
+<p>(aka STACK) Elements can be added until full, newest added element can be fetched</p>
+<h4 id="class-diagrm">Class Diagrm</h4>
+<pre class="mermaid"><code>classDiagram
+
+
+FB_BaseFB&lt;|--FB_AnyBase
+
+class FB_LIFOAny{
+    Push()
+    Pop()
+    Reset()   
+}
+
+FB_AnyBase&lt;|--FB_LIFOAny</code></pre>
+<h4 id="methods_6">Methods</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Push</td>
+<td>BOOL</td>
+<td>This will add data into the array at the next index.  It will cause an _ERROR when it is already _FULL</td>
+</tr>
+<tr>
+<td>Pop</td>
+<td>BOOL</td>
+<td>This will extract the newest data in the array.  It will cause an _ERROR if called when _EMPTY</td>
+</tr>
+<tr>
+<td>Reset</td>
+<td>BOOL</td>
+<td>This will empty the array and put the index to the beginning</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ring-any">Ring ANY</h3>
+<p>Elements can be added, oldest element can be fetched, when full when written, the oldest element is OVERWRITTEN</p>
+<h4 id="class-diagram_3">Class Diagram</h4>
+<pre class="mermaid"><code>classDiagram
+
+
+FB_BaseFB&lt;|--FB_AnyBase
+
+class FB_RingAny{
+    Push()
+    Pop()
+    Reset()   
+}
+
+FB_AnyBase&lt;|--FB_RingAny</code></pre>
+<h4 id="methods_7">Methods</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Push</td>
+<td>BOOL</td>
+<td>This will add data into the array at the next index.  If _FULL, then oldest element is OVERWRITTEN</td>
+</tr>
+<tr>
+<td>Pop</td>
+<td>BOOL</td>
+<td>This will extract the oldest data in the array.  It will cause an _ERROR if called when _EMPTY</td>
+</tr>
+<tr>
+<td>Reset</td>
+<td>BOOL</td>
+<td>This will empty the array and put the index to the beginning</td>
+</tr>
+</tbody>
+</table>
+<h2 id="any-array">ANY Array</h2>
+<p>Elements can be added, removed, exchanged at a certain location in the array</p>
+<h3 id="class-diagram_4">Class Diagram</h3>
+<pre class="mermaid"><code>classDiagram
+
+
+FB_BaseFB&lt;|--FB_ArrayAny
+
+class FB_ArrayAny{
+    Enable : BOOL
+    LowerBoundary : DINT
+    UpperBoundary : DINT
+
+    Delete()
+    Insert()
+    Exchange()
+    Reset()   
+}
+</code></pre>
+<h3 id="properties_3">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LowerBoundary</td>
+<td>DINT</td>
+<td>This is the lower boundary of the array being used</td>
+</tr>
+<tr>
+<td>UpperBoundary</td>
+<td>DINT</td>
+<td>This is the upper boundary of the array being used</td>
+</tr>
+<tr>
+<td>Enable</td>
+<td>BOOL</td>
+<td>This will enable the methods</td>
+</tr>
+</tbody>
+</table>
+<h3 id="methods_8">Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Return Type</th>
+<th>Passed Params</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Delete</td>
+<td>BOOL</td>
+<td>ArrayIn:ANY,DataIn:ANY,Location:DINT</td>
+<td>This will delete the data at the location in the array and shift up the rest below and make the UpperBound value 0</td>
+</tr>
+<tr>
+<td>Insert</td>
+<td>BOOL</td>
+<td>ArrayIn:ANY,DataIn:ANY,Location:DINT</td>
+<td>This will insert the DataIn at the location in the array and shift down the rest of the array.  This will lose the data on the end of the array</td>
+</tr>
+<tr>
+<td>Exchange</td>
+<td>BOOL</td>
+<td>ArrayIn:ANY,DataIn:ANY,Location:DINT</td>
+<td>This will insert the DataIn at the location in the array losing what was at the location.  No shifting of the other data</td>
+</tr>
+<tr>
+<td>Reset</td>
+<td></td>
+<td>ArrayIn : ANY</td>
+<td>This will empty the array and put the index to the beginning</td>
+</tr>
+</tbody>
+</table>
 
 
   
@@ -2732,7 +3245,7 @@ END_VAR
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../assets/javascripts/bundle.81fa17fe.min.js"></script>
       
     
   </body>
