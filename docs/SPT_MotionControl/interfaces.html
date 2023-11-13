@@ -2564,6 +2564,12 @@
 <td>Returns an AXIS_REF for use in external motion functions, etc.</td>
 </tr>
 <tr>
+<td>AxisParameters</td>
+<td>REFERENCE TO ST_AxisParameterSet</td>
+<td>R</td>
+<td>Returns a reference to the axis' NC parameters</td>
+</tr>
+<tr>
 <td>ExternalSequence</td>
 <td><a href="#i_motionsequence">I_MotionSequence</a></td>
 <td>RW</td>
@@ -2791,6 +2797,11 @@
 <td>MoveVelocity</td>
 <td>BOOL</td>
 <td>Initiate a continuous velocity move</td>
+</tr>
+<tr>
+<td>ReadParameterSet</td>
+<td>Bool</td>
+<td>Reads parameter set for Axis, Parameter Set available in <code>AxisParameters</code></td>
 </tr>
 <tr>
 <td>Reset</td>

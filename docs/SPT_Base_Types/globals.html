@@ -2448,6 +2448,12 @@
 <td>If <code>TRUE</code>, component names will have their parent's name prepended</td>
 </tr>
 <tr>
+<td>INHIBIT_SIMULATION_WARNING</td>
+<td>BOOL</td>
+<td>FALSE</td>
+<td>If <code>TRUE</code>, components in simulation mode will not raise a warning indicating as such</td>
+</tr>
+<tr>
 <td>MAX_NO_OF_SUBMODULES</td>
 <td>UDINT</td>
 <td>20</td>
@@ -2466,6 +2472,18 @@
 <td>Maximum number of <a href="interfaces.html#i_packml_externalcontroller" target="_blank">I_PackML_ExternalController</a> that can be registered with a submodule</td>
 </tr>
 <tr>
+<td>SUBMODULE_NAME_DELIMETER</td>
+<td>STRING(10)</td>
+<td>' ' <em>(space)</em></td>
+<td>String applied to submodule names to indicate hierarchy</td>
+</tr>
+<tr>
+<td>STATELOGGER_DISABLED</td>
+<td>BOOL</td>
+<td>FALSE</td>
+<td>If <code>TRUE</code>, no state change events will be raised, no matter their severity (entering Held/Aborted states will not be raised)</td>
+</tr>
+<tr>
 <td>UNIT_MODE_DEFAULT</td>
 <td><a href="duts.html#e_pmlunitmode" target="_blank">E_PMLUnitMode</a></td>
 <td>ePMLUnitMode_Production</td>
@@ -2476,12 +2494,6 @@
 <td><a href="https://infosys.beckhoff.com/english.php?content=../content/1033/tcplclib_tc3_packml_v2/1336569355.html&amp;id=" target="_blank">E_PMLCommand</a></td>
 <td>ePMLCommand_Abort</td>
 <td>Default command which is set to all submodules upon initialization</td>
-</tr>
-<tr>
-<td>SUBMODULE_NAME_DELIMETER</td>
-<td>STRING(10)</td>
-<td>' ' <em>(space)</em></td>
-<td>String applied to submodule names to indicate hierarchy</td>
 </tr>
 </tbody>
 </table>

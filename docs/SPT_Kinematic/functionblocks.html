@@ -3493,6 +3493,12 @@ It implements and uses <a href="https://www.beckhoff.com/en-en/products/automati
 <td>R/W</td>
 <td>References the selected Axes of the Kinematic System</td>
 </tr>
+<tr>
+<td>CamMaster</td>
+<td>REFERENCE TO AXIS_REF</td>
+<td>R</td>
+<td>References the Cam Master Axis</td>
+</tr>
 </tbody>
 </table>
 <h3 id="methods_4">Methods</h3>
@@ -3527,6 +3533,11 @@ It implements and uses <a href="https://www.beckhoff.com/en-en/products/automati
 </tr>
 <tr>
 <td>CamAddPointToPath</td>
+<td>BOOL</td>
+<td>Returns <code>TRUE</code> Command was accepted, this function will add one Point to the executing Cam Table</td>
+</tr>
+<tr>
+<td>CamAddMotionPointByAxis</td>
 <td>BOOL</td>
 <td>Returns <code>TRUE</code> Command was accepted, this function will add one Point to the executing Cam Table</td>
 </tr>
@@ -3584,10 +3595,40 @@ END_VAR
 Start Point in Table is always defined by the current position of the System. Subsequent added destination Points defined by the input values will be added to the cam table.
 Before starting to add points it needs to be clear by setting <code>TotalPointsInTable</code> to the final point number. </p>
 <p>The cam table will be built when <code>TotalPointsInTable</code> equals <code>PointNumber</code>, when last point was successfully added. </p>
-<p>As user the Motion Function of each point can be defined. This can be dangerous as it defines how the system moves! Read <a href="https://www.beckhoff.com/en-en/products/automation/twincat/tfxxxx-twincat-3-functions/tf5xxx-tc3-motion-control/tf5050.html" target="_blank">TF5050</a> carefully -&gt; <a href="https://infosys.beckhoff.com/english.php?content=../content/1033/tf5050_tc3_nc_camming/1003744011.html&amp;id=" target="_blank">MC_MotionFunctionType</a></p>
+<p>As user the Motion Function of each point can be defined. This can be dangerous as it defines how the system moves! Read <a href="https://infosys.beckhoff.com/english.php?content=../content/1033/tf5050_tc3_nc_camming/index.html&amp;id=" target="_blank">TF5050</a> carefully -&gt; <a href="https://infosys.beckhoff.com/english.php?content=../content/1033/tf5050_tc3_nc_camming/1003744011.html&amp;id=" target="_blank">MC_MotionFunctionType</a></p>
 <p>The start point is always defined. With <code>MotionFunctionFirstPoint</code> the motion function of the first point can be influenced. </p>
 <p>As default motion function <code>MC_MotionFunctionType.MOTIONFUNCTYPE_POLYNOM5</code> is recommended. Each point starts and ends with velocity zero.</p>
 <p>In case velocity/acceleration/deceleration is desired to be unequal zero, use PointVelocity,PointAcceleration and PointJerk to influence the derivatives of the velocity in this point of the cam table. </p>
+<h4 id="camaddmotionpointbyaxis">CamAddMotionPointByAxis()</h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code>METHOD CamAddMotionPointByAxis : BOOL
+VAR_INPUT
+    Axis                     : UDINT(1..KINEMATIC_CONSTANTS.DEGREES_OF_FREEDOM_MAX);                   // Axis Number to add point to Cam table
+    MotionFunctionFirstPoint : MC_MotionFunctionType := MC_MotionFunctionType.MOTIONFUNCTYPE_POLYNOM5; // Motion Function Type of initial Point in Cam Table. Start Postion is defined by current Positon of Axes.
+    MotionFunctionThisPoint  : MC_MotionFunctionType := MC_MotionFunctionType.MOTIONFUNCTYPE_POLYNOM5; // Motion Function Type of this Point to be added to Cam-Table
+    PointNumber              : UDINT(2..Parameter_Kinematic.MaxCammingPositionsPerTable);              // Number of Point to be added to Cam Table, must be strictly increasing without gaps
+    TotalPointsInTable       : UDINT(2..Parameter_Kinematic.MaxCammingPositionsPerTable);              // Total Number of Points in final Cam Table
+    MasterPosition           : LREAL;                                                                  // Master Position for this Motion Point scaled to 1
+    SlavePosition            : LREAL;                                                                  // Slave Position at this Point in Cam Table
+    PointVelocity            : LREAL;                                                                  // Slave Velocity at this Point in Cam Table
+    PointAcceleration        : LREAL;                                                                  // Slave Acceleration at this Point in Cam Table
+    PointJerk                : LREAL;                                                                  // Slave Jerk at this Point in Cam Table
+END_VAR
+</code></pre></div></td></tr></table></div>
+<p><code>CamAddMotionPointByAxis()</code> differentiates from <code>CamAddPointToPath()</code> that it can create a cam table by Axis. </p>
+<p>The scaling of the Master is defined by 0.0 to 1.0 (no unit). Within this range for each Axis one cam table can be created with variable Point count <code>PointNumber</code>.</p>
+<p><code>CamAddPointToPath()</code> evenly divides the Master range 0.0 to 1.0 by the number of points <code>TotalPointsInTable()</code>. With <code>CamAddMotionPointByAxis()</code> the user must create the relationship between Master Positions and slave Positions by axis. The <code>TotalPointsInTable</code> is by Axis in <code>CamAddMotionPointByAxis()</code>.</p>
 <h4 id="camin">CamIn()</h4>
 <p><code>METHOD CamIn : BOOL</code></p>
 <p>Cam in Axes system from <code>CamAxisRef</code> to created Cam Tables.</p>
@@ -3622,7 +3663,7 @@ It uses the functions of Camming to create Cam Tables for movement paths and the
 <details class="warning">
 <summary>Warning</summary>
 <p>Selecting Cam Table Motion profile is fully accessible by the user and can lead to dangerous behavior of the Robotic System.
-Read <a href="https://www.beckhoff.com/en-en/products/automation/twincat/tfxxxx-twincat-3-functions/tf5xxx-tc3-motion-control/tf5050.html" target="_blank">TF5050</a> Documentation carefully!</p>
+Read <a href="https://infosys.beckhoff.com/english.php?content=../content/1033/tf5050_tc3_nc_camming/index.html&amp;id=" target="_blank">TF5050</a> Documentation carefully!</p>
 </details>
 <h3 id="properties_5">Properties</h3>
 <table>
@@ -3665,6 +3706,18 @@ Read <a href="https://www.beckhoff.com/en-en/products/automation/twincat/tfxxxx-
 <td>R/W</td>
 <td>Change to one or more Points in Buffer has been detected. User can by this indication update the recipe. User needs to reset this variable to detect next change.</td>
 </tr>
+<tr>
+<td>CamMasterAcs</td>
+<td>REFERENCE TO AXIS_REF</td>
+<td>R</td>
+<td>References the Cam Master Axis for ACS</td>
+</tr>
+<tr>
+<td>CamMasterMcs</td>
+<td>REFERENCE TO AXIS_REF</td>
+<td>R</td>
+<td>References the Cam Master Axis for MCS</td>
+</tr>
 </tbody>
 </table>
 <h3 id="methods_5">Methods</h3>
@@ -3700,7 +3753,12 @@ Read <a href="https://www.beckhoff.com/en-en/products/automation/twincat/tfxxxx-
 <tr>
 <td>CamAddPointToPath</td>
 <td>BOOL</td>
-<td>Returns <code>TRUE</code> Command was accepted,</td>
+<td>Returns <code>TRUE</code> Command was accepted, this function will add one Point to the executing Cam Table</td>
+</tr>
+<tr>
+<td>CamAddMotionPointByAxis</td>
+<td>BOOL</td>
+<td>Returns <code>TRUE</code> Command was accepted, this function will add one Point to the executing Cam Table</td>
 </tr>
 <tr>
 <td>Disable</td>
