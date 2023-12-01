@@ -1,0 +1,253 @@
+<mxfile host="Electron" modified="2023-10-24T22:05:13.902Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.5 Chrome/114.0.5735.243 Electron/25.3.1 Safari/537.36" etag="Ua4Z7Aam9_k7vseSWjnc" version="21.6.5" type="device" pages="3">
+  <diagram name="Page-1" id="G1h-hna9NTbcmUlU7BuT">
+    <mxGraphModel dx="1818" dy="1397" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="3M7Ev9A3lRglvP-CGK-n-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="-387" y="-125" width="649" height="496" as="geometry" />
+        </mxCell>
+        <mxCell id="3M7Ev9A3lRglvP-CGK-n-13" value="TwinCAT Process Data" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;verticalAlign=top;dashed=1;dashPattern=1 4;" parent="1" vertex="1">
+          <mxGeometry x="-164" y="14" width="175" height="235" as="geometry" />
+        </mxCell>
+        <mxCell id="3M7Ev9A3lRglvP-CGK-n-2" value="PLC" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="-379" y="-120" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="3M7Ev9A3lRglvP-CGK-n-3" value="PLC Task" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;align=left;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="-340" y="-62" width="167" height="357" as="geometry" />
+        </mxCell>
+        <mxCell id="3M7Ev9A3lRglvP-CGK-n-4" value="Vision Task" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;align=left;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="20" y="-58" width="154" height="366" as="geometry" />
+        </mxCell>
+        <mxCell id="3M7Ev9A3lRglvP-CGK-n-6" value="Vision Component for&amp;nbsp; Image Process Extended from FB_VisionBase" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;verticalAlign=top;align=left;" parent="1" vertex="1">
+          <mxGeometry x="41" y="-6" width="120" height="206" as="geometry" />
+        </mxCell>
+        <mxCell id="3M7Ev9A3lRglvP-CGK-n-11" value="Some EM or Machine Module" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;align=left;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="-333" y="2" width="153" height="136" as="geometry" />
+        </mxCell>
+        <mxCell id="3M7Ev9A3lRglvP-CGK-n-5" value="Vision Component PLC Task" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;align=left;" parent="1" vertex="1">
+          <mxGeometry x="-314" y="54" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3M7Ev9A3lRglvP-CGK-n-7" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="3M7Ev9A3lRglvP-CGK-n-5" target="3M7Ev9A3lRglvP-CGK-n-6" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-194" y="161" as="sourcePoint" />
+            <mxPoint x="-144" y="111" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3M7Ev9A3lRglvP-CGK-n-8" value="Trigger" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" parent="3M7Ev9A3lRglvP-CGK-n-7" vertex="1" connectable="0">
+          <mxGeometry x="-0.303" y="4" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3M7Ev9A3lRglvP-CGK-n-9" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;exitX=0;exitY=0.75;exitDx=0;exitDy=0;" parent="1" source="3M7Ev9A3lRglvP-CGK-n-6" target="3M7Ev9A3lRglvP-CGK-n-5" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-120" y="186" as="sourcePoint" />
+            <mxPoint x="-70" y="136" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3M7Ev9A3lRglvP-CGK-n-10" value="Results" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" parent="3M7Ev9A3lRglvP-CGK-n-9" vertex="1" connectable="0">
+          <mxGeometry x="-0.4093" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OXF6YxTENA27pm0VMFSe-1" value="One Camera, One PLC Component &amp;amp; one VisionTask Component" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="-387" y="384" width="648" height="152" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="smTE3Ryfd20SON-I22SQ" name="Page-2">
+    <mxGraphModel dx="1818" dy="1397" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="oglh7Q0ibeI7e2zwoUav-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="-377" y="-115" width="615" height="739" as="geometry" />
+        </mxCell>
+        <mxCell id="oglh7Q0ibeI7e2zwoUav-4" value="PLC Task" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="-330" y="-52" width="167" height="587" as="geometry" />
+        </mxCell>
+        <mxCell id="KF7a9DWUhPTQ8zXakweV-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="-323" y="277" width="153" height="176" as="geometry" />
+        </mxCell>
+        <mxCell id="oglh7Q0ibeI7e2zwoUav-2" value="TwinCAT Process Data" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;verticalAlign=top;dashed=1;dashPattern=1 4;" vertex="1" parent="1">
+          <mxGeometry x="-154" y="24" width="175" height="142" as="geometry" />
+        </mxCell>
+        <mxCell id="oglh7Q0ibeI7e2zwoUav-3" value="PLC" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="-369" y="-110" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="oglh7Q0ibeI7e2zwoUav-5" value="Vision Task" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="30" y="-48" width="154" height="266" as="geometry" />
+        </mxCell>
+        <mxCell id="oglh7Q0ibeI7e2zwoUav-6" value="Vision Component for&amp;nbsp; Image Process Extended from FB_VisionBase" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;verticalAlign=top;align=left;" vertex="1" parent="1">
+          <mxGeometry x="51" y="4" width="120" height="184" as="geometry" />
+        </mxCell>
+        <mxCell id="oglh7Q0ibeI7e2zwoUav-7" value="Some EM or Machine Module" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="-323" y="12" width="153" height="176" as="geometry" />
+        </mxCell>
+        <mxCell id="oglh7Q0ibeI7e2zwoUav-8" value="Vision Component PLC Task" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-304" y="64" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="oglh7Q0ibeI7e2zwoUav-9" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="oglh7Q0ibeI7e2zwoUav-8" target="oglh7Q0ibeI7e2zwoUav-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-184" y="171" as="sourcePoint" />
+            <mxPoint x="-134" y="121" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oglh7Q0ibeI7e2zwoUav-10" value="Trigger" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" vertex="1" connectable="0" parent="oglh7Q0ibeI7e2zwoUav-9">
+          <mxGeometry x="-0.303" y="4" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oglh7Q0ibeI7e2zwoUav-11" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;exitX=0;exitY=0.75;exitDx=0;exitDy=0;" edge="1" parent="1" source="oglh7Q0ibeI7e2zwoUav-6" target="oglh7Q0ibeI7e2zwoUav-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-110" y="196" as="sourcePoint" />
+            <mxPoint x="-60" y="146" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oglh7Q0ibeI7e2zwoUav-12" value="Results" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" vertex="1" connectable="0" parent="oglh7Q0ibeI7e2zwoUav-11">
+          <mxGeometry x="-0.4093" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oglh7Q0ibeI7e2zwoUav-15" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="oglh7Q0ibeI7e2zwoUav-2" target="oglh7Q0ibeI7e2zwoUav-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oglh7Q0ibeI7e2zwoUav-16" value="Vision Task 2" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="30" y="238" width="154" height="266" as="geometry" />
+        </mxCell>
+        <mxCell id="oglh7Q0ibeI7e2zwoUav-17" value="Vision Component for&amp;nbsp; Image Process Extended from FB_VisionBase" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;verticalAlign=top;align=left;" vertex="1" parent="1">
+          <mxGeometry x="51" y="290" width="120" height="184" as="geometry" />
+        </mxCell>
+        <mxCell id="oglh7Q0ibeI7e2zwoUav-18" value="TwinCAT Process Data" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;verticalAlign=top;dashed=1;dashPattern=1 4;" vertex="1" parent="1">
+          <mxGeometry x="-154" y="292" width="175" height="142" as="geometry" />
+        </mxCell>
+        <mxCell id="oglh7Q0ibeI7e2zwoUav-19" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-184" y="362" as="sourcePoint" />
+            <mxPoint x="51" y="318" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oglh7Q0ibeI7e2zwoUav-20" value="Trigger" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" vertex="1" connectable="0" parent="oglh7Q0ibeI7e2zwoUav-19">
+          <mxGeometry x="-0.303" y="4" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oglh7Q0ibeI7e2zwoUav-21" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;exitX=0;exitY=0.75;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="51" y="410" as="sourcePoint" />
+            <mxPoint x="-184" y="377" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oglh7Q0ibeI7e2zwoUav-22" value="Results" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" vertex="1" connectable="0" parent="oglh7Q0ibeI7e2zwoUav-21">
+          <mxGeometry x="-0.4093" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oglh7Q0ibeI7e2zwoUav-23" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="oglh7Q0ibeI7e2zwoUav-18" target="oglh7Q0ibeI7e2zwoUav-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oglh7Q0ibeI7e2zwoUav-24" value="Vision Component PLC Task" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-304" y="345" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="O-pSI3zKJ3zeyOcXx3Hx-1" value="Two Cameras, Two PLC, Two Vision Tasks.&amp;nbsp; Two Vision camera component.&amp;nbsp; Images done at same time" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="-387" y="619" width="648" height="152" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="_L5ipHQ7DcIYwNtsypD1" name="Page-3">
+    <mxGraphModel dx="1818" dy="1397" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Evx5I12jvzQqJ53dK1_B-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="-387" y="-125" width="649" height="739" as="geometry" />
+        </mxCell>
+        <mxCell id="Evx5I12jvzQqJ53dK1_B-2" value="TwinCAT Process Data" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;verticalAlign=top;dashed=1;dashPattern=1 4;" vertex="1" parent="1">
+          <mxGeometry x="-164" y="14" width="175" height="127" as="geometry" />
+        </mxCell>
+        <mxCell id="Evx5I12jvzQqJ53dK1_B-3" value="PLC" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="-379" y="-120" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Evx5I12jvzQqJ53dK1_B-4" value="PLC Task" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="-340" y="-62" width="167" height="587" as="geometry" />
+        </mxCell>
+        <mxCell id="Evx5I12jvzQqJ53dK1_B-5" value="Vision Task" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="20" y="-58" width="154" height="587" as="geometry" />
+        </mxCell>
+        <mxCell id="Evx5I12jvzQqJ53dK1_B-6" value="Vision Component for&amp;nbsp; Image Process Extended from FB_VisionBase" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;verticalAlign=top;align=left;" vertex="1" parent="1">
+          <mxGeometry x="41" y="-6" width="120" height="164" as="geometry" />
+        </mxCell>
+        <mxCell id="Evx5I12jvzQqJ53dK1_B-7" value="Some EM or Machine Module" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="-333" y="2" width="153" height="171" as="geometry" />
+        </mxCell>
+        <mxCell id="Evx5I12jvzQqJ53dK1_B-8" value="Vision Component PLC Task" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-314" y="54" width="120" height="91" as="geometry" />
+        </mxCell>
+        <mxCell id="Evx5I12jvzQqJ53dK1_B-9" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" edge="1" parent="1" source="Evx5I12jvzQqJ53dK1_B-8" target="Evx5I12jvzQqJ53dK1_B-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-194" y="161" as="sourcePoint" />
+            <mxPoint x="-144" y="111" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Evx5I12jvzQqJ53dK1_B-10" value="Trigger" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" vertex="1" connectable="0" parent="Evx5I12jvzQqJ53dK1_B-9">
+          <mxGeometry x="-0.303" y="4" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Evx5I12jvzQqJ53dK1_B-11" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="Evx5I12jvzQqJ53dK1_B-6" target="Evx5I12jvzQqJ53dK1_B-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-120" y="186" as="sourcePoint" />
+            <mxPoint x="-194" y="237" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Evx5I12jvzQqJ53dK1_B-12" value="Results" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" vertex="1" connectable="0" parent="Evx5I12jvzQqJ53dK1_B-11">
+          <mxGeometry x="-0.4093" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KIRn7FTJk03GAVCxjO8H-1" value="Two Cameras, One PLC component, Two Vision Components, One Vision Task.&lt;br&gt;PLC to rotate taking pictures for each one" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="-387" y="619" width="648" height="152" as="geometry" />
+        </mxCell>
+        <mxCell id="wYohLuTYjvE8Quk6unQq-1" value="&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="-333" y="224" width="153" height="176" as="geometry" />
+        </mxCell>
+        <mxCell id="wYohLuTYjvE8Quk6unQq-3" value="Vision Component for&amp;nbsp; Image Process Extended from FB_VisionBase" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;verticalAlign=top;align=left;" vertex="1" parent="1">
+          <mxGeometry x="41" y="237" width="120" height="184" as="geometry" />
+        </mxCell>
+        <mxCell id="wYohLuTYjvE8Quk6unQq-4" value="TwinCAT Process Data" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;verticalAlign=top;dashed=1;dashPattern=1 4;" vertex="1" parent="1">
+          <mxGeometry x="-164" y="239" width="175" height="142" as="geometry" />
+        </mxCell>
+        <mxCell id="wYohLuTYjvE8Quk6unQq-5" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-194" y="309" as="sourcePoint" />
+            <mxPoint x="41" y="265" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wYohLuTYjvE8Quk6unQq-6" value="Trigger" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" vertex="1" connectable="0" parent="wYohLuTYjvE8Quk6unQq-5">
+          <mxGeometry x="-0.303" y="4" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wYohLuTYjvE8Quk6unQq-7" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;exitX=0;exitY=0.75;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="41" y="357" as="sourcePoint" />
+            <mxPoint x="-194" y="324" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wYohLuTYjvE8Quk6unQq-8" value="Results" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" vertex="1" connectable="0" parent="wYohLuTYjvE8Quk6unQq-7">
+          <mxGeometry x="-0.4093" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wYohLuTYjvE8Quk6unQq-9" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="wYohLuTYjvE8Quk6unQq-4" target="wYohLuTYjvE8Quk6unQq-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wYohLuTYjvE8Quk6unQq-10" value="Vision Component PLC Task" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-314" y="292" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
