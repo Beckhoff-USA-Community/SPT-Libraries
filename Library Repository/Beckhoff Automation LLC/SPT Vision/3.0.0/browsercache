@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Library Name="SPT Vision, 3.0.0 (Beckhoff Automation LLC)">
+  <Node Name="Project Information" TypeGUID="{085afe48-c5d8-4ea5-ab0d-b35701fa6009}" EmbeddedTypeGUIDs="" ProvidesLanguageModel="false" ObjectGUID="{11c0fc3a-9bcf-4dd8-ac38-efb93363e521}" />
+  <Node Name="Library Manager" TypeGUID="{adb5cb65-8e1d-4a00-b70a-375ea27582f3}" EmbeddedTypeGUIDs="" ObjectGUID="{04325ccf-4acd-4a20-b541-23ff62c9a0b8}" />
+  <Node Name="DUTs" TypeGUID="{738bea1e-99bb-4f04-90bb-a7a567e74e3a}" EmbeddedTypeGUIDs="" ProvidesLanguageModel="false" ObjectGUID="{f1c98dda-1aa6-48dd-a24a-0295c858bf7f}" />
+  <Node Name="GVLs" TypeGUID="{738bea1e-99bb-4f04-90bb-a7a567e74e3a}" EmbeddedTypeGUIDs="" ProvidesLanguageModel="false" ObjectGUID="{7c93dec1-e577-43f6-9e5d-064c6b82edc2}" />
+  <Node Name="POUs" TypeGUID="{738bea1e-99bb-4f04-90bb-a7a567e74e3a}" EmbeddedTypeGUIDs="" ProvidesLanguageModel="false" ObjectGUID="{34689f41-6770-4704-a2af-9dd707f8afa7}" />
+  <Node Name="MAIN" TypeGUID="{6f9dac99-8de1-4efc-8465-68ac443b7d08}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{293a7dc0-9dc3-0763-2987-c98ade1313da}" />
+  <Node Name="Project Information" TypeGUID="{738bea1e-99bb-4f04-90bb-a7a567e74e3a}" EmbeddedTypeGUIDs="" ProvidesLanguageModel="false" ObjectGUID="{70dc1feb-aa3e-447e-9060-988985d61a42}" />
+  <Node Name="F_GetCompany" TypeGUID="{6f9dac99-8de1-4efc-8465-68ac443b7d08}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" Comment=" This function has been automatically generated from the project information." ObjectGUID="{1c12ce69-4e2d-0d53-1cd8-92e7a1b0e8ea}" />
+  <Node Name="F_GetTitle" TypeGUID="{6f9dac99-8de1-4efc-8465-68ac443b7d08}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" Comment=" This function has been automatically generated from the project information." ObjectGUID="{ce94e1c6-da39-08b9-38b7-1b327f7867f9}" />
+  <Node Name="F_GetVersion" TypeGUID="{6f9dac99-8de1-4efc-8465-68ac443b7d08}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" Comment=" This function has been automatically generated from the project information." ObjectGUID="{6cec820c-0b6c-017e-278d-f0a5ea844896}" />
+  <Node Name="Version" TypeGUID="{738bea1e-99bb-4f04-90bb-a7a567e74e3a}" EmbeddedTypeGUIDs="" ProvidesLanguageModel="false" ObjectGUID="{1ac12917-22b5-4583-8b02-8d9ef75b3e13}" />
+  <Node Name="Global_Version" TypeGUID="{ffbfa93a-b94d-45fc-a329-229860183b1d}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" Comment=" This function has been automatically generated from the project information." ObjectGUID="{98c5cee5-4aab-0241-27f1-dec827094676}" />
+  <Node Name="Vision" TypeGUID="{738bea1e-99bb-4f04-90bb-a7a567e74e3a}" EmbeddedTypeGUIDs="" ProvidesLanguageModel="false" ObjectGUID="{6d74e322-45e1-4467-b714-9e7532e7137a}" />
+  <Node Name="DUTs" TypeGUID="{738bea1e-99bb-4f04-90bb-a7a567e74e3a}" EmbeddedTypeGUIDs="" ProvidesLanguageModel="false" ObjectGUID="{bb13dae7-1d47-4847-b68d-6d58df078d43}" />
+  <Node Name="E_VisionTools" TypeGUID="{2db5746d-d284-4425-9f7f-2663a34b0ebc}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{f3feccbf-2edc-0ca3-3e64-c98a47456416}" />
+  <Node Name="ST_BlobResults" TypeGUID="{2db5746d-d284-4425-9f7f-2663a34b0ebc}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{21709665-c39c-0c85-2bdd-caea78aa66d8}" />
+  <Node Name="ST_CameraReadWrite" TypeGUID="{2db5746d-d284-4425-9f7f-2663a34b0ebc}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{6332b149-9822-0349-1edb-e285480a9457}" />
+  <Node Name="ST_Image2Video" TypeGUID="{2db5746d-d284-4425-9f7f-2663a34b0ebc}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{1af279ce-ee1a-086e-2156-48c1dd797471}" />
+  <Node Name="ST_VisionResults" TypeGUID="{2db5746d-d284-4425-9f7f-2663a34b0ebc}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{94bb97c5-8403-0274-2eac-071fec2514b7}" />
+  <Node Name="GVLs" TypeGUID="{738bea1e-99bb-4f04-90bb-a7a567e74e3a}" EmbeddedTypeGUIDs="" ProvidesLanguageModel="false" ObjectGUID="{e0630c34-87b9-4b7b-bf06-b49b2b261c2c}" />
+  <Node Name="GVL_CameraDefinitions" TypeGUID="{ffbfa93a-b94d-45fc-a329-229860183b1d}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{daaaa7f0-f3b4-0e7d-1132-ffe617494ee5}" />
+  <Node Name="GVL_Image2Video" TypeGUID="{ffbfa93a-b94d-45fc-a329-229860183b1d}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{c0ee7818-6f38-071f-1e77-4e684f21e68e}" />
+  <Node Name="GVL_VisionColor" TypeGUID="{ffbfa93a-b94d-45fc-a329-229860183b1d}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{f22496f6-7b6c-098a-1894-53d04a335a27}" />
+  <Node Name="HMI" TypeGUID="{738bea1e-99bb-4f04-90bb-a7a567e74e3a}" EmbeddedTypeGUIDs="" ProvidesLanguageModel="false" ObjectGUID="{86eeeda2-eae2-4974-9d6b-2d47601d19bf}" />
+  <Node Name="ST_VisionBase_Command" TypeGUID="{2db5746d-d284-4425-9f7f-2663a34b0ebc}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{7d5926b4-c909-03d2-1864-92bc7580bfa7}" />
+  <Node Name="ST_VisionBase_Config" TypeGUID="{2db5746d-d284-4425-9f7f-2663a34b0ebc}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{59bf0dbc-ca99-06ae-228f-e5a298b8f250}" />
+  <Node Name="ST_VisionBase_HMI" TypeGUID="{2db5746d-d284-4425-9f7f-2663a34b0ebc}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{49a3643a-e65b-0f21-06e7-0ec0923658ab}" />
+  <Node Name="ST_VisionBase_Status" TypeGUID="{2db5746d-d284-4425-9f7f-2663a34b0ebc}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{f84bbed4-167b-0191-296f-b96802dea07e}" />
+  <Node Name="PLC Task" TypeGUID="{738bea1e-99bb-4f04-90bb-a7a567e74e3a}" EmbeddedTypeGUIDs="" ProvidesLanguageModel="false" ObjectGUID="{70b7677b-6faa-4473-964e-b8afd1467b09}" />
+  <Node Name="FB_PlcCameraBase" TypeGUID="{6f9dac99-8de1-4efc-8465-68ac443b7d08}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{1e82f861-fd0a-0919-0257-7c35778c4d1c}">
+    <Node Name="CreateEvents" TypeGUID="{f8a58466-d7f6-439f-bbb8-d4600e41d099}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" Comment="! @summary Initializes event function blocks using this components's name" ObjectGUID="{7bf58d58-ce76-06a7-152e-e931ca9ac6a8}" />
+    <Node Name="CyclicLogic" TypeGUID="{f8a58466-d7f6-439f-bbb8-d4600e41d099}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" Comment="! @summary This method serves as the entry point for all underlying FB logic" ObjectGUID="{089fe6cb-195f-0e27-2b86-f3b0c0ed210c}" />
+    <Node Name="GetResults" TypeGUID="{f8a58466-d7f6-439f-bbb8-d4600e41d099}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{9d040a05-d398-0c84-0a81-2199114a15bc}" />
+    <Node Name="Reset" TypeGUID="{f8a58466-d7f6-439f-bbb8-d4600e41d099}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" Comment="! @summary Clears error flags and error IDs for this component" ObjectGUID="{46de7012-762d-0ed1-3c8e-a27898f8df21}" />
+    <Node Name="RunVision" TypeGUID="{5a3b8626-d3e9-4f37-98b5-66420063d91e}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{561468cf-c154-03e5-0d20-f421210773a4}">
+      <Node Name="Set" TypeGUID="{792f2eb6-721e-4e64-ba20-bc98351056db}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{414af5da-28e6-0406-39c6-4b35a28a31b4}" />
+    </Node>
+    <Node Name="TriggerImage" TypeGUID="{5a3b8626-d3e9-4f37-98b5-66420063d91e}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{1140422b-0b3c-0307-156b-f07208b33d4a}">
+      <Node Name="Set" TypeGUID="{792f2eb6-721e-4e64-ba20-bc98351056db}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{c02d6b92-9497-0cd0-0c01-c5ee6502247a}" />
+    </Node>
+  </Node>
+  <Node Name="VisionTask" TypeGUID="{738bea1e-99bb-4f04-90bb-a7a567e74e3a}" EmbeddedTypeGUIDs="" ProvidesLanguageModel="false" ObjectGUID="{dc9c43c1-64ba-4f93-a78b-f30d05d65b1d}" />
+  <Node Name="FB_CameraParameterBuffer" TypeGUID="{6f9dac99-8de1-4efc-8465-68ac443b7d08}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{cd4835a2-cfb4-0a88-35a3-8271f4329be8}">
+    <Node Name="AddData" TypeGUID="{f8a58466-d7f6-439f-bbb8-d4600e41d099}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{c7382461-ab14-026e-2003-a217b286b778}" />
+    <Node Name="BufferCount" TypeGUID="{5a3b8626-d3e9-4f37-98b5-66420063d91e}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{c58280b7-6820-0e06-135d-5c3d9fc68c38}">
+      <Node Name="Get" TypeGUID="{792f2eb6-721e-4e64-ba20-bc98351056db}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{c5eebd5c-0a9e-0dd1-37fc-57ee2aa33ffa}" />
+    </Node>
+    <Node Name="GetData" TypeGUID="{f8a58466-d7f6-439f-bbb8-d4600e41d099}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{63269196-9507-07f8-1ed2-4067484f9cc5}" />
+    <Node Name="ReadData" TypeGUID="{f8a58466-d7f6-439f-bbb8-d4600e41d099}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{036a1800-7fe3-0b1c-26f1-9d8b5ad054d9}" />
+    <Node Name="ResetData" TypeGUID="{f8a58466-d7f6-439f-bbb8-d4600e41d099}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{1f83dbdd-4d84-036c-1890-4ae5551c06de}" />
+  </Node>
+  <Node Name="FB_VideoPlaybackControl" TypeGUID="{6f9dac99-8de1-4efc-8465-68ac443b7d08}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{7771a2b9-277f-0cb4-23bb-e2648046cb43}">
+    <Node Name="Busy" TypeGUID="{5a3b8626-d3e9-4f37-98b5-66420063d91e}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{3a304a6e-7b83-0058-0c8b-a5a7eca2426c}">
+      <Node Name="Get" TypeGUID="{792f2eb6-721e-4e64-ba20-bc98351056db}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{261ec17a-bf66-0cf6-0309-9ed61cf11f30}" />
+    </Node>
+    <Node Name="Error" TypeGUID="{5a3b8626-d3e9-4f37-98b5-66420063d91e}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{ee645271-e3b5-0954-1421-4d5043a2f120}">
+      <Node Name="Get" TypeGUID="{792f2eb6-721e-4e64-ba20-bc98351056db}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{4119097b-f20f-08d5-1f1e-ef86e618a581}" />
+    </Node>
+    <Node Name="ErrorID" TypeGUID="{5a3b8626-d3e9-4f37-98b5-66420063d91e}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{29059d6f-6abd-006c-07a5-72afdbe039d3}">
+      <Node Name="Get" TypeGUID="{792f2eb6-721e-4e64-ba20-bc98351056db}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{c5e66a0d-0854-0958-285d-35bb9477b0ee}" />
+    </Node>
+    <Node Name="CyclicLogic" TypeGUID="{f8a58466-d7f6-439f-bbb8-d4600e41d099}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{bc8a8b27-dfe3-0717-3279-124d6e1550fd}" />
+    <Node Name="InitComplete" TypeGUID="{5a3b8626-d3e9-4f37-98b5-66420063d91e}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{7a61c45a-2949-0a19-05fc-24f352a990b7}">
+      <Node Name="Get" TypeGUID="{792f2eb6-721e-4e64-ba20-bc98351056db}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{187d135f-cb80-0397-1cae-383dd60a7e5a}" />
+    </Node>
+    <Node Name="Execute" TypeGUID="{f8a58466-d7f6-439f-bbb8-d4600e41d099}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{956e1910-c403-0a46-3e62-97f37cc4ad0d}" />
+    <Node Name="OnAlarmRaised" TypeGUID="{f8a58466-d7f6-439f-bbb8-d4600e41d099}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{a4216244-1602-09d6-0b03-bc06f4eb6cd4}" />
+    <Node Name="SubscribedEvents" TypeGUID="{5a3b8626-d3e9-4f37-98b5-66420063d91e}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{fa27ebeb-13ea-0182-05e6-7047decd22f3}">
+      <Node Name="Get" TypeGUID="{792f2eb6-721e-4e64-ba20-bc98351056db}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{ece6223f-0ef0-0646-29e9-970c8168bc95}" />
+    </Node>
+    <Node Name="SubscribeEvents" TypeGUID="{5a3b8626-d3e9-4f37-98b5-66420063d91e}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{71454155-952e-0eb2-314d-87c5203208ce}">
+      <Node Name="Set" TypeGUID="{792f2eb6-721e-4e64-ba20-bc98351056db}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{964adbeb-75d6-0d60-3180-1f7e4d4a1a67}" />
+    </Node>
+    <Node Name="UnsubscribeEvents" TypeGUID="{5a3b8626-d3e9-4f37-98b5-66420063d91e}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{752ce0f7-bc09-0370-158c-993e9a9082a9}">
+      <Node Name="Set" TypeGUID="{792f2eb6-721e-4e64-ba20-bc98351056db}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{6e6813a4-c831-0192-1157-e8b7eb471407}" />
+    </Node>
+    <Node Name="AddImage" TypeGUID="{f8a58466-d7f6-439f-bbb8-d4600e41d099}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{e2256ff4-99e6-048e-3f80-5e9697f044f5}" />
+    <Node Name="AlarmDelayTime" TypeGUID="{5a3b8626-d3e9-4f37-98b5-66420063d91e}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{a61fddf6-6152-0777-3afd-46836a8aa557}">
+      <Node Name="Set" TypeGUID="{792f2eb6-721e-4e64-ba20-bc98351056db}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{1981a076-88fc-0427-377c-cb6fd7370037}" />
+    </Node>
+    <Node Name="CameraID" TypeGUID="{5a3b8626-d3e9-4f37-98b5-66420063d91e}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{e4cdef8f-51e2-04ed-3588-14c23e76c196}">
+      <Node Name="Set" TypeGUID="{792f2eb6-721e-4e64-ba20-bc98351056db}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{f300cdb3-04a7-0d8c-3a1f-a0ccf51a5f91}" />
+    </Node>
+    <Node Name="FramesPerSecond" TypeGUID="{5a3b8626-d3e9-4f37-98b5-66420063d91e}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{2794357e-43a7-0a8f-0e1e-7a734ceac7dc}">
+      <Node Name="Set" TypeGUID="{792f2eb6-721e-4e64-ba20-bc98351056db}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{b29710f5-6241-068f-139e-9a8e976b55c4}" />
+    </Node>
+    <Node Name="ImageReductionFactor" TypeGUID="{5a3b8626-d3e9-4f37-98b5-66420063d91e}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{6451fbc9-6672-0997-0ccf-0e7080b09f22}">
+      <Node Name="Set" TypeGUID="{792f2eb6-721e-4e64-ba20-bc98351056db}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{a9a9b97a-b167-050f-2b46-65d4a2b98fed}" />
+    </Node>
+    <Node Name="ImageSourceDirectory" TypeGUID="{5a3b8626-d3e9-4f37-98b5-66420063d91e}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{552e5e1e-5e33-0bbd-1721-83c14ad37f51}">
+      <Node Name="Set" TypeGUID="{792f2eb6-721e-4e64-ba20-bc98351056db}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{30519bab-ccd1-02c9-00ff-960780be31e9}" />
+    </Node>
+    <Node Name="VideoOutputDirectory" TypeGUID="{5a3b8626-d3e9-4f37-98b5-66420063d91e}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{338cb32a-2e12-02b7-2a0b-cfa934436f1b}">
+      <Node Name="Set" TypeGUID="{792f2eb6-721e-4e64-ba20-bc98351056db}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{5d78897d-a29a-0c23-3af8-a7a2fcb5135e}" />
+    </Node>
+    <Node Name="WriteImage" TypeGUID="{f8a58466-d7f6-439f-bbb8-d4600e41d099}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{196768c3-fed0-05e7-0363-23a08fbc093e}" />
+  </Node>
+  <Node Name="I_BaseFB" TypeGUID="{738bea1e-99bb-4f04-90bb-a7a567e74e3a}" EmbeddedTypeGUIDs="" ProvidesLanguageModel="false" ObjectGUID="{026192e6-6c39-09f1-1a48-9c80edd25d8a}" />
+  <Node Name="I_CyclicFB" TypeGUID="{738bea1e-99bb-4f04-90bb-a7a567e74e3a}" EmbeddedTypeGUIDs="" ProvidesLanguageModel="false" ObjectGUID="{7fa0b40e-ad78-01d1-3cbb-3aced96e9f0f}" />
+  <Node Name="ListenerBase2" TypeGUID="{738bea1e-99bb-4f04-90bb-a7a567e74e3a}" EmbeddedTypeGUIDs="" ProvidesLanguageModel="false" ObjectGUID="{bf74bc62-214b-0ed0-3800-02e4e6bc3403}" />
+  <Node Name="FB_VisionCameraBase" TypeGUID="{6f9dac99-8de1-4efc-8465-68ac443b7d08}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{b0295dd6-c50c-09ad-30bc-8207e7c92ca7}">
+    <Node Name="LightBackground" TypeGUID="{5a3b8626-d3e9-4f37-98b5-66420063d91e}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{e1992b55-c02e-02a3-36aa-827937f34cbb}">
+      <Node Name="Get" TypeGUID="{792f2eb6-721e-4e64-ba20-bc98351056db}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{753290a6-933d-0a27-2f1b-c5085a0d2f54}" />
+      <Node Name="Set" TypeGUID="{792f2eb6-721e-4e64-ba20-bc98351056db}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{368c4b9a-1a73-0c59-1679-8a398c773ddf}" />
+    </Node>
+    <Node Name="ExposureAddress" TypeGUID="{5a3b8626-d3e9-4f37-98b5-66420063d91e}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{b18cd76d-cead-0066-3112-3f98a70c9ce4}">
+      <Node Name="Set" TypeGUID="{792f2eb6-721e-4e64-ba20-bc98351056db}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{12ebef1d-846f-0f69-3ef3-e2e8b0d1b1eb}" />
+    </Node>
+    <Node Name="GainAddress" TypeGUID="{5a3b8626-d3e9-4f37-98b5-66420063d91e}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{7eb9b59a-13b8-0520-1980-750206a17609}">
+      <Node Name="Set" TypeGUID="{792f2eb6-721e-4e64-ba20-bc98351056db}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{5bdac59e-ef2d-0a4f-0fd3-834a156cbf31}" />
+    </Node>
+    <Node Name="CyclicLogic" TypeGUID="{f8a58466-d7f6-439f-bbb8-d4600e41d099}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{8fe57172-d515-05b5-2806-7e85b0adc62f}" />
+    <Node Name="HMICommunication" TypeGUID="{f8a58466-d7f6-439f-bbb8-d4600e41d099}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{4842a0ae-d0e9-0512-3003-5985e5aaf39e}" />
+    <Node Name="ProcessImage" TypeGUID="{f8a58466-d7f6-439f-bbb8-d4600e41d099}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{2abd20cc-be25-0585-31d2-d7ceb921139b}" />
+    <Node Name="ReadParamUDINT" TypeGUID="{f8a58466-d7f6-439f-bbb8-d4600e41d099}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{a25dfac4-42d5-0595-14b1-d8dfbafb9e61}" />
+    <Node Name="SetParamUDINT" TypeGUID="{f8a58466-d7f6-439f-bbb8-d4600e41d099}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{2c3864d4-77ea-02f8-2f6a-c4b57756be81}" />
+  </Node>
+  <Node Name="Blob Properties" TypeGUID="{738bea1e-99bb-4f04-90bb-a7a567e74e3a}" EmbeddedTypeGUIDs="" ProvidesLanguageModel="false" ObjectGUID="{b73c18da-2581-054d-201d-9a3ea11b7a0b}" />
+  <Node Name="Camera Properties" TypeGUID="{738bea1e-99bb-4f04-90bb-a7a567e74e3a}" EmbeddedTypeGUIDs="" ProvidesLanguageModel="false" ObjectGUID="{39341307-cb6c-0e4f-0429-3a7c9804b3c2}" />
+  <Node Name="FB_VisionCameraDetection" TypeGUID="{6f9dac99-8de1-4efc-8465-68ac443b7d08}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{269fb07d-17a4-0eba-0b88-9c73ed66cb35}">
+    <Node Name="ProcessImage" TypeGUID="{f8a58466-d7f6-439f-bbb8-d4600e41d099}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{89afbac1-a931-0b51-1b43-568bf9e626a5}" />
+    <Node Name="Initialize" TypeGUID="{f8a58466-d7f6-439f-bbb8-d4600e41d099}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{f04bffa0-15e2-0c31-3b22-493c3181f44d}" />
+  </Node>
+  <Node Name="I_VisionBase" TypeGUID="{738bea1e-99bb-4f04-90bb-a7a567e74e3a}" EmbeddedTypeGUIDs="" ProvidesLanguageModel="false" ObjectGUID="{429f64d8-38c4-07ca-17e6-5d625f1cbd16}" />
+  <Node Name="Methods" TypeGUID="{738bea1e-99bb-4f04-90bb-a7a567e74e3a}" EmbeddedTypeGUIDs="" ProvidesLanguageModel="false" ObjectGUID="{3cbec1f0-6e2c-06ff-38cc-343ed5ad604a}" />
+  <Node Name="FB_VisionCameraMonitor" TypeGUID="{6f9dac99-8de1-4efc-8465-68ac443b7d08}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{d8d419fd-030b-0856-0bcf-0f3315775bed}">
+    <Node Name="CameraID" TypeGUID="{5a3b8626-d3e9-4f37-98b5-66420063d91e}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{921a5236-0350-07b3-0dd3-3006607c53cc}">
+      <Node Name="Set" TypeGUID="{792f2eb6-721e-4e64-ba20-bc98351056db}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{34a16577-b336-0a91-05f4-6cd722ab3afb}" />
+    </Node>
+    <Node Name="FramesPerSecond" TypeGUID="{5a3b8626-d3e9-4f37-98b5-66420063d91e}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{35096b2d-98db-0d3d-3ee9-e14f7c4d6cc4}">
+      <Node Name="Set" TypeGUID="{792f2eb6-721e-4e64-ba20-bc98351056db}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{3b797be2-79b1-0261-22be-e59cadc3b073}" />
+    </Node>
+    <Node Name="ImageSourceDirectory" TypeGUID="{5a3b8626-d3e9-4f37-98b5-66420063d91e}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{e2e79d0b-80fc-021a-1d2f-cadc44e635b3}">
+      <Node Name="Set" TypeGUID="{792f2eb6-721e-4e64-ba20-bc98351056db}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{4b640bb5-c78b-08fe-041d-7ef03edc00f1}" />
+    </Node>
+    <Node Name="VideoOutputDirectory" TypeGUID="{5a3b8626-d3e9-4f37-98b5-66420063d91e}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{950b164d-c31c-002a-1455-67bcdbca13a1}">
+      <Node Name="Set" TypeGUID="{792f2eb6-721e-4e64-ba20-bc98351056db}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{db799704-bcf0-0e48-246b-a17677fadba5}" />
+    </Node>
+    <Node Name="CyclicLogic" TypeGUID="{f8a58466-d7f6-439f-bbb8-d4600e41d099}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{463c785c-ec43-0d50-21b6-8e79370fa286}" />
+    <Node Name="Initialize" TypeGUID="{f8a58466-d7f6-439f-bbb8-d4600e41d099}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{f3b4d724-0e49-0566-3180-8b40d6334044}" />
+    <Node Name="ProcessImage" TypeGUID="{f8a58466-d7f6-439f-bbb8-d4600e41d099}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94};{3b83b776-fb25-43b8-99f2-3c507c9143fc}" ObjectGUID="{05e949a8-b2c4-0ff7-1b66-3dbd543c7d8c}" />
+  </Node>
+  <Node Name="Video Properties" TypeGUID="{738bea1e-99bb-4f04-90bb-a7a567e74e3a}" EmbeddedTypeGUIDs="" ProvidesLanguageModel="false" ObjectGUID="{865987ea-783e-0962-2144-a91294ce502e}" />
+  <Node Name="I_CameraBase" TypeGUID="{6654496c-404d-479a-aad2-8551054e5f1e}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{676683d4-c8ad-0251-0642-4232bdb4f4f8}">
+    <Node Name="CyclicLogic" TypeGUID="{f89f7675-27f1-46b3-8abb-b7da8e774ffd}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{95255556-acc5-093f-3ad8-4cc5a92beaf6}" />
+    <Node Name="ProcessImage" TypeGUID="{f89f7675-27f1-46b3-8abb-b7da8e774ffd}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{bccf2511-65b9-0283-28e7-4716a234db4b}" />
+  </Node>
+  <Node Name="Parameters_Vision" TypeGUID="{ffbfa93a-b94d-45fc-a329-229860183b1d}" EmbeddedTypeGUIDs="{a9ed5b7e-75c5-4651-af16-d2c27e98cb94}" ObjectGUID="{56c9dfe6-e032-0b0f-1edc-689100bf16fe}" />
+  <Node Name="VISUs" TypeGUID="{738bea1e-99bb-4f04-90bb-a7a567e74e3a}" EmbeddedTypeGUIDs="" ProvidesLanguageModel="false" ObjectGUID="{1b4b1b3a-d161-48f3-b098-5f09217e9ba6}" />
+  <Node Name="Project Settings" TypeGUID="{8753fe6f-4a22-4320-8103-e553c4fc8e04}" EmbeddedTypeGUIDs="" ProvidesLanguageModel="false" ObjectGUID="{6470a90f-b7cb-43ac-9ae5-94b2338b4573}" />
+</Library>
