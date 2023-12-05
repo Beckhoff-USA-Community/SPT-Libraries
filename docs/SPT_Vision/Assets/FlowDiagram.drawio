@@ -1,0 +1,28 @@
+<mxfile host="Electron" modified="2023-11-28T14:24:26.120Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.5 Chrome/114.0.5735.243 Electron/25.3.1 Safari/537.36" etag="ed59O0wTqR-BAEM15-Vl" version="21.6.5" type="device">
+  <diagram name="Page-1" id="BdfBqy5E8suxvyjmO8KK">
+    <mxGraphModel dx="2362" dy="1366" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="0Wpm7n9Ylp2ZLUTAbepn-1" value="Vision Task" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;verticalAlign=top;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-408" y="-181" width="592" height="665" as="geometry" />
+        </mxCell>
+        <mxCell id="0Wpm7n9Ylp2ZLUTAbepn-2" value="FB_VisionCameraMonitor:FB_VisionCameraBase&lt;br&gt;&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;verticalAlign=top;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-383" y="-130" width="551" height="584" as="geometry" />
+        </mxCell>
+        <mxCell id="0Wpm7n9Ylp2ZLUTAbepn-3" value="CyclicLogic()&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;VideoPlaybackControl.CyclicLogic()" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;verticalAlign=top;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-364" y="-89" width="517" height="526" as="geometry" />
+        </mxCell>
+        <mxCell id="0Wpm7n9Ylp2ZLUTAbepn-4" value="Camera State Engine&lt;br&gt;&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;verticalAlign=top;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-345" y="-40" width="483" height="347" as="geometry" />
+        </mxCell>
+        <mxCell id="0Wpm7n9Ylp2ZLUTAbepn-6" value="ProcessImage()" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;verticalAlign=top;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-328" y="-1" width="448" height="291" as="geometry" />
+        </mxCell>
+        <mxCell id="0Wpm7n9Ylp2ZLUTAbepn-7" value="VideoPlaybackControl.AddImage" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;verticalAlign=top;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-311" y="39" width="414" height="229" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
