@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.0">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.45e1311d.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -1099,6 +1099,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../SPT_Components/ComponentGuide.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guide to write a Component
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../SPT_Components/changelog.html" class="md-nav__link">
         
   
@@ -1895,6 +1916,15 @@
   <a href="#st_amppoint" class="md-nav__link">
     <span class="md-ellipsis">
       ST_AmpPoint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#st_camtableslavedynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      ST_CamTableSlaveDynamics
     </span>
   </a>
   
@@ -2933,6 +2963,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#st_camtableslavedynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      ST_CamTableSlaveDynamics
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3185,6 +3224,21 @@ END_TYPE
 <p>Circular Parameter Detail:</p>
 <p><img alt="" src="CircularParameter.png" /></p>
 </div>
+<h3 id="st_camtableslavedynamics">ST_CamTableSlaveDynamics</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>TYPE ST_CamTableSlaveDynamics :
+    STRUCT
+        SlavePosition     : LREAL;
+        SlaveVelocity     : LREAL;
+        SlaveAcceleration : LREAL;
+    END_STRUCT
+END_TYPE
+</code></pre></div></td></tr></table></div>
 
 
 

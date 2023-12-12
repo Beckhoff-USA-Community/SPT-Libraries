@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="index.html">
+        <link rel="prev" href="examples/solenoidbankbase.html">
       
       
         <link rel="next" href="changelog.html">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Functions - SPT Application Framework Documentation</title>
+        <title>Guide to write a Component - SPT Application Framework Documentation</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#functions" class="md-skip">
+        <a href="#guide-to-write-a-component" class="md-skip">
           Skip to content
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Functions
+              Guide to write a Component
             
           </span>
         </div>
@@ -276,11 +276,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../SPT_Components/index.html" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="index.html" class="md-tabs__link">
           
   
   SPT Components
@@ -321,13 +323,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="index.html" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../SPT_Event_Logger/index.html" class="md-tabs__link">
           
   
   SPT Event Logger
@@ -840,8 +840,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -850,12 +852,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
@@ -869,7 +871,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             SPT Components
@@ -883,7 +885,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SPT_Components/index.html" class="md-nav__link">
+      <a href="index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -941,7 +943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SPT_Components/cylinders.html" class="md-nav__link">
+      <a href="cylinders.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -962,7 +964,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SPT_Components/motioncontrol.html" class="md-nav__link">
+      <a href="motioncontrol.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -983,7 +985,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SPT_Components/sensors.html" class="md-nav__link">
+      <a href="sensors.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1004,7 +1006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SPT_Components/PackMLEvent.html" class="md-nav__link">
+      <a href="PackMLEvent.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1070,7 +1072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SPT_Components/examples/solenoidbankbase.html" class="md-nav__link">
+      <a href="examples/solenoidbankbase.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1096,10 +1098,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../SPT_Components/ComponentGuide.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Guide to write a Component
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="ComponentGuide.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1108,6 +1130,113 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Planning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component Development
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Component Development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cyclic-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cyclic Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commands-and-feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commands and Feedback
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#errors-and-warnings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Errors and Warnings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hmi" class="md-nav__link">
+    <span class="md-ellipsis">
+      HMI
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#template" class="md-nav__link">
+    <span class="md-ellipsis">
+      Template
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1120,7 +1249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SPT_Components/changelog.html" class="md-nav__link">
+      <a href="changelog.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1474,8 +1603,6 @@
       
   
   
-    
-  
   
   
     
@@ -1486,12 +1613,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
@@ -1505,7 +1632,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             SPT Event Logger
@@ -1519,7 +1646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="index.html" class="md-nav__link">
+      <a href="../SPT_Event_Logger/index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1537,30 +1664,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Functions
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="functions.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../SPT_Event_Logger/functions.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1569,89 +1676,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#f_clearalleventsinclass" class="md-nav__link">
-    <span class="md-ellipsis">
-      F_ClearAllEventsInClass
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#f_createalleventsinclass" class="md-nav__link">
-    <span class="md-ellipsis">
-      F_CreateAllEventsInClass
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#f_getmaxseverityraised" class="md-nav__link">
-    <span class="md-ellipsis">
-      F_GetMaxSeverityRaised
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#f_raisealarm" class="md-nav__link">
-    <span class="md-ellipsis">
-      F_RaiseAlarm
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#f_raisealarmandsetflags" class="md-nav__link">
-    <span class="md-ellipsis">
-      F_RaiseAlarmAndSetFlags
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#f_raisealarmwithstringparameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      F_RaiseAlarmWithStringParameters
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#f_raisealarmwithstringsandflags" class="md-nav__link">
-    <span class="md-ellipsis">
-      F_RaiseAlarmWithStringsAndFlags
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1664,7 +1688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="changelog.html" class="md-nav__link">
+      <a href="../SPT_Event_Logger/changelog.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2819,63 +2843,87 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#f_clearalleventsinclass" class="md-nav__link">
+  <a href="#planning" class="md-nav__link">
     <span class="md-ellipsis">
-      F_ClearAllEventsInClass
+      Planning
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#f_createalleventsinclass" class="md-nav__link">
+  <a href="#component-development" class="md-nav__link">
     <span class="md-ellipsis">
-      F_CreateAllEventsInClass
+      Component Development
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Component Development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cyclic-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cyclic Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commands-and-feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commands and Feedback
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#errors-and-warnings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Errors and Warnings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hmi" class="md-nav__link">
+    <span class="md-ellipsis">
+      HMI
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentation
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#f_getmaxseverityraised" class="md-nav__link">
+  <a href="#template" class="md-nav__link">
     <span class="md-ellipsis">
-      F_GetMaxSeverityRaised
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#f_raisealarm" class="md-nav__link">
-    <span class="md-ellipsis">
-      F_RaiseAlarm
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#f_raisealarmandsetflags" class="md-nav__link">
-    <span class="md-ellipsis">
-      F_RaiseAlarmAndSetFlags
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#f_raisealarmwithstringparameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      F_RaiseAlarmWithStringParameters
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#f_raisealarmwithstringsandflags" class="md-nav__link">
-    <span class="md-ellipsis">
-      F_RaiseAlarmWithStringsAndFlags
+      Template
     </span>
   </a>
   
@@ -2896,104 +2944,109 @@
                   
 
 
-<h1 id="functions">Functions</h1>
-<h2 id="f_clearalleventsinclass">F_ClearAllEventsInClass</h2>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>FUNCTION F_ClearAllEventsInClass
-VAR_IN_OUT
-    Alarms : ARRAY[*] OF FB_TcAlarm; //! Array of Alarms to be defined
-END_VAR
-</code></pre></div></td></tr></table></div>
-<p>Clears any events within <code>Alarms</code> that may have been raised.</p>
-<h2 id="f_createalleventsinclass">F_CreateAllEventsInClass</h2>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>FUNCTION F_CreateAllEventsInClass
-VAR_IN_OUT
-    Alarms : ARRAY[*] OF FB_TcAlarm; //! Array of Alarms to be defined
-END_VAR
+<h1 id="guide-to-write-a-component">Guide to write a Component</h1>
+<div class="admonition rules">
+<p class="admonition-title">Rules</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Plan your component before writing code.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Use <a href="../Getting_Started\DesignGuide.md#style-guide" target="_blank">SPT style guide</a> to develop your component.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Use SPT Component Base.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Apply SPT principal for Command execution.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Create Errors for your Component.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Create example Hmi for your Component.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Prevent using <code>VAR_INPUT</code>, <code>VAR_OUTPUT</code> and <code>VAR_INOUT</code>. Use Methods and Properties to access component.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Document your components functionality</li>
+</ul>
+</div>
+<p>It is necessary to be familiar with the <a href="../Getting_Started\DesignGuide.md" target="_blank">Design Guide</a> of the SPT Framework.</p>
+<h2 id="planning">Planning</h2>
+<p>Before starting to write code for your component it is essential to plan the functionality. Consider using planning tools for your class diagram such as <a href="https://www.mermaidchart.com/" target="_blank">mermaid</a></p>
+<p>To use the object oriented approach the planning process focuses on reusability of the component. </p>
+<ul>
+<li>What is the smallest single function needed?</li>
+<li>What is the intended function of this component?</li>
+<li>The component starts small with basic functions and can subsequently be inherited to add functionality.</li>
+<li>Plan interfaces to PackML state machine. No, to very limited sequences inside of Components. The sequencing of commands will be handled by Equipment Module or Machine Module. </li>
+</ul>
+<details class="example">
+<summary>Example Class Diagram</summary>
+<p>Example could be a cylinder with Extend/Retract output as base component. 
+The extension adds inputs for extended/retracted along with error messages for final position not reached.</p>
+<pre class="mermaid"><code>    classDiagram
+FB_Component_MyComponentExtension &lt;|-- FB_Component_MyComponentBase
+FB_Component_MyComponentBase &lt;|-- FB_ComponentBase
+FB_Component_MyComponentBase &lt;|-- I_Component_MyComponentBase
+I_Component_MyComponentExtension &lt;|-- I_Component_MyComponentBase
+FB_Component_MyComponentExtension &lt;|-- I_Component_MyComponentExtension 
+FB_ComponentBase &lt;|-- I_ComponentBase
+FB_ComponentBase &lt;|-- FB_CyclicFB
+FB_CyclicFB &lt;|-- FB_BaseFB
+FB_BaseFB &lt;|-- I_BaseFB
+FB_CyclicFB &lt;|-- I_CyclicFB
 
-VAR_INPUT
-    ClassSize  : UDINT;                   //! Size in bytes of the event class
-    pInitEvent : POINTER TO TcEventEntry; //! Address of first event in Event Class (Should be the InitReferenceEvent)
-    Prefix     : STRING;                  //! String Prefix for the Event Message -- Usually the Module ID and Name
-END_VAR
-</code></pre></div></td></tr></table></div>
-Initializes all instances of <code>FB_TcAlarm</code> within <code>Alarms</code>.</p>
-<h2 id="f_getmaxseverityraised">F_GetMaxSeverityRaised</h2>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>FUNCTION F_GetMaxSeverityRaised : TcEventSeverity //! Maximum severity
-VAR_IN_OUT
-    Alarms : ARRAY[*] OF FB_TcAlarm; //! Events to compare against
-END_VAR
+class I_ComponentBase{
+    CurrentAlarmSeverity
+    InSimulation
+    Name
+    ParentResponseDefinitions
 
-VAR_INPUT
-    CurrentSeverity : TcEventSeverity; //! Current severity of module alarm
-END_VAR
-</code></pre></div></td></tr></table></div>
-<p>Returns the highest severity level of any events currently raised within <code>Alarms</code>.</p>
-<h2 id="f_raisealarm">F_RaiseAlarm</h2>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>FUNCTION F_RaiseAlarm
-VAR_IN_OUT
-    Alarm : FB_TcAlarm; //! Alarm to be raised
-END_VAR
-</code></pre></div></td></tr></table></div>
-<p>Raises event associated with <code>Alarm</code>.</p>
-<h2 id="f_raisealarmandsetflags">F_RaiseAlarmAndSetFlags</h2>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>FUNCTION F_RaiseAlarmAndSetFlags
-VAR_IN_OUT
-    Alarm     : FB_TcAlarm; //! Alarm to be raised
-    ErrorFlag : BOOL;       //! Error flag to set (VAR_IN_OUT, put the variable you want the function to SET here)
-    ErrorID   : UDINT;      //! Error ID to set (VAR_IN_OUT, put the variable you want the function to SET here) - Will be set using the ID of the given fbAlarm
-END_VAR
-</code></pre></div></td></tr></table></div>
-<p>Raises event associated with <code>Alarm</code>, sets <code>ErrorFlag</code> to <code>TRUE</code>, and copies the eventID associated with <code>Alarm</code> into <code>ErrorID</code>. </p>
-<h2 id="f_raisealarmwithstringparameters">F_RaiseAlarmWithStringParameters</h2>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>FUNCTION F_RaiseAlarmWithStringParameters
-VAR_IN_OUT
-    Alarm : FB_TcAlarm; //! Alarm to be raised
-END_VAR
-
-VAR_INPUT
-    String_1 : STRING; //! First string parameter
-    String_2 : STRING; //! Second string parameter
-    String_3 : STRING; //! Third string parameter
-END_VAR
-</code></pre></div></td></tr></table></div>
-<p>Raises event associated with <code>Alarm</code> and passes <code>String_n</code> as arguments for contextual information. </p>
-<h2 id="f_raisealarmwithstringsandflags">F_RaiseAlarmWithStringsAndFlags</h2>
+    AllowHmiControl()
+    BlockHmiControl()
+    Reset()
+}
+class I_CyclicFB {
+    InitComplete
+    CyclicLogic()
+}
+class I_BaseFB{
+    Busy
+    Error
+    ErrorID
+}
+note for FB_ComponentBase "This is found in Library SPT Base Types"
+class FB_ComponentBase{
+    CreateEvents()
+    HMICommunication()
+    Initialize()
+    Monitoring()
+    RaiseAlarm()
+    RaiseAlarmWithStrings()
+    RaiseEventWithStrings()
+}
+class I_Component_MyComponentBase{
+    MethodCommand1()
+    MethodCommand2()
+    Property1
+    Property2
+}
+class I_Component_MyComponentExtension{
+    FeedbackProperty1
+    FeedbackProperty2
+}</code></pre>
+</details>
+<h2 id="component-development">Component Development</h2>
+<p>The <code>FB_ComponentBase</code> provides the necessary functions to integrate seamlessly with the SPT Framework. <code>FB_ComponentBase</code> implements <code>I_ComponentBase</code> and extends <code>FB_CyclicFB</code>.</p>
+<p>Organize your components <code>FB_Component_MyComponent</code> methods and properties in folders as shown in the following example.</p>
+<div class="admonition example">
+<p class="admonition-title">Example Folder Structure</p>
+<p><img alt="" src="WriteComponent/Folders.png" /></p>
+</div>
+<h3 id="variables">Variables</h3>
+<p>The components variables are declared in the header of the FB. The following basic structure is recommended.</p>
+<p><img alt="" src="WriteComponent/Variables.png" /></p>
+<h3 id="cyclic-code">Cyclic Code</h3>
+<p>Cyclic logic will be executed in the method <code>CyclicLogic()</code> provided by <code>FB_CyclicFB</code>. No code is allowed in the body of the FB as it violates the design pattern of SPT!</p>
+<p>Inside of <code>CyclicLogic()</code> the component will be initialized, custom code executed, super called and the alarm severity determined.</p>
+<p>Every component inherits <code>FB_BaseFB</code>, related variables for <code>Error</code>, <code>ErrorId</code> and <code>Busy</code> are assigned in <code>CyclicLogic()</code> based on your custom functions.</p>
+<p><img alt="" src="WriteComponent/CyclicLogic.png" /></p>
+<h3 id="commands-and-feedback">Commands and Feedback</h3>
+<p><a href="https://infosys.beckhoff.com/english.php?content=../content/1033/tc3_plc_intro/4262436875.html&amp;id=" target="_blank">Interfaces</a> provide a unified access to your component. It shall include the commands to execute functions and the required feedbacks. </p>
+<p>The execution of a command for the component is required to implement the following pattern. </p>
+<p><strong>Trigger the Command:</strong></p>
+<p>The command is executed by calling the method for one cycle, the return value of the method must indicate if the command has been accepted.</p>
+<details class="example">
+<summary>Example Command</summary>
+<p>Method <code>MyCommand1:BOOL</code>:
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -3005,20 +3058,184 @@ END_VAR
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code>FUNCTION F_RaiseAlarmWithStringsAndFlags
-VAR_IN_OUT
-    Alarm     : FB_TcAlarm; //! Alarm to be raised
-    ErrorFlag : BOOL;       //! Error flag to set (VAR_IN_OUT, put the variable you want the function to SET here)
-    ErrorID   : UDINT;      //! Error ID to set (VAR_IN_OUT, put the variable you want the function to SET here) - Will be set using the ID of the given fbAlarm
-END_VAR
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code>// Component already busy -&gt; return and not accept command
+IF _Busy THEN
+    // Trace Message Command was not accepted
+    TRACE(&#39;MyCommand1 rejected, component busy!&#39;);
+    RETURN;
+END_IF
 
-VAR_INPUT
-    String_1 : STRING; //! First string parameter
-    String_2 : STRING; //! Second string parameter
-    String_3 : STRING; //! Third string parameter
-END_VAR
+// Execute MyCommand1.....
+//
+//
+//
+MyCommand1 := TRUE;
 </code></pre></div></td></tr></table></div>
-<p>Raises event associated with <code>Alarm</code>, sets <code>ErrorFlag</code> to <code>TRUE</code>, and copies the eventID associated with <code>Alarm</code> into <code>ErrorID</code>.  <code>String_n</code> are passed as arguments for contextual information. </p>
+<img alt="" src="WriteComponent/ExampleCommand.png" /></p>
+</details>
+<p><strong>Wait for Done or Error:</strong></p>
+<p>Once the command has been accepted, the component is expected to be <code>Busy</code> indicated by <code>MyComponent.Busy</code> equals <code>True</code> . At successful completion of the command the <code>Busy</code> turns back to <code>False</code>.</p>
+<p>In cases where the component command fails execution the <code>Busy</code> bit is expected to turn <code>False</code> and the <code>Error</code>,<code>ErrorId</code> indicate an error. Further an alarm is expected to be raised. (Explained in the following paragraph.)</p>
+<details class="example">
+<summary>Example Command Sequence for a Component</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>    CASE SequenceState OF
+        0: // Trigger Command
+            IF MyComponent.MyCommand1() THEN
+                SequenceState := SequenceState + 10;
+            END_IF
+
+        10: // Wait for Done
+            IF NOT MyComponent.Busy AND NOT MyComponent.Error THEN
+                SequenceState := SequenceState + 10;
+            END_IF
+    END_CASE
+</code></pre></div></td></tr></table></div>
+</details>
+<p>This is the default handling of component commands if not documented otherwise.</p>
+<h3 id="errors-and-warnings">Errors and Warnings</h3>
+<p>In case the component fails an error is expected. The SPT framework uses the <a href="../Getting_Started\SPT Event Logger.md" target="_blank">TwinCAt Eventlogger</a></p>
+<h4 id="create-an-alarm">Create an Alarm</h4>
+<p>To create Alarms, each component has an array of <code>FB_TcAlarm</code> along with a .tmc file which contains the event class.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>// Alarms
+    MyComponentAlarms : ARRAY[1..MY_COMPONENT_ALARMS_COUNT] OF FB_TcAlarm;
+</code></pre></div></td></tr></table></div>
+<p>Create the Event Class in the TMC Editor.</p>
+<details class="info">
+<summary>Create Event Class</summary>
+<p><img alt="" src="WriteComponent/CreateEventClass1.png" />
+<img alt="" src="WriteComponent/CreateEventClass2.png" />
+<img alt="" src="WriteComponent/CreateEventClass3.png" /></p>
+</details>
+<p>The method <code>CreateEvents()</code> is called during initialization from the base class and needs to be overwritten to initialize the MyComponent Events.</p>
+<p>The first event in the custom created event class is reserved for the initialization message.
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>    SUPER^.CreateEvents();
+    F_CreateAllEventsInClass(Alarms     := MyComponentAlarms,
+                            ClassSize   := SIZEOF(TC_EVENTS.MyComponentAlarms),
+                            pInitEvent := ADR(TC_EVENTS.MyComponentAlarms.InitReferenceEvent),
+                            Prefix      := _Name);
+</code></pre></div></td></tr></table></div></p>
+<h4 id="trigger-an-alarm">Trigger an Alarm</h4>
+<p>After the alarms have been initialized they can be raised in <code>Monitoring()</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>    SUPER^.Monitoring();
+    {error &#39;raise custom alarms here&#39;}
+    IF TRUE AND NOT MyComponentAlarms[E_MyComponentAlarms.MyExampleError].bRaised THEN
+        RaiseAlarmWithStrings(MyComponentAlarms[E_MyComponentAlarms.MyExampleError], &#39;&#39;, &#39;&#39;);
+    END_IF
+</code></pre></div></td></tr></table></div>
+<p>The reset of the alarm is expected in <code>Reset()</code>. 
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>    // Clear Component Alarms
+    F_ClearAllEventsInClass(MyComponentAlarms);
+
+    // Call Super
+    Reset := Super^.Reset();
+</code></pre></div></td></tr></table></div></p>
+<details class="note">
+<summary>Note Reset</summary>
+<p>If <code>FB_PackML_BaseModule</code> is used as Equipment Module or Machine Module the state <code>Clearing()</code> is calling the <code>Reset()</code> of the registered component when the bit <code>Error</code> is <code>True</code>.</p>
+</details>
+<p>The component is cyclicly determining the highest <code>CurrentAlarmSeverity</code> in <code>CyclicLogic()</code>. The Equipment Module which the Component is part of will read the <code>CurrentAlarmSeverity</code> and determine along with the <code>ParentFaultResponseDefinitions</code> the error reaction. </p>
+<p>By default the error reaction is set in the base class <code>FB_ComponentBase</code> but may be adjusted by the component developer.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>    _ParentFaultResponseDefinitions : ARRAY[0..4] OF E_AlarmResponse := [   E_AlarmResponse.NoResponse, 
+                                                                            E_AlarmResponse.NoResponse, 
+                                                                            E_AlarmResponse.NoResponse, 
+                                                                            E_AlarmResponse.Abort_ImmediateError, 
+                                                                            E_AlarmResponse.Abort_ImmediateError];
+</code></pre></div></td></tr></table></div>
+<p>In the default case any alarm with severity <code>error</code> or <code>critical</code> will lead the controlling EM to an Abort_ImmediateError.</p>
+<p>The error reaction can be changed via property <code>ParentResponseDefinitions</code>.</p>
+<p><img alt="" src="WriteComponent/Severity.png" /></p>
+<details class="tip">
+<summary>Tip Error Reaction</summary>
+<p>Example case to change the error reaction is the failure of a stack light fuse. The alarm can have severity error, however the error reaction is set to <code>E_AlarmResponse.NoResponse</code>.</p>
+</details>
+<h3 id="hmi">HMI</h3>
+<p>For communication with the HMI/UI the structure ending with <code>_HMI</code> will be used. This structure consists of three Parts - <strong>config</strong>, <strong>command</strong> and <strong>status</strong>.
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>    // HMI
+    MyComponent_HMI         : ST_ComponentMyComponent_HMI;
+    HMICommandDescendant_RT : R_TRIG;
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>TYPE ST_ComponentMyComponent_HMI :
+    STRUCT
+        Config  : ST_ComponentMyComponent_Config;
+        Command : ST_ComponentMyComponent_Command;
+        Status  : ST_ComponentMyComponent_Status;
+    END_STRUCT
+END_TYPE
+</code></pre></div></td></tr></table></div></p>
+<p><code>FB_ComponentBase</code> contains <code>ComponentBase_HMI</code> for the config, command and status from the Base Class to be used in HMI. E.g. Busy, Error, ErrorID.</p>
+<p>Code for Hmi communication will be placed in the overwritten method of <code>HMICommunication()</code>.</p>
+<p>First section ensures commands are triggered with positive edge.
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>HMICommandDescendant_RT(CLK := (ComponentBase_HMI.Status.HMIControlAvailable AND NOT HMICommandActive_Base) AND (MyComponent_HMI.Command.MyCommand1 XOR MyComponent_HMI.Command.MyCommand2));
+</code></pre></div></td></tr></table></div></p>
+<div class="admonition note">
+<p class="admonition-title">Allow and Block HMI Control</p>
+<p><code>ComponentBase_HMI.Status.HMIControlAvailable</code> is provided by the <code>FB_ComponentBase</code>. The Equipment Module can influence HMI operability by using the Methods <code>AllowHmiControl()</code> and <code>BlockHmiControl()</code>.</p>
+</div>
+<p>Second section provides feedback to the base class if command is currently active to ensure one command at a time.
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>HMICommandActive_Descendant := ComponentBase_HMI.Status.HMIControlAvailable AND (MyComponent_HMI.Command.MyCommand1 OR MyComponent_HMI.Command.MyCommand2);
+</code></pre></div></td></tr></table></div></p>
+<p>The third section updates the status to the HMI.
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>//Update HMI status info
+MyComponent_HMI.Status.MyVarProperty1 := _MyVarProperty1;
+MyComponent_HMI.Status.MyVarProperty2 := _MyVarProperty2;
+</code></pre></div></td></tr></table></div></p>
+<h2 id="documentation">Documentation</h2>
+<p>In any case it is necessary to document the intent and functionality of your custom component.</p>
+<p>To release the component via the SPT Framework platform the following documentation points are required.</p>
+<div class="admonition rules">
+<p class="admonition-title">Rules for Documentation</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Class Diagram </li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Flow charts of operation and commands</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> User Guide with quick start and example code</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Interface documentation explaining all Methods and Properties</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Function Blocks, intended use and functions</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Data Types</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Parameter</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Change Log</li>
+</ul>
+</div>
+<h2 id="template">Template</h2>
+<p>This guide to write a component provides a template component to find <a href="https://github.com/Beckhoff-USA-Community/SPT_Component-Template" target="_blank">here</a>.</p>
+<p>The compiler errors will guide along with this document to develop a custom component.
+<img alt="" src="WriteComponent/Errors.png" /></p>
 
 
 

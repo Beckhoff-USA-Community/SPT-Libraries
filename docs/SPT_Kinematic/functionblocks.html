@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.0">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.45e1311d.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -1087,6 +1087,27 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Components/ComponentGuide.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guide to write a Component
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4002,6 +4023,18 @@ It implements and uses <a href="https://www.beckhoff.com/en-en/products/automati
 <td>R</td>
 <td>References the Cam Master Axis</td>
 </tr>
+<tr>
+<td>CamInOptions</td>
+<td><a href="https://infosys.beckhoff.com/english.php?content=../content/1033/tcplclibmc2_camming/460469259.html&amp;id=" target="_blank">ST_CamInOptions</a></td>
+<td>R/W</td>
+<td>Set options for CamIn</td>
+</tr>
+<tr>
+<td>CamTableSlaveDynamics</td>
+<td>ARRAY[1..KINEMATIC_CONSTANTS.DEGREES_OF_FREEDOM_MAX] OF ST_CamTableSlaveDynamics</td>
+<td>R</td>
+<td>Slave dynamics read with <code>ReadCamTableSlaveDynamics()</code></td>
+</tr>
 </tbody>
 </table>
 <h3 id="methods_4">Methods</h3>
@@ -4069,6 +4102,11 @@ It implements and uses <a href="https://www.beckhoff.com/en-en/products/automati
 <td>BOOL</td>
 <td>Returns <code>TRUE</code> Command was accepted, Stops all movement</td>
 </tr>
+<tr>
+<td>ReadCamTableSlaveDynamics</td>
+<td>BOOL</td>
+<td>Returns <code>TRUE</code> Reads the cam table slave dynamics at the Master Position and saves it in Property <code>CamTableSlaveDynamics</code></td>
+</tr>
 </tbody>
 </table>
 <h4 id="camaddpointtopath">CamAddPointToPath()</h4>
@@ -4120,7 +4158,7 @@ VAR_INPUT
     Axis                     : UDINT(1..KINEMATIC_CONSTANTS.DEGREES_OF_FREEDOM_MAX);                   // Axis Number to add point to Cam table
     MotionFunctionFirstPoint : MC_MotionFunctionType := MC_MotionFunctionType.MOTIONFUNCTYPE_POLYNOM5; // Motion Function Type of initial Point in Cam Table. Start Postion is defined by current Positon of Axes.
     MotionFunctionThisPoint  : MC_MotionFunctionType := MC_MotionFunctionType.MOTIONFUNCTYPE_POLYNOM5; // Motion Function Type of this Point to be added to Cam-Table
-    PointNumber              : UDINT(2..Parameter_Kinematic.MaxCammingPositionsPerTable);              // Number of Point to be added to Cam Table, must be strictly increasing without gaps
+    PointNumber              : UDINT(1..Parameter_Kinematic.MaxCammingPositionsPerTable);              // Number of Point to be added to Cam Table, must be strictly increasing without gaps
     TotalPointsInTable       : UDINT(2..Parameter_Kinematic.MaxCammingPositionsPerTable);              // Total Number of Points in final Cam Table
     MasterPosition           : LREAL;                                                                  // Master Position for this Motion Point scaled to 1
     SlavePosition            : LREAL;                                                                  // Slave Position at this Point in Cam Table
@@ -4130,6 +4168,7 @@ VAR_INPUT
 END_VAR
 </code></pre></div></td></tr></table></div>
 <p><code>CamAddMotionPointByAxis()</code> differentiates from <code>CamAddPointToPath()</code> that it can create a cam table by Axis. </p>
+<p>With Parameter <code>CammingFirstPointInTableByUser</code> equals <code>TRUE</code> the first point in Cam table can be changed from Cam Master starting position to user defined. Therefore use <code>CamAddMotionPointByAxis()</code> to set Point 1 to the desired Master and Slave Position by Axis.</p>
 <p>The scaling of the Master is defined by 0.0 to 1.0 (no unit). Within this range for each Axis one cam table can be created with variable Point count <code>PointNumber</code>.</p>
 <p><code>CamAddPointToPath()</code> evenly divides the Master range 0.0 to 1.0 by the number of points <code>TotalPointsInTable()</code>. With <code>CamAddMotionPointByAxis()</code> the user must create the relationship between Master Positions and slave Positions by axis. The <code>TotalPointsInTable</code> is by Axis in <code>CamAddMotionPointByAxis()</code>.</p>
 <h4 id="camin">CamIn()</h4>
@@ -4221,6 +4260,30 @@ Read <a href="https://infosys.beckhoff.com/english.php?content=../content/1033/t
 <td>R</td>
 <td>References the Cam Master Axis for MCS</td>
 </tr>
+<tr>
+<td>CamInOptionsACS</td>
+<td><a href="https://infosys.beckhoff.com/english.php?content=../content/1033/tcplclibmc2_camming/460469259.html&amp;id=" target="_blank">ST_CamInOptions</a></td>
+<td>R/W</td>
+<td>Set options for CamIn ACS</td>
+</tr>
+<tr>
+<td>CamInOptionsMCS</td>
+<td><a href="https://infosys.beckhoff.com/english.php?content=../content/1033/tcplclibmc2_camming/460469259.html&amp;id=" target="_blank">ST_CamInOptions</a></td>
+<td>R/W</td>
+<td>Set options for CamIn MCS</td>
+</tr>
+<tr>
+<td>CamTableSlaveDynamicsACS</td>
+<td>ARRAY[1..KINEMATIC_CONSTANTS.DEGREES_OF_FREEDOM_MAX] OF ST_CamTableSlaveDynamics</td>
+<td>R</td>
+<td>Slave dynamics read with <code>ReadCamTableSlaveDynamicsACS()</code></td>
+</tr>
+<tr>
+<td>CamTableSlaveDynamicsMCS</td>
+<td>ARRAY[1..KINEMATIC_CONSTANTS.DEGREES_OF_FREEDOM_MAX] OF ST_CamTableSlaveDynamics</td>
+<td>R</td>
+<td>Slave dynamics read with <code>ReadCamTableSlaveDynamicsMCS()</code></td>
+</tr>
 </tbody>
 </table>
 <h3 id="methods_5">Methods</h3>
@@ -4297,6 +4360,16 @@ Read <a href="https://infosys.beckhoff.com/english.php?content=../content/1033/t
 <td>SetPoint</td>
 <td>BOOL</td>
 <td>Set Point to Point input Value</td>
+</tr>
+<tr>
+<td>ReadCamTableSlaveDynamicsACS</td>
+<td>BOOL</td>
+<td>Returns <code>TRUE</code> Reads the cam table slave dynamics at the Master Position and saves it in Property <code>CamTableSlaveDynamicsACS</code></td>
+</tr>
+<tr>
+<td>ReadCamTableSlaveDynamicsMCS</td>
+<td>BOOL</td>
+<td>Returns <code>TRUE</code> Reads the cam table slave dynamics at the Master Position and saves it in Property <code>CamTableSlaveDynamicsMCS</code></td>
 </tr>
 </tbody>
 </table>
