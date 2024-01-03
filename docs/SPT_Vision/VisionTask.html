@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
     
     
       
@@ -2952,9 +2952,9 @@
 <p>The design is to have a Vision Base object that can have all things needed to setup and run a camera and take a picture.  Then the extended classes would be implement the ProcessImage in order to handle the processing as needed.   From the base class, three types of vision handling are given to use:</p>
 <ol>
 <li>Object Detection - Results at a minimum are x,y,a relative to origin of image</li>
-<li><img alt="🚧" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f6a7.svg" title=":construction:" /> Measurement - Results are Pass fail or Offset or distance value</li>
-<li><img alt="🚧" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f6a7.svg" title=":construction:" /> Inspection - Results are Pass fail</li>
-<li><img alt="🚧" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f6a7.svg" title=":construction:" /> <img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f914.svg" title=":thinking:" /> Combo of Tools - Array of method pointers to choose the tools you want to use</li>
+<li><img alt="🚧" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f6a7.svg" title=":construction:" /> Measurement - Results are Pass fail or Offset or distance value</li>
+<li><img alt="🚧" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f6a7.svg" title=":construction:" /> Inspection - Results are Pass fail</li>
+<li><img alt="🚧" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f6a7.svg" title=":construction:" /> <img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f914.svg" title=":thinking:" /> Combo of Tools - Array of method pointers to choose the tools you want to use</li>
 <li>Video Playback - Images are put together to create a AVI file when a fault occurs</li>
 </ol>
 <blockquote>
@@ -3036,7 +3036,7 @@ This method needs to be overriden in the Extended function block.  </p>
 <h3 id="setparamdint">SetParamDINT</h3>
 <h3 id="alarms">Alarms</h3>
 <p>The alarms array will be in the PLC Task so that the framework can handle them correclty for the machine.  The Vision Task will have to send Error and ErrorID over the TwinCAT Process Image.</p>
-<h3 id="to-do"><img alt="🚧" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f6a7.svg" title=":construction:" /> To Do</h3>
+<h3 id="to-do"><img alt="🚧" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f6a7.svg" title=":construction:" /> To Do</h3>
 <ol>
 <li>Switch between real camera and simulation</li>
 <li>Define a results Structure that fits the given solutions<ol>

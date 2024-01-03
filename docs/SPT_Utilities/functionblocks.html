@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
     
     
       
@@ -2365,6 +2365,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#fb_component_jsonfilehandler" class="md-nav__link">
+    <span class="md-ellipsis">
+      FB_Component_JsonFileHandler
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FB_Component_JsonFileHandler">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#properties_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methods
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3187,6 +3220,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#fb_component_jsonfilehandler" class="md-nav__link">
+    <span class="md-ellipsis">
+      FB_Component_JsonFileHandler
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FB_Component_JsonFileHandler">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#properties_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methods
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3727,6 +3793,84 @@ class FB_ArrayAny{
 <td></td>
 <td>ArrayIn : ANY</td>
 <td>This will empty the array and put the index to the beginning</td>
+</tr>
+</tbody>
+</table>
+<h2 id="fb_component_jsonfilehandler">FB_Component_JsonFileHandler</h2>
+<p>Basic handler for Json files. LoadFile() will load document or create file in <code>Path</code> if not existent. </p>
+<p>Same patter is followed in all <code>UpdateXYZ()</code> and <code>ReadXYZ()</code> methods, if member does not exist member will be created in file.</p>
+<h3 id="properties_4">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Path</td>
+<td>String</td>
+<td>Path to Json document e.g. <code>C:\MyJsonFile.json</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="methods_9">Methods</h3>
+<p>All methods return <code>TRUE</code> if command has been accepted.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LoadFile</td>
+<td>BOOL</td>
+<td>Loads Json document from <code>Path</code>, creates json file it not present in <code>Path</code>.</td>
+</tr>
+<tr>
+<td>ReadBool</td>
+<td>BOOL</td>
+<td>Read member from json file and display in <code>Value</code> output, creates member if not found in file.</td>
+</tr>
+<tr>
+<td>ReadDInt</td>
+<td>BOOL</td>
+<td>Read member from json file and display in <code>Value</code> output, creates member if not found in file.</td>
+</tr>
+<tr>
+<td>ReadLREAL</td>
+<td>BOOL</td>
+<td>Read member from json file and display in <code>Value</code> output, creates member if not found in file.</td>
+</tr>
+<tr>
+<td>ReadString</td>
+<td>BOOL</td>
+<td>Read member from json file and display in <code>Value</code> output, creates member if not found in file.</td>
+</tr>
+<tr>
+<td>UpdateBool</td>
+<td>BOOL</td>
+<td>Update member in json file, creates member if not found in file.</td>
+</tr>
+<tr>
+<td>UpdateDInt</td>
+<td>BOOL</td>
+<td>Update member in json file, creates member if not found in file.</td>
+</tr>
+<tr>
+<td>UpdateLreal</td>
+<td>BOOL</td>
+<td>Update member in json file, creates member if not found in file.</td>
+</tr>
+<tr>
+<td>UpdateString</td>
+<td>BOOL</td>
+<td>Update member in json file, creates member if not found in file.</td>
 </tr>
 </tbody>
 </table>
