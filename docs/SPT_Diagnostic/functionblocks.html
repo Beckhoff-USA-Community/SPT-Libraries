@@ -2983,6 +2983,84 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="SPT Diagnostic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fb_component_safety_base" class="md-nav__link">
+    <span class="md-ellipsis">
+      FB_Component_Safety_Base
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fb_component_safety_group" class="md-nav__link">
+    <span class="md-ellipsis">
+      FB_Component_Safety_Group
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fb_component_safety_andorfb" class="md-nav__link">
+    <span class="md-ellipsis">
+      FB_Component_Safety_AndOrFB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fb_component_safety_connectionfb" class="md-nav__link">
+    <span class="md-ellipsis">
+      FB_Component_Safety_ConnectionFB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fb_component_safety_edmfb" class="md-nav__link">
+    <span class="md-ellipsis">
+      FB_Component_Safety_EdmFB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fb_component_safety_estopfb" class="md-nav__link">
+    <span class="md-ellipsis">
+      FB_Component_Safety_EstopFB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fb_component_safety_monfb" class="md-nav__link">
+    <span class="md-ellipsis">
+      FB_Component_Safety_MonFB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fb_component_devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      FB_Component_Devices
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3109,6 +3187,84 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="SPT Diagnostic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fb_component_safety_base" class="md-nav__link">
+    <span class="md-ellipsis">
+      FB_Component_Safety_Base
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fb_component_safety_group" class="md-nav__link">
+    <span class="md-ellipsis">
+      FB_Component_Safety_Group
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fb_component_safety_andorfb" class="md-nav__link">
+    <span class="md-ellipsis">
+      FB_Component_Safety_AndOrFB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fb_component_safety_connectionfb" class="md-nav__link">
+    <span class="md-ellipsis">
+      FB_Component_Safety_ConnectionFB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fb_component_safety_edmfb" class="md-nav__link">
+    <span class="md-ellipsis">
+      FB_Component_Safety_EdmFB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fb_component_safety_estopfb" class="md-nav__link">
+    <span class="md-ellipsis">
+      FB_Component_Safety_EstopFB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fb_component_safety_monfb" class="md-nav__link">
+    <span class="md-ellipsis">
+      FB_Component_Safety_MonFB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fb_component_devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      FB_Component_Devices
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3161,9 +3317,98 @@
 
 <h1 id="function-blocks">Function Blocks</h1>
 <h2 id="spt-diagnostic">SPT Diagnostic</h2>
-<ul>
-<li>Not released</li>
-</ul>
+<h3 id="fb_component_safety_base">FB_Component_Safety_Base</h3>
+<p>(extends <code>FB_ComponentBase</code>, implements <code>I_SafetyBase</code>, <code>I_SafetySimulation</code>)</p>
+<p>This FB provides the Basis for each Safety Diagnostic function block thereafter. 
+Each Safety Diagnosis FB is a Component within the Framework and can be registered in EMs or Machine Modules.</p>
+<p>By assigning <code>SafetyReset</code> the auxiliary function is triggered by executing the Method <code>.Reset()</code>.</p>
+<details class="example">
+<summary>Quickstart</summary>
+<ol>
+<li>
+<p>Create instances for Safety Diagnostic FB on appropriate level, EM or Machine. 
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>SafetyGroupAutoReset    : FB_SafetyResetPulse;
+SafetyReset             : FB_SafetyResetPulse;
+SafetyGroup_Main        : FB_Component_Safety_Group       := (Name := &#39;Safety Group Main&#39;, SafetyReset := SafetyGroupAutoReset, AutoResetConnectionFaults := TRUE);
+SafetyEstop             : FB_Component_Safety_EstopFB     := (Name := &#39;E-Stop&#39;, DependenceFB := SafetyGroup_Main, SafetyReset := SafetyReset);
+</code></pre></div></td></tr></table></div></p>
+</li>
+<li>
+<p>Link <code>Run</code>/<code>ErrorAcknowledgement</code> for Safety Groups.</p>
+<p><img alt="" src="DiagnosticPictures\LinkRunErrorAck.png" /></p>
+</li>
+<li>
+<p>Link <code>State</code>/<code>Diag</code>.</p>
+<p><img alt="" src="DiagnosticPictures\InfoDataSettings.png" /></p>
+<p><img alt="" src="DiagnosticPictures\GroupLinks.png" /></p>
+<p>The process image to link to will be shown under the selected Safety PLC Device (EL6910, EL2911,...) in the EtherCat Master.</p>
+</li>
+</ol>
+</details>
+<h3 id="fb_component_safety_group">FB_Component_Safety_Group</h3>
+<p>(extends <code>FB_Component_Safety_Base</code>)</p>
+<p>Evaluate Safety Group status and provide <code>Run</code> bit required for each Safety Group.</p>
+<p>This FB requires a <code>SafetyReset</code> assignment during initialization. </p>
+<p>When property <code>AutoResetConnectionFaults</code> is set, the FB will trigger reset function continuously in case of error state. </p>
+<h3 id="fb_component_safety_andorfb">FB_Component_Safety_AndOrFB</h3>
+<p>(extends <code>FB_Component_Safety_Base</code>)</p>
+<h3 id="fb_component_safety_connectionfb">FB_Component_Safety_ConnectionFB</h3>
+<p>(extends <code>FB_Component_Safety_Base</code>)</p>
+<h3 id="fb_component_safety_edmfb">FB_Component_Safety_EdmFB</h3>
+<p>(extends <code>FB_Component_Safety_Base</code>)</p>
+<h3 id="fb_component_safety_estopfb">FB_Component_Safety_EstopFB</h3>
+<p>(extends <code>FB_Component_Safety_Base</code>)</p>
+<p>Property <code>ActiveName</code> can be used to change Alarm message from default <code>pressed!</code>.</p>
+<h3 id="fb_component_safety_monfb">FB_Component_Safety_MonFB</h3>
+<p>(extends <code>FB_Component_Safety_Base</code>)</p>
+<p>Property <code>ActiveName</code> can be used to change Alarm message from default <code>pressed!</code>.</p>
+<p>Property <code>ActiveAlarm</code> can be used to suppress the Alarm for Safety FB not OK.</p>
+<h3 id="fb_component_devices">FB_Component_Devices</h3>
+<p>(extends <code>FB_ComponentBase</code>, implements <code>I_Diagnostic</code>)</p>
+<p>Reads all Devices available in runtime and assigns correct evaluating FB.</p>
+<p>Each set amount of time the Diagnostic information is evaluated from e.g. EtherCat Masters.</p>
+<p>This FB is required to be parameterized by the following Parameter <code>Parameter_Diagnostic</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UPDATE_TIME</td>
+<td>Start Diagnostic Run every xxx ms, T#0s = deactivated, update needs to manually occur via I_Diagnostic.Update()</td>
+</tr>
+<tr>
+<td>DEVICES_MAX</td>
+<td>Max Devices in this System</td>
+</tr>
+<tr>
+<td>ETHERCAT_MASTER_START_UP_TIME</td>
+<td>Time to Startup EtherCat Master Diagnostic at initial startup</td>
+</tr>
+<tr>
+<td>ETHERCAT_MASTER_MAX</td>
+<td>Max EtherCat Masters</td>
+</tr>
+<tr>
+<td>ETHERCAT_MASTER_SLAVE_MAX</td>
+<td>Max Slaves per EtherCat Master</td>
+</tr>
+<tr>
+<td>ETHERCAT_MASTER_SYNC_UNIT_MAX</td>
+<td>Max Count of Sync Units per Master</td>
+</tr>
+<tr>
+<td>ETHERCAT_MASTER_SYNC_UNIT_SLAVE_MAX</td>
+<td>Max Count of Slaves per Sync Unit</td>
+</tr>
+</tbody>
+</table>
 <h2 id="spt-ethercat">SPT EtherCat</h2>
 <h3 id="fb_component_ethercatmaster">FB_Component_EtherCatMaster</h3>
 <p>(extends <code>FB_ComponentBase</code>, implements <code>I_EtherCatMaster</code>)</p>

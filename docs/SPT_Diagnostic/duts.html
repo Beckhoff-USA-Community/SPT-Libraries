@@ -3004,6 +3004,84 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="SPT Diagnostic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#st_safetystatediag" class="md-nav__link">
+    <span class="md-ellipsis">
+      ST_SafetyStateDiag
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e_componentsafetyconnection_state" class="md-nav__link">
+    <span class="md-ellipsis">
+      E_ComponentSafetyConnection_State
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e_componentsafetyedm_state" class="md-nav__link">
+    <span class="md-ellipsis">
+      E_ComponentSafetyEdm_State
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e_componentsafetyestop_state" class="md-nav__link">
+    <span class="md-ellipsis">
+      E_ComponentSafetyEStop_State
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e_componentsafetygroup_diag" class="md-nav__link">
+    <span class="md-ellipsis">
+      E_ComponentSafetyGroup_Diag
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e_componentsafetygroup_state" class="md-nav__link">
+    <span class="md-ellipsis">
+      E_ComponentSafetyGroup_State
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e_componentsafetymon_state" class="md-nav__link">
+    <span class="md-ellipsis">
+      E_ComponentSafetyMon_State
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e_componentsafetyorand_state" class="md-nav__link">
+    <span class="md-ellipsis">
+      E_ComponentSafetyOrAnd_State
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3127,6 +3205,84 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="SPT Diagnostic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#st_safetystatediag" class="md-nav__link">
+    <span class="md-ellipsis">
+      ST_SafetyStateDiag
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e_componentsafetyconnection_state" class="md-nav__link">
+    <span class="md-ellipsis">
+      E_ComponentSafetyConnection_State
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e_componentsafetyedm_state" class="md-nav__link">
+    <span class="md-ellipsis">
+      E_ComponentSafetyEdm_State
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e_componentsafetyestop_state" class="md-nav__link">
+    <span class="md-ellipsis">
+      E_ComponentSafetyEStop_State
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e_componentsafetygroup_diag" class="md-nav__link">
+    <span class="md-ellipsis">
+      E_ComponentSafetyGroup_Diag
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e_componentsafetygroup_state" class="md-nav__link">
+    <span class="md-ellipsis">
+      E_ComponentSafetyGroup_State
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e_componentsafetymon_state" class="md-nav__link">
+    <span class="md-ellipsis">
+      E_ComponentSafetyMon_State
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e_componentsafetyorand_state" class="md-nav__link">
+    <span class="md-ellipsis">
+      E_ComponentSafetyOrAnd_State
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3197,6 +3353,188 @@
 
 <h1 id="duts">DUTs</h1>
 <h2 id="spt-diagnostic">SPT Diagnostic</h2>
+<h3 id="st_safetystatediag">ST_SafetyStateDiag</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>{attribute &#39;pack_mode&#39; := &#39;1&#39;}
+TYPE ST_SafetyStateDiag :
+    STRUCT
+        State : USINT;
+        Diag  : UINT; // **NOT PRESENT ON AND/OR FBs ** For components with USINT as Diag connection, connect first 8 Bit of UINT Diag. Inherited FB is evaluating correct length.
+    END_STRUCT
+END_TYPE
+</code></pre></div></td></tr></table></div>
+<h3 id="e_componentsafetyconnection_state">E_ComponentSafetyConnection_State</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code>{attribute &#39;qualified_only&#39;}
+{attribute &#39;strict&#39;}
+TYPE E_ComponentSafetyConnection_State : (
+        Reset      := 100,
+        Session    := 101,
+        Connection := 102,
+        Parameter  := 103,
+        Data       := 104,
+        Shutdown   := 105,
+        Deactive   := 106
+    ) USINT;
+END_TYPE
+</code></pre></div></td></tr></table></div>
+<h3 id="e_componentsafetyedm_state">E_ComponentSafetyEdm_State</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>{attribute &#39;qualified_only&#39;}
+TYPE E_ComponentSafetyEdm_State : (
+        Invalid := 0,
+        Stop    := 2,
+        Error   := 4,
+        Reset   := 5,
+        MonOff  := 14,
+        MonOn   := 15
+    ) USINT;
+END_TYPE
+</code></pre></div></td></tr></table></div>
+<h3 id="e_componentsafetyestop_state">E_ComponentSafetyEStop_State</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code>{attribute &#39;qualified_only&#39;}
+TYPE E_ComponentSafetyEStop_State : (
+        Invalid  := 0,
+        Run      := 1,
+        Stop     := 2,
+        Safe     := 3,
+        Error    := 4,
+        Reset    := 5,
+        Start    := 6,
+        DelayOut := 7
+    ) USINT;
+END_TYPE
+</code></pre></div></td></tr></table></div>
+<h3 id="e_componentsafetygroup_diag">E_ComponentSafetyGroup_Diag</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>{attribute &#39;qualified_only&#39;}
+TYPE E_ComponentSafetyGroup_Diag : (
+        NoError       := 0,
+        FbError       := 1,
+        ComError      := 2,
+        ModuleError   := 3,
+        CmpError      := 4,
+        DeactiveError := 5,
+        RestartError  := 6
+    ) UINT;
+END_TYPE
+</code></pre></div></td></tr></table></div>
+<h3 id="e_componentsafetygroup_state">E_ComponentSafetyGroup_State</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code>{attribute &#39;qualified_only&#39;}
+TYPE E_ComponentSafetyGroup_State : (
+        Invalid      := 0,
+        Run          := 1,
+        Stop         := 2,
+        Error        := 4,
+        Reset        := 5,
+        Start        := 6,
+        StopError    := 7,
+        Deactive     := 16,
+        WaitComError := 17
+    ) USINT;
+END_TYPE
+</code></pre></div></td></tr></table></div>
+<h3 id="e_componentsafetymon_state">E_ComponentSafetyMon_State</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code>{attribute &#39;qualified_only&#39;}
+TYPE E_ComponentSafetyMon_State : (
+        Invalid    := 0,
+        Run        := 1,
+        Stop       := 2,
+        Safe       := 3,
+        Error      := 4,
+        Reset      := 5,
+        Start      := 6,
+        ErrorDelay := 7,
+        DelayOut   := 8,
+        FuncTest   := 9
+    ) USINT;
+END_TYPE
+</code></pre></div></td></tr></table></div>
+<h3 id="e_componentsafetyorand_state">E_ComponentSafetyOrAnd_State</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>{attribute &#39;qualified_only&#39;}
+TYPE E_ComponentSafetyOrAnd_State : (
+        Invalid := 0,
+        Run     := 1,
+        Stop    := 2,
+        Safe    := 3
+    ) USINT;
+END_TYPE
+</code></pre></div></td></tr></table></div>
 <h2 id="spt-ethercat">SPT EtherCat</h2>
 <h3 id="st_ethercatmasterinfo">ST_EtherCatMasterInfo</h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>

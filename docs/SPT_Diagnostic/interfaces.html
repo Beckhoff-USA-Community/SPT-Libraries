@@ -2962,6 +2962,48 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="SPT Diagnostic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#i_safetybase" class="md-nav__link">
+    <span class="md-ellipsis">
+      I_SafetyBase
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i_safetyreset" class="md-nav__link">
+    <span class="md-ellipsis">
+      I_SafetyReset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i_safetysimulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      I_SafetySimulation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i_diagnostic" class="md-nav__link">
+    <span class="md-ellipsis">
+      I_Diagnostic
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3109,6 +3151,48 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="SPT Diagnostic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#i_safetybase" class="md-nav__link">
+    <span class="md-ellipsis">
+      I_SafetyBase
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i_safetyreset" class="md-nav__link">
+    <span class="md-ellipsis">
+      I_SafetyReset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i_safetysimulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      I_SafetySimulation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i_diagnostic" class="md-nav__link">
+    <span class="md-ellipsis">
+      I_Diagnostic
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3161,11 +3245,123 @@
 
 <h1 id="interfaces">Interfaces</h1>
 <h2 id="spt-diagnostic">SPT Diagnostic</h2>
+<h3 id="i_safetybase">I_SafetyBase</h3>
+<h4 id="properties">Properties</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Property</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Access</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OK</td>
+<td>BOOL</td>
+<td>GET</td>
+<td>Indicator for Safety Function Block OK, see specific FB for interpretation.</td>
+</tr>
+<tr>
+<td>SafetyReset</td>
+<td>I_SafetyReset</td>
+<td>SET</td>
+<td>Interface Pointer to Reset Function.</td>
+</tr>
+<tr>
+<td>DependenceFB</td>
+<td>I_BaseFB</td>
+<td>GET/SET</td>
+<td>FB which is one level up, Error messages of this FBs are blocked if upper level is errored.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="i_safetyreset">I_SafetyReset</h3>
+<p>(extends <code>I_CyclicFB</code>)</p>
+<h4 id="properties_1">Properties</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Property</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Access</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PulseDuration</td>
+<td>TIME</td>
+<td>SET</td>
+<td>Pulse duration high of Reset-Bit.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="methods">Methods</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Method</strong></th>
+<th><strong>Return Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Execute</td>
+<td>BOOL</td>
+<td>Execute Reset on this FB.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="i_safetysimulation">I_SafetySimulation</h3>
+<p>(extends <code>I_SafetyBase</code>)</p>
+<h4 id="methods_1">Methods</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Method</strong></th>
+<th><strong>Return Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SimulateSafetyDiag</td>
+<td>none</td>
+<td>Simulate of Diag Variable.</td>
+</tr>
+<tr>
+<td>SimulateSafetyState</td>
+<td>none</td>
+<td>Simulate of State Variable.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="i_diagnostic">I_Diagnostic</h3>
+<h4 id="methods_2">Methods</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Method</strong></th>
+<th><strong>Return Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Update</td>
+<td>none</td>
+<td>Update Diagnostic information.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="spt-ethercat">SPT EtherCat</h2>
 <h3 id="i_ethercatmaster">I_EtherCatMaster</h3>
 <p>(extends <code>I_ComponentBase</code>)</p>
 <p>Interface for basic EtherCat Master information.</p>
-<h4 id="properties">Properties</h4>
+<h4 id="properties_2">Properties</h4>
 <table>
 <thead>
 <tr>
@@ -3196,7 +3392,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="methods">Methods</h4>
+<h4 id="methods_3">Methods</h4>
 <table>
 <thead>
 <tr>
@@ -3215,7 +3411,7 @@
 </table>
 <h3 id="i_syncunittask">I_SyncUnitTask</h3>
 <p>(extends <code>I_CyclicFB</code>)</p>
-<h4 id="properties_1">Properties</h4>
+<h4 id="properties_3">Properties</h4>
 <table>
 <thead>
 <tr>
