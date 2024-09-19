@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>TwinCAT.XAE.PLC.Lib.SPT_Framework</id>
+    <version>4026.1.0</version>
+    <title>Beckhoff TwinCAT XAE PLCSPT Framwork</title>
+    <authors>Beckhoff Automation, LLC</authors>
+    <projectUrl>https://github.com/Beckhoff-USA-Community/SPT-Libraries</projectUrl>
+    <copyright>(c) Beckhoff Automation, LLC</copyright>
+    <licenseUrl>https://github.com/Beckhoff-USA-Community/SPT-Libraries/blob/main/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <icon>icon.png</icon>
+    <tags>Beckhoff TwinCAT Workload CategoryGeneral VariantXAE</tags>
+    <description>Workload including SPT Framework Libraries</description>
+    <packageTypes>
+      <packageType name="Workload" />
+    </packageTypes>
+    <dependencies>
+      <dependency id="TwinCAT.XAE.PLC.Lib.SPT_Base_Types.3.2.10" version="3.2.10" />
+      <dependency id="TwinCAT.XAE.PLC.Lib.SPT_Component_Base.3.0.2" version="3.0.2" />
+      <dependency id="TwinCAT.XAE.PLC.Lib.SPT_Components.3.2.7" version="3.2.7" />
+      <dependency id="TwinCAT.XAE.PLC.Lib.SPT_Drives.3.0.2" version="3.0.2" />
+      <dependency id="TwinCAT.XAE.PLC.Lib.SPT_Event_Logger.3.2.0" version="3.2.0" />
+      <dependency id="TwinCAT.XAE.PLC.Lib.SPT_Kinematics.3.3.1" version="3.3.1" />
+      <dependency id="TwinCAT.XAE.PLC.Lib.SPT_MotionControl.3.2.5" version="3.2.5" />
+      <dependency id="TwinCAT.XAE.PLC.Lib.SPT_NC_Axis.3.0.7" version="3.0.7" />
+      <dependency id="TwinCAT.XAE.PLC.Lib.SPT_NC_Basic_Slave.3.0.4" version="3.0.4" />
+      <dependency id="TwinCAT.XAE.PLC.Lib.SPT_NC_Cam_Slave.3.0.0" version="3.0.0" />
+      <dependency id="TwinCAT.XAE.PLC.Lib.SPT_NC_Homing.3.0.1" version="3.0.1" />
+      <dependency id="TwinCAT.XAE.PLC.Lib.SPT_NCI.3.2.3" version="3.2.3" />
+      <dependency id="TwinCAT.XAE.PLC.Lib.SPT_PackML_Base.3.0.3" version="3.0.3" />
+      <dependency id="TwinCAT.XAE.PLC.Lib.SPT_Tracing.3.0.2" version="3.0.2" />
+      <dependency id="TwinCAT.XAE.PLC.Lib.SPT_Utilities.3.2.3" version="3.2.3" />
+      <dependency id="TwinCAT.XAE.PLC.Lib.SPT_Vision.3.0.4" version="3.0.4" />
+      <dependency id="TwinCAT.XAE.PLC.Lib.SPT_XPlanar.3.6.2" version="3.6.2" />
+      <dependency id="TwinCAT.XAE.PLC.Lib.SPT_XTS.3.2.0" version="3.2.0" />
+    </dependencies>
+  </metadata>
+</package>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+  <id></id>
+    <version></version>
+    <title></title>
+    <authors>Beckhoff Automation, LLC</authors>
+    <projectUrl>https://github.com/Beckhoff-USA-Community/SPT-Libraries</projectUrl>
+    <copyright>(c) Beckhoff Automation, LLC</copyright>
+    <licenseUrl>https://github.com/Beckhoff-USA-Community/SPT-Libraries/blob/main/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+	  <icon>icon.png</icon>
+    <tags>Beckhoff TwinCAT AllowMultipleVersions</tags>
+    <summary></summary>
+    <description></description>
+    <docsUrl>https://beckhoff-usa-community.github.io/SPT-Libraries/</docsUrl>
+    <!-- <releaseNotes>__REPLACE_OR_REMOVE__MarkDown_Okay</releaseNotes> -->
+    <!-- =============================== -->
+    <dependencies>
+      <dependency id="TwinCAT.XAE.PLC.Lib.SPT_Event_Logger" version="0.0.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="TF1000-Base.png" target="icon.png" />
+    <file src="tools\**" target="tools" />
+    <file src="SPT_Base_Types.library" target="tools\LibraryToInstall.library"/>
+  </files>
+</package>
