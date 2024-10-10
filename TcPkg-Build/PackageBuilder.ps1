@@ -44,7 +44,7 @@ Function BuildLibraries{
     # Create the XML document
     $xmlDocument = [xml]$nuspecContent
     # Modify the package ID
-    $xmlDocument.package.metadata.id = "TwinCAT.XAE.PLC.Lib."+$libraryBaseName
+    $xmlDocument.package.metadata.id = "Tc3.PLC.Lib."+$libraryBaseName
     # Modify the package version
     $xmlDocument.package.metadata.version = $libraryVersion
     # Modify the package title
@@ -59,21 +59,21 @@ Function BuildLibraries{
     ####################
 
     # create dependencies xml document
-    $xmlDep = New-Object -TypeName System.Xml.XmlDocument
+    #$xmlDep = New-Object -TypeName System.Xml.XmlDocument
     # Create root node for dependencies
-    $rootDep = $xmlDep.CreateElement("dependencies")
-    $mute = $xmlDep.AppendChild($rootDep)
+    #$rootDep = $xmlDep.CreateElement("dependencies")
+    #$mute = $xmlDep.AppendChild($rootDep)
     
     # Add the dependency xml objects
-    foreach ($linDep in $libraryDependencies){
-        $childDep = $xmlDep.CreateElement("dependency")
-        $childDep.SetAttribute("id","TwinCAT.XAE.PLC.Lib." + $linDep)
-        $childDep.SetAttribute("version", "0.0.0")
-        $mute = $rootDep.AppendChild($childDep)
-    }
+    #foreach ($linDep in $libraryDependencies){
+    #    $childDep = $xmlDep.CreateElement("dependency")
+    #    $childDep.SetAttribute("id","Tc3.PLC.Lib." + $linDep)
+    #    $childDep.SetAttribute("version", "0.0.0")
+    #    $mute = $rootDep.AppendChild($childDep)
+    #}
 
     # Modify the dependencies
-    $xmlDocument.package.metadata.dependencies.InnerXml = $rootDep.InnerXml
+    #$xmlDocument.package.metadata.dependencies.InnerXml = $rootDep.InnerXml
 
     ####################
     ### Files ###

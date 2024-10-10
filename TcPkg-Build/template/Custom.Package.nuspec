@@ -17,7 +17,6 @@
     <!-- <releaseNotes>__REPLACE_OR_REMOVE__MarkDown_Okay</releaseNotes> -->
     <!-- =============================== -->
     <dependencies>
-      <dependency id="TwinCAT.XAE.PLC.Lib.SPT_Event_Logger" version="0.0.0" />
     </dependencies>
   </metadata>
   <files>

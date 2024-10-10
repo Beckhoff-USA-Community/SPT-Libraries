@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
-    <id>TwinCAT.XAE.PLC.Lib.SPT_XTS</id>
+    <id>Tc3.PLC.Lib.SPT_XTS</id>
     <version>3.2.0</version>
     <title>Beckhoff TwinCAT XAE PLC Library SPT XTS</title>
     <authors>Beckhoff Automation, LLC</authors>
@@ -17,9 +17,6 @@
     <!-- <releaseNotes>__REPLACE_OR_REMOVE__MarkDown_Okay</releaseNotes> -->
     <!-- =============================== -->
     <dependencies>
-      <dependency id="TwinCAT.XAE.PLC.Lib.SPT_Base_Types" version="0.0.0" />
-      <dependency id="TwinCAT.XAE.PLC.Lib.SPT_Event_Logger" version="0.0.0" />
-      <dependency id="TwinCAT.XAE.PLC.Lib.SPT_Utilities" version="0.0.0" />
     </dependencies>
   </metadata>
   <files>
