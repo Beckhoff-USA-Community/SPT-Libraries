@@ -31,7 +31,7 @@
       <dependency id="TwinCAT.XAE.PLC.Lib.SPT_PackML_Base.3.0.3" version="3.0.3" />
       <dependency id="TwinCAT.XAE.PLC.Lib.SPT_Tracing.3.0.2" version="3.0.2" />
       <dependency id="TwinCAT.XAE.PLC.Lib.SPT_Utilities.3.2.3" version="3.2.3" />
-      <dependency id="TwinCAT.XAE.PLC.Lib.SPT_Vision.3.0.4" version="3.0.4" />
+      <dependency id="TwinCAT.XAE.PLC.Lib.SPT_Vision.3.0.5" version="3.0.5" />
       <dependency id="TwinCAT.XAE.PLC.Lib.SPT_XPlanar.3.6.2" version="3.6.2" />
       <dependency id="TwinCAT.XAE.PLC.Lib.SPT_XTS.3.2.0" version="3.2.0" />
     </dependencies>
