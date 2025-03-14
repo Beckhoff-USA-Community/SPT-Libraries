@@ -3869,7 +3869,7 @@
 <p>An additional feature of these events is the ability to provide language translation and select the language to be displayed based on a single global selection. </p>
 </details>
 <p>There is the possibility to create a custom event for any messages or alarms that you wish to be able to add to the event logger. Once an event has been added to the event logger it can be easily exchanged with both TwinCAT and non-TwinCAT components.</p>
-<p><img alt="Event Logger connections" src="/References/assets/Training/Alarms/Picture2.png" title="Event Logger connections" /></p>
+<p><img alt="Event Logger connections" src="../../References/assets/Training/Alarms/Picture2.png" title="Event Logger connections" /></p>
 <p>For example, the XAE can be used to create an Event Class, the XAR will Raise the event, the HMI will display the event, and then there is the possibility to send the event to some other component to log the event.</p>
 <p>When adding events, it is recommended to add a new tmc file that will hold those events separate from the TwinCAT System. This will allow the events to be modified and held in revision control. Additionally, this will allow for the tmc files to be portable and able to be reused on multiple projects. Because of these options it is also recommended that each EM and Component have their own tmc file.</p>
 <p>Ideally an event or alarm will be created for every possible condition, this will allow for language translation to be created and used in the HMI; however, to get started you can simply create a single event of each severity type and populate the text from the PLC, and then add specific events later.</p>

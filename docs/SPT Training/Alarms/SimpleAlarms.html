@@ -3998,8 +3998,8 @@
 <h2 id="create-the-tmc-file">Create the tmc file</h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>NO SPACES should exist in the tmc file. Any names created should be done so without spaces. If you notice any text box with a red background, fix this before saving the file.
-<img alt="No spaces allowed" src="/References/assets/Training/Alarms/Picture4.png" title="No spaces allowed" /> </p>
+<p>NO SPACES should exist in the tmc file. Any names created should be done so without spaces. If you notice any text box with a red background, fix this before saving the file.<br />
+<img alt="No spaces allowed" src="../../References/assets/Training/Alarms/Picture4.png" title="No spaces allowed" /> </p>
 </div>
 <p>The tmc files can be created within a single folder of the project in order to help more easily manage them later. </p>
 <p>When a new tmc file is created there is one important feature that must be configured correctly to work properly with the SPT Framework. </p>
@@ -4009,31 +4009,31 @@
 </code></pre></div></td></tr></table></div>
 </div>
 <p>This allows for the PLC code to be consistent throughout the implementation. This first event should be at Pos 0 and Id 1.</p>
-<p><img alt="The first event" src="/References/assets/Training/Alarms/Picture3.png" title="The first event" /> </p>
+<p><img alt="The first event" src="../../References/assets/Training/Alarms/Picture3.png" title="The first event" /> </p>
 <p>Further events can be added in any order that you deem logical.</p>
 <p>Once the events have been added the file must be saved and the Solution Rebuilt.
 In the Solution Explorer under System, right click on the Type System and select ‘Add New Item’.</p>
-<p><img alt="Add new tmc file" src="/References/assets/Training/Alarms/Picture9.png" title="Add new tmc file" /> </p>
+<p><img alt="Add new tmc file" src="../../References/assets/Training/Alarms/Picture9.png" title="Add new tmc file" /> </p>
 <p>In the ‘Save As’ dialog box you should be at the project level. You can verify this by seeing the _Boot and _Config folders. By default, the folder path is: <code>C:\Users\userName\Documents\TcXaeShell\projectName</code>. Create a new folder for the tmc file at this location, call it tmcFiles. </p>
-<p><img alt="New folder for tmc files" src="/References/assets/Training/Alarms/Picture10.png" title="New folder for tmc files" /> </p>
+<p><img alt="New folder for tmc files" src="../../References/assets/Training/Alarms/Picture10.png" title="New folder for tmc files" /> </p>
 <p>Double click on the folder tmcFiles, provide a name for your tmc file (Cylinder) and select ‘Save’.
 Right click on the new Cylinder item in the Solution Explorer and select ‘Edit Project File’. </p>
-<p><img alt="Edit Project File" src="/References/assets/Training/Alarms/Picture11.png" title="Edit Project File" /> </p>
+<p><img alt="Edit Project File" src="../../References/assets/Training/Alarms/Picture11.png" title="Edit Project File" /> </p>
 <p>Right click on ‘Data Types’ and select 'Add new event class’. </p>
-<p><img alt="Add new event class" src="/References/assets/Training/Alarms/Picture12.png" title="Add new event class" /> </p>
+<p><img alt="Add new event class" src="../../References/assets/Training/Alarms/Picture12.png" title="Add new event class" /> </p>
 <p>Select ‘EventClass1’ and change the Name to match the tmc file name (Cylinder). </p>
-<p><img alt="Rename event class" src="/References/assets/Training/Alarms/Picture13.png" title="Rename event class" /> </p>
+<p><img alt="Rename event class" src="../../References/assets/Training/Alarms/Picture13.png" title="Rename event class" /> </p>
 <p>Expand the 2 items under Data Types. Select ‘Events’ and add 2 items using the green plus sign. Select the first event and change the name to <code>InitReferenceEvent</code>. </p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>It is important that this name matches exactly and is the first event in the list (Id: 1). In the PLC we will use some generic code that always references the <code>InitReferenceEvent</code>. Being consistent with the naming makes this possible. </p>
 </div>
 <p>Next, set the severity to Verbose. </p>
-<p><img alt="Create the InitReferenceEvent" src="/References/assets/Training/Alarms/Picture14.png" title="Create the InitReferenceEvent" /> </p>
+<p><img alt="Create the InitReferenceEvent" src="../../References/assets/Training/Alarms/Picture14.png" title="Create the InitReferenceEvent" /> </p>
 <p>Select the other two events and change the names to something valid for the error or warning you wish to create. In this example we will set one to warning, and the other to error. Also, change the <code>Display Text</code> to something meaningful, this text is what will be displayed in the <code>Error List</code>. Finally set the Severity to match the Warning and Error. </p>
-<p><img alt="Set the values for Warning and Error" src="/References/assets/Training/Alarms/Picture15.png" title="Set the values for Warning and Error" /> </p>
+<p><img alt="Set the values for Warning and Error" src="../../References/assets/Training/Alarms/Picture15.png" title="Set the values for Warning and Error" /> </p>
 <p>Close the tmc editor window and select <code>Yes</code> to save the tmc file. Double click the new tmc file under the Type System and select the <code>Event Classes</code> tab. Locate the Cylinder row and place a checkbox in the first column; it doesn’t have a name. </p>
-<p><img alt="Add the tmc file to the type system" src="/References/assets/Training/Alarms/Picture16.png" title="Add the tmc file to the type system" /> </p>
+<p><img alt="Add the tmc file to the type system" src="../../References/assets/Training/Alarms/Picture16.png" title="Add the tmc file to the type system" /> </p>
 <p>This checkbox will add the event class to the Type System for this project. Rebuild the Solution and check that you have no errors.</p>
 <h3 id="tmc-file-errors">TMC File Errors</h3>
 <h4 id="no-spaces-allowed">No Spaces Allowed</h4>

@@ -4033,7 +4033,7 @@
 <p>This section will build upon the information covered in the Simple Alarms above; however, we will now implement alarms at the component level within the SPT Framework. If you did not add the SPT Base Types library before, please do so before continuing.</p>
 <p>The creation of the tmc file will follow the same process, but the idea of creating separate files for each component becomes more important for portability of the component.
 Create a tmc file for a component with the following events:</p>
-<p><img alt="Component Alarms" src="/References/assets/Training/Alarms/Picture17.png" title="Component Alarms" /> </p>
+<p><img alt="Component Alarms" src="../../References/assets/Training/Alarms/Picture17.png" title="Component Alarms" /> </p>
 <p>In the Simple Alarm document, we placed the code directly in the Main POU, for this example we will first need to create a Machine Module and add a Component to it. Start a new project (or use the existing one from above) and add the following libraries as needed: SPT Base Types, Tc3_PackML_V2, SPT Event Logger, and TC3_EventLogger. </p>
 <h3 id="create-a-component">Create a Component</h3>
 <p>Add a new POU named <code>Component</code> that <code>EXTENDS FB_ComponentBase</code> and include the following variable declarations:</p>
@@ -4236,7 +4236,7 @@ reset : BOOL;
     END_IF
 </code></pre></div></td></tr></table></div>
 <p>From the <code>Monitoring()</code> method of your component you can now test each alarm and verify that is is raised in the error list. Setting the <code>reset</code> variable to true in <code>MAIN</code> will attempt to clear the alarms. Any alarms that are still set in the <code>Monitoring()</code> method will log both an <code>AlarmCleared</code> and an <code>AlarmRaised</code>, while the ones that are FALSE will simply log <code>AlarmCleared</code>.</p>
-<p><img alt="Testing Component Alarms" src="/References/assets/Training/Alarms/Picture18.png" title="Testing Component Alarms" /> </p>
+<p><img alt="Testing Component Alarms" src="../../References/assets/Training/Alarms/Picture18.png" title="Testing Component Alarms" /> </p>
 
 
 

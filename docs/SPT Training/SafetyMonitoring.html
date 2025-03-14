@@ -4010,20 +4010,20 @@ SafetyGroup_Main     : FB_Component_Safety_Group :=(
     AutoResetConnectionFaults := TRUE);
 </code></pre></div></td></tr></table></div></p>
 <p>A unique instance of the <code>FB_SafetyResetPulse</code> is defined and passed to the instance <code>SafetyGroup_Main</code>. When the code is compiled an instance variable will appear under the Plc Task Inputs of the PLC Instance with the declared name.</p>
-<p><img alt="Linkable variables from FB_Component_Safety_Group" src="/References/assets/Training/SafetyMonitoring/Picture1.png" title="Linkable variables from FB_Component_Safety_Group" /></p>
+<p><img alt="Linkable variables from FB_Component_Safety_Group" src="../References/assets/Training/SafetyMonitoring/Picture1.png" title="Linkable variables from FB_Component_Safety_Group" /></p>
 <p>In the code we must call the <code>CyclicLogic()</code> method, and selectively call the <code>Reset()</code> method. It is imperative that the <code>Reset()</code> method be called at least once before valid messages can be logged. When using the SPT Framework this is handled by the state machine.</p>
 <p>The two links for State and Diag cannot be made until the TwinSAFE logic program has been created. Once created, you will find the TwinSAFE Group Info Data under the EL6910 or other safety controller. For this variable, enabling ‘Matching Type’ and ‘Matching Size’ will be helpful.</p>
-<p><img alt="Hardware variable for FB_Component_Safety_Group.State" src="/References/assets/Training/SafetyMonitoring/Picture2.png" title="Hardware variable from FB_Component_Safety_Group.State" /></p>
+<p><img alt="Hardware variable for FB_Component_Safety_Group.State" src="../References/assets/Training/SafetyMonitoring/Picture2.png" title="Hardware variable from FB_Component_Safety_Group.State" /></p>
 <p>For the Diag variable, remove ‘Matching Type’ and 'Matching Size’, and select ‘All Types’. Then type diag in the search window. The Diag variable in the <code>ST_SafetyStateDiag</code> is of type UINT and the hardware variable is of type USINT. </p>
-<p><img alt="Hardware variable for FB_Component_Safety_Group.Diag" src="/References/assets/Training/SafetyMonitoring/Picture3.png" title="Hardware variable from FB_Component_Safety_Group.Diag" /></p>
+<p><img alt="Hardware variable for FB_Component_Safety_Group.Diag" src="../References/assets/Training/SafetyMonitoring/Picture3.png" title="Hardware variable from FB_Component_Safety_Group.Diag" /></p>
 <p>When creating the link there will be a popup window for a Size Mismatch, because we are linking a UINT to a USINT. No changes are needed in the popup window.</p>
-<p><img alt="Adjusting Variable Size Mismatch" src="/References/assets/Training/SafetyMonitoring/Picture4.png" title="Adjusting Variable Size Mismatch" /></p>
+<p><img alt="Adjusting Variable Size Mismatch" src="../References/assets/Training/SafetyMonitoring/Picture4.png" title="Adjusting Variable Size Mismatch" /></p>
 <p>The reason behind this is that some of the Diag variables are of the smaller USINT type, and other Diag variables are a UINT. But in order to use a single structure for all Diag variables, we created the structure with the larger UINT and link it to a smaller variable.
 Once the link is created, you can see that the link is only to the first 8 bits ‘Diag&lt;0-7&gt;’:</p>
-<p><img alt="Verifying the link" src="/References/assets/Training/SafetyMonitoring/Picture5.png" title="Verifying the link" /></p>
+<p><img alt="Verifying the link" src="../References/assets/Training/SafetyMonitoring/Picture5.png" title="Verifying the link" /></p>
 <h3 id="alarms">Alarms</h3>
 <p>The Alarms provided by the <code>FB_Component_Safety_Group</code> are based on the following event class:</p>
-<p><img alt="Verifying the link" src="/References/assets/Training/SafetyMonitoring/Picture6.png" title="Verifying the link" /></p>
+<p><img alt="Verifying the link" src="../References/assets/Training/SafetyMonitoring/Picture6.png" title="Verifying the link" /></p>
 <p>An instance of <code>FB_Component_Safety_ConnectionFB</code> can be declared as follows:
 <div class="copy highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -4038,18 +4038,18 @@ SafetyOutput  : FB_Component_Safety_ConnectionFB :=(
 <p>The SafetyReset instance of <code>FB_SafetyResetPulse</code> is passed to the <code>FB_Component_Safety_ConnectionFB</code>. When the Component’s <code>Reset()</code> method is called, it will in turn call the <code>Execute()</code> method of <code>FB_SafetyResetPulse</code>. The default behavior of the <code>FB_SafetyResetPulse</code> is to toggle the variable <code>Reset</code> which is defined as a <code>%Q*</code> at the duration of the <code>PulseDuration</code> input. The <code>PulseDuration</code> time is a configurable property, with a default of 100ms. If a custom reset is needed, a function block that implements the <code>I_SafetyReset</code> interface can be passed to your instance of <code>FB_Component_Safety_ConnectionFB</code> using the strategy pattern.</p>
 <p>The <code>FB_Component_Safety_ConnectionFB</code> also uses a DependenceFB which allows for the errors of that function block to suppress the errors of this function block.</p>
 <p>The <code>SafetyOutput</code> instance will provide the following variables for linking to the safety controller hardware.</p>
-<p><img alt="Linkable variables from FB_Component_Safety_ConnectionFB" src="/References/assets/Training/SafetyMonitoring/Picture7.png" title="Linkable variables from FB_Component_Safety_ConnectionFB" /></p>
+<p><img alt="Linkable variables from FB_Component_Safety_ConnectionFB" src="../References/assets/Training/SafetyMonitoring/Picture7.png" title="Linkable variables from FB_Component_Safety_ConnectionFB" /></p>
 <p>Before the variables in the PLC instance can be linked, the variables in the safety projects must be enabled. Locate the sds for the connection to be monitored, enable the <code>Map State</code> and <code>Map Diag</code> check boxes. This will create the variables needed in the process image.</p>
-<p><img alt="Create linkable hardware variables" src="/References/assets/Training/SafetyMonitoring/Picture8.png" title="Create linkable hardware variables" /></p>
+<p><img alt="Create linkable hardware variables" src="../References/assets/Training/SafetyMonitoring/Picture8.png" title="Create linkable hardware variables" /></p>
 <p>Then select the <code>Linking</code> tab and take note of the Name. In this image it is <code>Message_3</code>.</p>
-<p><img alt="View linkable hardware variables" src="/References/assets/Training/SafetyMonitoring/Picture9.png" title="View linkable hardware variables" /></p>
+<p><img alt="View linkable hardware variables" src="../References/assets/Training/SafetyMonitoring/Picture9.png" title="View linkable hardware variables" /></p>
 <p>When the <code>State</code> and <code>Diag</code> variables are linked, it is important to ensure that they are linked to the correct message of the Safety Controller.</p>
-<p><img alt="Verify Message Number" src="/References/assets/Training/SafetyMonitoring/Picture10.png" title="Verify Message Number" /></p>
+<p><img alt="Verify Message Number" src="../References/assets/Training/SafetyMonitoring/Picture10.png" title="Verify Message Number" /></p>
 <p>Again, changing the filter options and searching for diag will add in finding the needed variable.</p>
-<p><img alt="Use the search filter" src="/References/assets/Training/SafetyMonitoring/Picture11.png" title="Use the search filter" /></p>
+<p><img alt="Use the search filter" src="../References/assets/Training/SafetyMonitoring/Picture11.png" title="Use the search filter" /></p>
 <p>The component instance will either need to be registered with an EM in the SPT Framework, or the <code>CyclicLogic()</code> and <code>Reset()</code> methods will need to be called appropriately from your code.</p>
 <p>The alarms provided by the <code>FB_Component_Safety_ConnectionFB</code> are defined in the <code>SafetyConection</code> event class:</p>
-<p><img alt="Available Alarms of the Safety Connection event class" src="/References/assets/Training/SafetyMonitoring/Picture12.png" title="Available Alarms of the Safety Connection event class" /></p>
+<p><img alt="Available Alarms of the Safety Connection event class" src="../References/assets/Training/SafetyMonitoring/Picture12.png" title="Available Alarms of the Safety Connection event class" /></p>
 <p>Monitoring a Safety Input is similar to the Safety Output. The biggest difference being the DependenceFB would typically be set to the Safety FB that the input is being passed to (covered in the next section).
 <div class="copy highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -4070,18 +4070,18 @@ SafetyOutput  : FB_Component_Safety_ConnectionFB :=(
 </code></pre></div></td></tr></table></div></p>
 <p>The DependenceFB is set to the <code>SafetyOutput</code> Connection that the safeEstop is driving, if the output is faulted then the safeEstop will also be faulted and its errors will only cause confusing and misdirection.</p>
 <p>In order to link the State and Diag variables they must first be created in the safety project. After opening the <code>sal</code> file, select the desired safety function block and open the properties window. Under <code>Info Data</code> set the Map Diag and Map State to TRUE.</p>
-<p><img alt="Enabling the linkable variables of the safety function block" src="/References/assets/Training/SafetyMonitoring/Picture13.png" title="Enabling the linkable variables of the safety function block" /></p>
+<p><img alt="Enabling the linkable variables of the safety function block" src="../References/assets/Training/SafetyMonitoring/Picture13.png" title="Enabling the linkable variables of the safety function block" /></p>
 <p>This will create the variables under the Safety Controller for linking.</p>
-<p><img alt="Linkable variables of the safety function block" src="/References/assets/Training/SafetyMonitoring/Picture14.png" title="Linkable variables of the safety function block" /></p>
+<p><img alt="Linkable variables of the safety function block" src="../References/assets/Training/SafetyMonitoring/Picture14.png" title="Linkable variables of the safety function block" /></p>
 <p>These links between the PLC and the Safety Controller do not require an offset, and can be linked directly.</p>
 <p>The component instance will either need to be registered with an EM in the SPT Framework, or the <code>CyclicLogic()</code> and <code>Reset()</code> methods will need to be called appropriately from your code.</p>
 <p>The alarms provided by the <code>FB_Component_Safety_EStopFB</code> are defined in the SafetyEstop event class:</p>
-<p><img alt="Available Alarms of the Safety EStop event class" src="/References/assets/Training/SafetyMonitoring/Picture15.png" title="Available Alarms of the Safety EStop event class" /></p>
+<p><img alt="Available Alarms of the Safety EStop event class" src="../References/assets/Training/SafetyMonitoring/Picture15.png" title="Available Alarms of the Safety EStop event class" /></p>
 <p>The remaining Safety Function Blocks will have a similar configuration. The alarms are defined in the following event classes:</p>
 <p>Safety Edm</p>
-<p><img alt="Available Alarms of the Safety Edm event class" src="/References/assets/Training/SafetyMonitoring/Picture16.png" title="Available Alarms of the Safety Edm event class" /></p>
+<p><img alt="Available Alarms of the Safety Edm event class" src="../References/assets/Training/SafetyMonitoring/Picture16.png" title="Available Alarms of the Safety Edm event class" /></p>
 <p>Safety Mon</p>
-<p><img alt="Available Alarms of the Safety Mon event class" src="/References/assets/Training/SafetyMonitoring/Picture17.png" title="Available Alarms of the Safety Mon event class" /></p>
+<p><img alt="Available Alarms of the Safety Mon event class" src="../References/assets/Training/SafetyMonitoring/Picture17.png" title="Available Alarms of the Safety Mon event class" /></p>
 
 
 
