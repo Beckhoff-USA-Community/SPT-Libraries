@@ -1,0 +1,4760 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="TypesOfComponents.html">
+      
+      
+        <link rel="next" href="ExtendingExisting.html">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.8">
+    
+    
+      
+        <title>Self-Contained - SPT Application Framework Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arial:300,300i,400,400i,700,700i%7Csans-serif+Lucida+Console:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Arial";--md-code-font:"sans-serif Lucida Console"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/style.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-2KSSSWXJ36"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-2KSSSWXJ36",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-2KSSSWXJ36",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#self-contained" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="SPT Application Framework Documentation" class="md-header__button md-logo" aria-label="SPT Application Framework Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SPT Application Framework Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Self-Contained
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Beckhoff-USA-Community/SPT-Libraries" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SPT-Libraries
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../index.html" class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Getting_Started/setup.html" class="md-tabs__link">
+          
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../Conventions.html" class="md-tabs__link">
+          
+  
+  Training
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../SPT_Base_Types/index.html" class="md-tabs__link">
+          
+  
+  Base Types
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../SPT_Components/index.html" class="md-tabs__link">
+          
+  
+  Components
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../SPT_Vision/VisionConcept.html" class="md-tabs__link">
+          
+  
+  Vision
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../SPT_Event_Logger/index.html" class="md-tabs__link">
+          
+  
+  Eventlogger
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../SPT_Kinematic/index.html" class="md-tabs__link">
+          
+  
+  Kinematics
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../SPT_MotionControl/index.html" class="md-tabs__link">
+          
+  
+  Motion Control
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../SPT_Utilities/index.html" class="md-tabs__link">
+          
+  
+  Utilities
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../SPT_XPlanar/index.html" class="md-tabs__link">
+          
+  
+  XPlanar
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../SPT_XTS/index.html" class="md-tabs__link">
+          
+  
+  XTS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../SPT_NCI/index.html" class="md-tabs__link">
+          
+  
+  NCI
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../SPT_Diagnostic/index.html" class="md-tabs__link">
+          
+  
+  Diagnostic
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="SPT Application Framework Documentation" class="md-nav__button md-logo" aria-label="SPT Application Framework Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    SPT Application Framework Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Beckhoff-USA-Community/SPT-Libraries" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SPT-Libraries
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Getting_Started/setup.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Getting_Started/Videos.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Video Tutorials
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Getting_Started/DesignGuide.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Getting_Started/PackML%20Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PackML Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../References/PackML.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TR88 Standard
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Getting_Started/SPT%20Framework.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SPT Framework
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Getting_Started/SPT%20Event%20Logger.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SPT Event Logger
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Training
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Training
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Conventions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conventions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PackMLModeAndStates.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PackML Modes and States
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ModulesSubmodulesAndComponents.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modules, Submodules, and Components
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../StartingNewRepo.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Starting a new Repository
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPT_Libraries.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SPT Libraries
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LibraryParams.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SPT Library Parameters
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../InitializeAndCyclicLogic.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Initialize and CyclicLogic
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MachineCodeProgression.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Code Progression
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Component Design and Development
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_10">
+            <span class="md-nav__icon md-icon"></span>
+            Component Design and Development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ComponentGuide.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_10_2" id="__nav_3_10_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Types of Component Designs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_10_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_10_2">
+            <span class="md-nav__icon md-icon"></span>
+            Types of Component Designs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="TypesOfComponents.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Self-Contained
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="SelfContained.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Self-Contained
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#self-contained" class="md-nav__link">
+    <span class="md-ellipsis">
+      Self-Contained
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Self-Contained">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-solenoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simple Solenoid:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#better-solenoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Better Solenoid:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hmi-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      HMI Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-methods-and-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Methods and Properties
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-the-better-solenoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing the Better Solenoid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-an-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating an Interface
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reset
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ExtendingExisting.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Extending an Existing Component
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="WrappingFB.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wrapping an Existing Function Block
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="WrappingLibrary.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wrapping a Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ControlSource.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Control Source
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_12" id="__nav_3_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Alarms and Events
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_12">
+            <span class="md-nav__icon md-icon"></span>
+            Alarms and Events
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Alarms/TraceMessages.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trace Messages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Alarms/EventLogger.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Event Logger
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Alarms/SimpleAlarms.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Simple Alarms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Alarms/ComponentAlarms.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Component Alarms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Alarms/MonitoringAlarms.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Monitoring Alarms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Alarms/ResettingAlarms.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resetting Alarms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SafetyMonitoring.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Safety Monitoring
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SampleCode.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sample Code
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Base Types
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Base Types
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Base_Types/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Base_Types/interfaces.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interfaces
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Base_Types/functionblocks.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Function Blocks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Base_Types/duts.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Base_Types/globals.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Globals/Parameters
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Base_Types/changelog.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Changelog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Components
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Components
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Components/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Function Blocks
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Function Blocks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Components/cylinders.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cylinders
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Components/modbusrtu.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MODBUS-RTU
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Components/motioncontrol.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Motion Control
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Components/PackMLEvent.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PackML Event
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Components/sensors.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sensors
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Examples
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Examples
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Components/examples/solenoidbankbase.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FB_SolenoidBankBase
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Components/ComponentGuide.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guide to write a Component
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Components/changelog.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Changelog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Vision
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Vision
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Vison Concept
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            Vison Concept
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Vision/VisionConcept.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Vision/VisionTask.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vision Task
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Vision/VisionPLC.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PLC Task
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Vision Object Detection
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Vision Object Detection
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Vision/VisionDetection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Vision/VisionBlob.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vison Processing Blob
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Vision Video Playback
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Vision Video Playback
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Vision/VisionPlayback.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Vision/changelog.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Changelog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Eventlogger
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Eventlogger
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Event_Logger/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Event_Logger/functions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Event_Logger/changelog.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Changelog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Kinematics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Kinematics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Kinematic/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    User Guide
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            User Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Kinematic/quickstart.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quickstart
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Kinematic/exampleCode.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Example Code
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Kinematic/interfaces.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interfaces
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Kinematic/functionblocks.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Function Blocks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Kinematic/duts.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Kinematic/globals.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Globals/Parameters
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Kinematic/changelog.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Changelog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Motion Control
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Motion Control
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_MotionControl/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_MotionControl/interfaces.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interfaces
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_MotionControl/functionblocks.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Function Blocks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_MotionControl/duts.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_MotionControl/globals.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Globals/Parameters
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_MotionControl/changelog.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Changelog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Utilities
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Utilities
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Utilities/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Utilities/interfaces.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interfaces
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Utilities/functionblocks.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Function Blocks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Utilities/functions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Utilities/duts.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Utilities/changelog.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Changelog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    XPlanar
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            XPlanar
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_XPlanar/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_XPlanar/interfaces.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interfaces
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_XPlanar/functionblocks.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Function Blocks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_XPlanar/globals.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Globals/Parameters
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_XPlanar/changelog.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Changelog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    XTS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            XTS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_XTS/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_2" id="__nav_12_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    User Guide
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_2">
+            <span class="md-nav__icon md-icon"></span>
+            User Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_XTS/quickstart.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quickstart
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_XTS/stationprogrammingnotes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Custom Station Programming
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_XTS/examplestations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Example Stations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_XTS/interfaces.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interfaces
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_XTS/functionblocks.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Function Blocks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_XTS/duts.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_XTS/globals.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Globals/Parameters
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_XTS/changelog.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Changelog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    NCI
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            NCI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_NCI/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_NCI/interfaces.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interfaces
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_NCI/functionblocks.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Function Blocks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_NCI/duts.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_NCI/changelog.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Changelog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Diagnostic
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            Diagnostic
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Diagnostic/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Diagnostic/interfaces.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interfaces
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Diagnostic/functionblocks.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Function Blocks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Diagnostic/duts.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SPT_Diagnostic/changelog.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Changelog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#self-contained" class="md-nav__link">
+    <span class="md-ellipsis">
+      Self-Contained
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Self-Contained">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-solenoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simple Solenoid:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#better-solenoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Better Solenoid:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hmi-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      HMI Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-methods-and-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Methods and Properties
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-the-better-solenoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing the Better Solenoid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-an-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating an Interface
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reset
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Self-Contained</h1>
+
+<h2 id="self-contained">Self-Contained</h2>
+<p>These are components that are created from scratch, with no preexisting code other than the <code>FB_ComponentBase</code>. They can be a simple component for a single output, or a more complex component with multiple inputs and outputs. In the below example we will create a simple component to control a solenoid. The simple version of this component will have the ability to energize and de-energize the output, and will have a property to read the status of the solenoid.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This Simple Solenoid does not properly comply with the rules of the SPT Framework as we are not returning a value from the Energize and Deenergize methods. This is done to keep the example simple. The Better Solenoid will return a value from the Energize and Deenergize methods.</p>
+</div>
+<h3 id="simple-solenoid">Simple Solenoid:</h3>
+<ol>
+<li>Add the <code>SPT Base Types</code> library to your project</li>
+<li>Create a function block that <code>Extends FB_ComponentBase</code> and name it <code>FB_Component_Solenoid</code></li>
+<li>Remove the <code>VAR_INPUT</code> and <code>VAR_OUTPUT</code> sections of the declaration
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>FB_Component_Solenoid EXTENDS FB_ComponentBase
+<span class="gd">-VAR_INPUT</span>
+<span class="gd">-END_VAR</span>
+<span class="gd">-VAR_OUTPUT</span>
+<span class="gd">-END_VAR</span>
+VAR
+END_VAR
+</code></pre></div></td></tr></table></div></li>
+<li>
+<p>Declare a local variable for the output
+<div class="copy highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>VAR
+    _Energize AT %Q* : BOOL;
+END_VAR
+</code></pre></div></td></tr></table></div></p>
+</li>
+<li>
+<p>Create 2 methods that return a BOOL, one to turn on the output, and one to turn off the output
+    <div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Method Declaration</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>METHOD Energize : BOOL;
+</code></pre></div></td></tr></table></div>
+    <div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Method Implementation</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>_Energize := TRUE;
+</code></pre></div></td></tr></table></div></p>
+<p><div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Method Declaration</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>METHOD Deenergize : BOOL;
+</code></pre></div></td></tr></table></div>
+<div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Method Implementation</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>_Energize := FALSE;
+</code></pre></div></td></tr></table></div></p>
+</li>
+<li>
+<p>Create a property that returns a BOOL to read that value of the output</p>
+<p>Energized.Get()
+<div class="copy highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Energized := _Energize;
+</code></pre></div></td></tr></table></div></p>
+</li>
+<li>
+<p>To test the Simple Solenoid create an instance of it in MAIN and add the following code:
+<div class="copy highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>MAIN
+VAR
+    Solenoid : FB_Component_Solenoid;
+END_VAR
+</code></pre></div></td></tr></table></div>
+<div class="copy highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>Solenoid.CyclicLogic();
+
+IF NOT Solenoid.Energized THEN
+    Solenoid.Energize();
+END_IF
+</code></pre></div></td></tr></table></div></p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We are not yet making use of anything within the CyclicLogic() method, it is important to build the habit of always calling it. As not doing so will cause problems in the future.</p>
+</div>
+<h3 id="better-solenoid">Better Solenoid:</h3>
+<p>While the above Simple Solenoid is functional, to comply with the SPT Framework standards a few changes need to be made. The Better Solenoid will return a value from the <code>Energize()</code> and <code>Deenergize()</code> methods, while also implementing the use of the <code>_Busy</code> and <code>_Error</code> status variables.</p>
+<p>We will also be adding an inhibit property to prevent the solenoid from operating, along with method to home the solenoid and a few other features.</p>
+<ol>
+<li>
+<p>Add a new Structure and declare the %Q variable
+   <div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Structure Declaration</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code> TYPE ST_IO_Solenoid :
+     STRUCT
+         Energize AT %Q* : BOOL;
+     END_STRUCT
+ END_TYPE
+</code></pre></div></td></tr></table></div></p>
+</li>
+<li>
+<p>Remove the %Q variable and declare an instance of the structure in the FB
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>FB_Component_Solenoid EXTENDS FB_ComponentBase
+VAR
+<span class="gd">-   _Energize AT %Q* : BOOL;</span>
+<span class="gi">+   IO : ST_IO_Solenoid;</span>
+END_VAR
+</code></pre></div></td></tr></table></div></p>
+</li>
+<li>
+<p>Update the Methods and Properties to use the new instance of the IO structure by replacing <code>_Energize</code> with <code>IO.Energize</code>
+    <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">METHOD Energize</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gd">-   _Energize := TRUE;</span>
+<span class="gi">+   IO.Energize := TRUE;</span>
+</code></pre></div></td></tr></table></div>
+    <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">METHOD Deenergize</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gd">-   _Energize := TRUE;</span>
+<span class="gi">+   IO.Energize := TRUE;</span>
+</code></pre></div></td></tr></table></div>
+    <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Property Energized.Get()</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gd">-   Energized := _Energize;</span>
+<span class="gi">+   Energized := IO.Energize;</span>
+</code></pre></div></td></tr></table></div></p>
+</li>
+<li>
+<p>Create convenience properties for other statuses
+    <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Deenergized.Get()</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Deenergized := NOT IO.Energize;
+</code></pre></div></td></tr></table></div></p>
+</li>
+<li>
+<p>Improve the command methods by replacing the existing code with the following
+<div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Energize()</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>//Prepare to Return FALSE in case the method is not able to complete
+Energize := FALSE;
+
+//Check for conditions and issue command
+IF NOT _Busy AND NOT _Error THEN
+    IO.Energize := TRUE;
+    //Return TRUE to indicate that the command was accepted
+    Energize := TRUE;
+END_IF
+</code></pre></div></td></tr></table></div></p>
+</li>
+<li>
+<p>Repeat for the Deenergize() method
+<div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Energize()</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>//Prepare to Return FALSE in case the method is not able to complete
+Deenergize := FALSE;
+
+//Check for conditions and issue command
+IF NOT _Busy AND NOT _Error THEN
+    IO.Energize := FALSE;
+    //Return TRUE to indicate that the command was accepted
+    Deenergize := TRUE;
+END_IF
+</code></pre></div></td></tr></table></div></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>_Busy</code> property of the base class <code>FB_ComponentBase</code> is initialized to TRUE and we are now monitoring it in the <code>Energize()</code> and <code>Deenergize()</code> methods, we must set it to FALSE for our methods to complete properly.</p>
+</div>
+</li>
+<li>
+<p>Add the <code>CyclicLogic()</code> method to the <code>FB_Component_Solenoid</code>, it is important to name this method exactly the same as the name used in the base class <code>FB_ComponentBase</code> since we are overriding that method.</p>
+<div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">CyclicLogic()</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>IF NOT _InitComplete THEN
+    _InitComplete := Initialize();
+    RETURN;
+END_IF
+
+_Busy := FALSE;
+
+SUPER^.CyclicLogic();
+</code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Part of the design of the framework is to not process anything within the <code>CyclicLogic()</code> method until the Initialization process is completed. Therefore, we always start with calling the <code>Initialize()` method until it returns TRUE. After which we no longer call the</code>Initialize()``` method.</p>
+</div>
+<p>We set <code>_Busy</code> to FALSE as none of the commands we are currently using will take more than one PLC cycle.</p>
+<p>Finally, we call the <code>CyclicLogic()</code> method of the base class using <code>SUPER^CyclicLogic()</code>. This will ensure that any required code of the framework is also updated.</p>
+</li>
+<li>
+<p>Temporary Configuration Properties - Some commands are simple enough that they do not need a method, and some properties need to be available for both Reading and Writing.    </p>
+<p>Declare a local variable that will be controlled by the property
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>FB_Component_Solenoid EXTENDS FB_ComponentBase
+VAR
+<span class="w"> </span>   IO : ST_IO_Solenoid;
+<span class="gi">+   _Inhibit : BOOL;</span>
+END_VAR
+</code></pre></div></td></tr></table></div></p>
+</li>
+<li>
+<p>Add the Inhibit property that will be used to disable commands</p>
+<div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Inhibit.Set</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>_Inhibit := Inhibit;
+</code></pre></div></td></tr></table></div>
+<div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Inhibit.Get</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Inhibit := _Inhibit;
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>Update the methods to check the _Inhibit value before issuing the command
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Energize()</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>Energize := FALSE;
+
+<span class="gi">+IF _Inhibit THEN</span>
+<span class="gi">+   Trace(&#39;Energize Inhibited&#39;);</span>
+<span class="gi">+   RETURN;</span>
+<span class="gi">+END_IF</span>
+
+IF NOT _Busy AND NOT _Error THEN
+<span class="w"> </span>   IO.Energize := TRUE;
+<span class="w"> </span>   Energize    := TRUE;
+END_IF
+</code></pre></div></td></tr></table></div></p>
+</li>
+<li>
+<p>Add the same code to the Deenergize() method and change the TRACE message.<br/>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Deenergize()</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>Deenergize := FALSE;
+
+<span class="gi">+IF _Inhibit THEN</span>
+<span class="gi">+   Trace(&#39;Deenergize Inhibited&#39;);  </span>
+<span class="gi">+   RETURN;</span>
+<span class="gi">+END_IF</span>
+
+IF NOT _Busy AND NOT _Error THEN
+<span class="w"> </span>   IO.Energize := FALSE;
+<span class="w"> </span>   Deenergize := TRUE;
+END_IF
+</code></pre></div></td></tr></table></div></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>FB_ComponentBase</code> has a property for <code>InSimulation</code>, the code that implements your component can set/get this variable. The default implementation of <code>InSimulation</code> is to log a message when it is set to TRUE. Any other use of the variable would be up to you. </p>
+</div>
+</li>
+</ol>
+<h3 id="hmi-control">HMI Control</h3>
+<p><code>FB_ComponentBase</code> provides some basic functionality to manage a component’s interaction with an HMI. Mainly providing status information about the component in general: <code>Busy, Error, ErrorID, InSimulation</code>, and even the provided <code>Name</code>.</p>
+<ol>
+<li>
+<p>Add the following 4 structures, with the respective variables. Take note that the ST_HMI_ structure contains an instance of the other 3, and the Config structure does not yet contain any variables. It is important to provide unique and descriptive names for each structure type.
+    <div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">ST_Command_Solenoid</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>Energize : BOOL:
+Deenergize : BOOL;
+</code></pre></div></td></tr></table></div>
+    <div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">ST_Config_Solenoid</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>//None
+</code></pre></div></td></tr></table></div>
+    <div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">ST_Status_Solenoid</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>Energized : BOOL;
+Deenergized : BOOL;
+Inhibited : BOOL;
+</code></pre></div></td></tr></table></div>
+    <div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">ST_HMI_Solenoid</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>Cmd : ST_Command_Solenoid;
+Cfg : ST_Config_Solenoid;
+Sts : ST_Status_Solenoid;
+</code></pre></div></td></tr></table></div>
+Create an instance of the ST_HMI_Solenoid in your component.
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>FB_Component_Solenoid EXTENDS FB_ComponentBase
+VAR
+<span class="w"> </span>   IO : ST_IO_Solenoid;
+<span class="w"> </span>   _Inhibit : BOOL;
+<span class="gi">+   HMI : ST_HMI_Solenoid;</span>
+END_VAR
+</code></pre></div></td></tr></table></div></p>
+</li>
+<li>
+<p>Add the <code>HMICommunication()</code> method to your FB. In this method we will add the code to read and write to the previously created HMI structures. It is important that this method be named exactly as the one in the <code>FB_ComponentBase</code>, as we will be overriding that method. Additionally, it is important to note that we do not have to call this method directly as it will be called by the <code>CyclicLogic()</code> method of the base class.<br />
+The code in this method will accept requests from the HMI, verify that the HMI is allowed to control the component (i.e. machine is in Manual), and provide specific status information to the HMI.
+Commands from the HMI are typically received through a rising trigger, this facilitates a send and forget methodology and keeps variables from getting left on.  </p>
+<p>Declare a rising trigger in the component at the function block level
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>FB_Component_Solenoid EXTENDS FB_ComponentBase
+VAR
+<span class="w"> </span>   IO : ST_IO_Solenoid;
+<span class="w"> </span>   _Inhibit : BOOL;
+<span class="w"> </span>   HMI : ST_HMI_Solenoid;
+<span class="gi">+   HMICommand_Solenoid_RT : R_TRIG;</span>
+END_VAR
+</code></pre></div></td></tr></table></div></p>
+</li>
+<li>
+<p>The <code>FB_ComponentBase</code> has a similar RT and it is important to not create a conflict with it. Therefore, the input conditions for our RT will be that HMI control is allowed, the base is not actively sending a command, and then the commands we wish to monitor from the 
+HMI.<br />
+In the <code>HMICommunication()</code> method, add the following code to the beginning of the method.
+    <div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HMICommunication()</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>HMICommand_Solenoid_RT(CLK :=
+                   //Internal checks
+                    (ComponentBase_Hmi.Status.HMIControlAvailable AND NOT HMICommandActive_Base)
+                    //Commands from HMI
+                        AND (HMI.Cmd.Energize XOR HMI.Cmd.Deenergize));
+</code></pre></div></td></tr></table></div></p>
+</li>
+<li>
+<p>Next, we need to inform the base class that we have accepted a command and disallow it from accepting one until we are done. The variable <code>HMICommandActive_Descendant</code> is already declared in the <code>FB_ComponentBase</code> for this purpose.<br />
+    <div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HMICommunication()</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>HMICommandActive_Descendant := 
+    //Internal Checks – same as the RT
+    ComponentBase_Hmi.Status.HMIControlAvailable AND 
+    //Commands from HMI
+    (HMI.Cmd.Energize OR HMI.Cmd.Deenergize);
+</code></pre></div></td></tr></table></div></p>
+</li>
+<li>
+<p>We then need to respond to the Commands received from the HMI based on the acceptance through the rising edge trigger and turn off those commands. Notice that we are calling the same methods that the machine code will call.
+<div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HMICommunication()</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>IF HMICommand_Solenoid_RT.Q THEN
+    IF HMI.Cmd.Energize THEN
+        Energize();
+    END_IF
+    IF HMI.Cmd.Deenergize THEN
+        Deenergize();
+    END_IF
+    //
+    HMI.Cmd.Energize := FALSE;
+    HMI.Cmd.Deenergize := FALSE;
+END_IF
+</code></pre></div></td></tr></table></div></p>
+</li>
+<li>One of the last things to do is update the status information going back to the HMI.
+<div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HMICommunication()</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>HMI.Sts.Energized   := IO.Energize;
+HMI.Sts.Deenergized := NOT IO.Energize;
+HMI.Sts.Inhibited   := _Inhibit;
+</code></pre></div></td></tr></table></div></li>
+<li>Lastly it is important to call the method of the base class.
+    <div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HMICommunication()</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>SUPER^.HMICommunication();
+</code></pre></div></td></tr></table></div></li>
+</ol>
+<h3 id="other-methods-and-properties">Other Methods and Properties</h3>
+<p>Other command methods could be used to help in the implementation of a component. 
+As an example, we could consider a <code>Home()</code> method. 
+The position for homing would need to be configurable as <code>Energized</code> or <code>Deenergized</code>, 
+and then the appropriate method could be called from the <code>Home()</code> method. 
+While this might seem trivial it will allow for the programmer who is implementing the component to write their code as <code>Component.Home()</code> and in one location set a property for the Component to change how it responds. <code>HomeIsDeenergized := TRUE</code>. 
+Then when the need arises they can change only the <code>HomeIsDeenergized</code> property from TRUE to FALSE, and all of the calls to the <code>Home()</code> method will respond accordingly. </p>
+<ol>
+<li>Within <code>ST_Config_Solenoid</code> add the following variable to the structure
+<div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">ST_Config_Solenoid</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>HomeIsDeenergized : BOOL;
+</code></pre></div></td></tr></table></div></li>
+<li>Add a property for HomeIsDeenergized</br>
+    <div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HomeIsDeenergized.Get</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>HomeIsDeenergized := HMI.Cfg.HomeIsDeenergized;
+</code></pre></div></td></tr></table></div>
+    <div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HomeIsDeenergized.Set</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>HMI.Cfg.HomeIsDeenergized := HomeIsDeenergized;
+</code></pre></div></td></tr></table></div></li>
+<li>
+<p>Add a Home() method that returns a BOOL
+    <div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Method Declaration</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>METHOD Home : BOOL
+</code></pre></div></td></tr></table></div>
+    <div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Method Implementation</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>Home := FALSE;
+IF HMI.Cfg.HomeIsDeenergized THEN
+    Home := Deenergize();       
+ELSE
+    Home := Energize();
+END_IF
+</code></pre></div></td></tr></table></div></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>Home()</code> method sets the return value to FALSE at the beginning. Afterwards the selected <code>Deenergize()</code> or <code>Energize()</code> method is called, each of those will return TRUE or FALSE depending on their completion and that value will then be returned from the <code>Home()</code> method.</p>
+</div>
+<p>The property <code>HomeIsDeenergized</code> is currently FALSE by default. This can be handled in several ways, but this is a great opportunity to show the purpose of the <code>Initialize()</code> method. </br></p>
+</li>
+<li>
+<p>Add the <code>Initialize()</code> method and the following code. Again, this method name needs to match the name used by the base class.
+<div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Method Declaration</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>METHOD Initialize : BOOL;
+</code></pre></div></td></tr></table></div>
+<div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Method Implementation</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>HomeIsDeenergized := TRUE;
+SUPER^.Initialize();
+</code></pre></div></td></tr></table></div></p>
+<p>This code sets the value of the property and then calls the method of the base class so that it may handle the initialization of <code>FB_ComponentBase</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Notice that we are setting the Property <code>HomeIsDeenergized</code> which calls the <code>Set()</code>  method of that property. Internally that will write directly to <code>HMI.Cfg.HomeIsDeenergized</code>. Within the <code>Initialize()</code> method we could also write to <code>HMI.Cfg.HomeIsDeenergized</code>; however, if we do this then we are bypassing any code that could be placed within the <code>Set()</code> method to ensure data integrity and also ensure that the code in the <code>Initialize()</code> method will continue to work properly if the internal name within the <code>HMI.Cfg</code> structure was to change. When making a decision of which variable to write to, it is better to interact with variables that will be external to the component as they will have a tendency to not change as doing so will potentially break the build for everyone using the component.</p>
+</div>
+</li>
+</ol>
+<h3 id="testing-the-better-solenoid">Testing the Better Solenoid</h3>
+<p>To test the Better Solenoid, we can edit the code in <code>MAIN</code>, but first notice that even with all the changes we have made the previous implementation code in <code>MAIN</code> is not required to change.</p>
+<ol>
+<li>
+<p>Add the test code below to <code>MAIN</code> and declare the proper variables.
+    <div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">MAIN Declaration</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>Status              : BOOL;
+Start               : BOOL;
+Stop                : BOOL;
+Home                : BOOL;
+Inhibit             : BOOL;
+SetHomeDeenergize   : BOOL;
+SetHomeEnergize     : BOOL;
+HomeActive          : BOOL;
+</code></pre></div></td></tr></table></div></p>
+<p><div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">MAIN Implementation</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span></pre></div></td><td class="code"><div><pre><span></span><code>Solenoid.CyclicLogic();
+Status := Solenoid.Energized;
+
+IF Start THEN
+    Start := FALSE;
+    Solenoid.Energize();
+END_IF
+
+IF Stop THEN
+    Stop := FALSE;
+    Solenoid.Deenergize();
+END_IF
+
+IF SetHomeDeenergize THEN
+    SetHomeDeenergize          := FALSE;
+    Solenoid.HomeIsDeenergized := TRUE;
+END_IF
+
+IF SetHomeEnergize THEN
+    SetHomeEnergize            := FALSE;
+    Solenoid.HomeIsDeenergized := FALSE;
+END_IF
+
+IF Home THEN
+    Home := FALSE;
+    Solenoid.Home();
+END_IF
+
+IF Inhibit THEN
+    Inhibit := FALSE;
+    Solenoid.Inhibit := TRUE;
+    Solenoid.Energize();
+ELSE
+    Solenoid.Inhibit := FALSE;
+END_IF
+</code></pre></div></td></tr></table></div>
+While the methods are returning a value, the previous code does not make use of that value. If you wish to confirm these return values, the test code can be modified as follows:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>IF Home THEN
+<span class="w"> </span>   Home := FALSE;
+<span class="gd">-   Solenoid.Home();</span>
+<span class="gi">+   HomeActive := Solenoid.Home();  </span>
+END_IF
+</code></pre></div></td></tr></table></div></p>
+</li>
+</ol>
+<h3 id="creating-an-interface">Creating an Interface</h3>
+<p>An interface can be added to allow for proper access from higher level code. The interface(s) should encompass the methods and properties needed to control and monitor the component.  </p>
+<ol>
+<li>
+<p>Create the interface <code>I_Component_Solenoid</code>  </p>
+</li>
+<li>
+<p>Add the following to the Interface
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Methods</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>Deenergize
+Energize
+Home
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Properties</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>Deenergized
+Energized
+HomeIsDeenergized
+Inhibit
+</code></pre></div></td></tr></table></div>
+Notice that we did not add all of the methods and properties of <code>FB_Component_Solenoid</code> to the interface. We specifically did not add any that are a part of the base class <code>FB_ComponentBase</code>, as they are already a part of the interface for the base class and we don’t need to add them again. When adding the methods and properties ensure that the spelling and return type matches and check the Get/Set of the properties and Delete the ones that are not needed. In this case the Set methods of Energize and Deenergize can be deleted.</p>
+</li>
+<li>
+<p>Change the declaration of the component to implement the interface
+    <div class="copy highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>FUNCTION_BLOCK FB_Component_Solenoid EXTENDS FB_ComponentBase IMPLEMENTS I_Component_Solenoid
+</code></pre></div></td></tr></table></div>
+Adding the interface after creating the class (Function Block) can feel backwards to some, and while prior proper planning can help minimize this it is important to know that interfaces can be modified as needed.
+Testing the interface can be done by declaring an instance of the interface, assigning the instance of the class to the interface, and replacing the class instance with the interface instance throughout the code.  </p>
+</li>
+<li>
+<p>Declare an instance of the interface in <code>MAIN</code>
+    <div class="copy highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>ipSolenoid : I_Component_Solenoid;
+</code></pre></div></td></tr></table></div></p>
+</li>
+<li>Assign the instance of the class to the instance of the interface after <code>Solenoid.CyclicLogic()</code>
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>Solenoid.CyclicLogic();
+<span class="gi">+ipSolenoid := Solenoid;</span>
+<span class="gd">-Status := Solenoid.Energized;</span>
+<span class="gi">+Status := ipSolenoid.Energized;</span>
+</code></pre></div></td></tr></table></div>
+As above replace the calls to <code>Solenoid</code> with <code>ipSolenoid</code>, but only where the methods and properties of <code>ipSolenoid</code> are used. This means that <code>Solenoid.CyclicLogic()</code> should not be changed, because <code>CyclicLogic()</code> is not part of the <code>ipSolenoid</code> interface. 
+The code is now ready for testing with the interface.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although this may seem like it is not useful, once we get deeper into object-oriented programming these interfaces will become very powerful and useful. To prevent having to modify your code it is best to create the interface before creating the class and try to predict the properties and methods that will be needed. Even if you start with an empty interface and add to it as needed during the development cycle it will save you time in the long run. Another point to note is that you can copy and paste between the FB and the Interface. If you wish to create methods and properties on the FB first, you can then copy them from the FB and paste them to the Interface. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>DO NOT drag and drop from the FB to the Interface, as this will remove the code.</p>
+</div>
+</div>
+<h3 id="reset">Reset</h3>
+<p><code>FB_ComponentBase</code> and Implements the interface <code>I_ComponentBase</code> which defines the method <code>Reset()</code>. This method is used by the base class to call <code>F_ClearAllEventsInClass</code>, which currently only contains the message for <code>InSimulation</code>. However this allows us to override and call the <code>Reset()</code> method for all components via the interface. For this example we will deenergize the <code>Solenoid</code> in the <code>Reset()</code> method. </p>
+<ol>
+<li>Add the a method to the component and select <code>Reset</code> from the <code>Name</code> drop down list. 
+      <img alt="Add Reset Method" src="../../References/assets/Training/AddResetMethod.png" /></li>
+<li>For the implementation of the method, return the proper values, call the <code>Reset()</code> method of the base class, and the <code>Deenergize()</code> method.
+    <div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Reset()</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>Reset := FALSE;
+IF SUPER^.Reset() THEN
+        Reset := Deenergize();
+END_IF
+</code></pre></div></td></tr></table></div>
+The method can be called from MAIN using the following, but take notice that we are not using the interface, and if you look at the intellisense drop down list of ipSolenoid, the Error and Reset items are not listed.
+<div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">MAIN</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>IF Solenoid.Error THEN
+    Solenoid.Reset();
+END_IF
+</code></pre></div></td></tr></table></div>
+If we EXTEND the I_Component_Solenoid interface from the I_ComponentBase interface, then the methods and properties of that interface will be available. Double click on the <code>I_Component_Solenoid</code> and modify the declaration to match the following
+<div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">I_Component_Solenoid</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>INTERFACE I_Component_Solenoid EXTENDS I_ComponentBase
+</code></pre></div></td></tr></table></div>
+Return to MAIN and update the code to use the interface ipSolenoid
+    <div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">MAIN</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>IF ipSolenoid.Error THEN
+    ipSolenoid.Reset();
+END_IF
+</code></pre></div></td></tr></table></div></li>
+</ol>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
