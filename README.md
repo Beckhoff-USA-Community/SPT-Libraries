@@ -1,3 +1,7 @@
+# Coming Soon!!!
+With the relesase of PackML V3 for TwinCAT 3.1.4026, the SPT Libraries will be moving to V4.0 to support the new PackML standard.
+
+
 # About This Repository
 These libraries go hand-in-hand with the [VFFS Demo PLC](https://github.com/Beckhoff-USA-Community/PackML_PLC_Example).
 
