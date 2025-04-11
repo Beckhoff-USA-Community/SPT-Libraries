@@ -1,0 +1,15 @@
+#SPT Base Types
+#SPT Event Logger
+#SPT Utilities
+#Tc2_Math
+#Tc2_MC2
+#Tc2_Standard
+#Tc2_System
+#Tc2_Utilities
+#Tc3_EventLogger
+#Tc3_JsonXml
+#Tc3_McCollisionAvoidance
+#Tc3_McCoordinatedMotion
+#Tc3_Module
+#Tc3_PackML_V2
+#Tc3_XTS_Utility
