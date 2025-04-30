@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -756,6 +756,21 @@
       What is PackML?
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="What is PackML?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-building-blocks-of-packml" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the building blocks of PackML?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4189,6 +4204,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="What is PackML?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-building-blocks-of-packml" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the building blocks of PackML?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -4271,7 +4301,7 @@
 
 <h2 id="what-is-packml">What is PackML?</h2>
 <p>According to the OMAC website - PackML is an automation standard developed by the OMAC and adopted by ISA as TR88.00.02 that makes it easier to transfer and retrieve consistent machine data. The primary goals of PackML are to encourage a common “look and feel” across a plant floor, and to enable and encourage industry innovation.</p>
-<p>What are the building blocks of PackML?</p>
+<h3 id="what-are-the-building-blocks-of-packml">What are the building blocks of PackML?</h3>
 <figure>
 <p><img alt="Alt text" src="assets/PackMLMMEMC.png" />
   </p>
@@ -4283,13 +4313,13 @@
 <p>The PackML standard defines 4 modes, but also allows for the user to define their own. The defined modes are Invalid, Production, Maintenance, and Manual. A complete machine can be developed with only the use of the Production Mode. However, the other modes can be used to best describe the group of possible states. It could be that a Manual Mode does not include the Suspended and Held paths, and the Maintenance Mode includes the Held path but not the Suspended path. These choices are completely left to the developer and how they choose to design the machine. There are a total of 32 possible modes, these can be used for a variety of scenarios such as a test mode that has a defined Complete command to leave the Execute state after a test is completed, or a warmup mode could be created to keep the machine in the Execute state until it’s ready.</p>
 <h3 id="what-is-the-packml-state-machine">What is the PackML state machine?</h3>
 <p>PackML defines modes of operation and the possible states within each mode. A complete machine can be developed using only the production mode. The states are grouped into areas defined by their functionality. Typically, a machine will power on and go through the Aborting state to Aborted, these same states can be used for fault handling. Understanding the diagram and the areas is important. When a machine is in Execute there are four possible paths. A Suspend command will be issued when an upstream or downstream dependency is not met. This could be the previous Equipment module has run out of material or possibly faulted. The other 3 paths are Hold, Abort, and Stop. The Hold and Stop commands are issued by the operator, while the Abort command is given by the code. There are two types of states, Acting and Wait. The ‘ing’ states are the Acting states. Aborting, Clearing, Stopping, Holding, etc. These states are entered because a command was given to do so. An Estop might cause an Abort command to be issued that will place the state machine into Aborting, or when the operator presses the Start button the command will be given for the state machine to move to the Starting state. Each of these acting states is followed by a StateComplete that is determined by the code and then transitions to a Wait state such as Stopped, Idle or Held. The Execute state is the exception to this as it is defined as an Acting state, but uses the StateComplete of the Starting state to enter and requires a command to leave.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">PackML V2</label><label for="__tabbed_1_2">PackML V3</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">PackML V3</label><label for="__tabbed_1_2">PackML V2</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><img alt="Alt text" src="assets/PackMLV2StateMachine.png" /></p>
+<p><img alt="Alt text" src="assets/PackMLFullStateMachine.png" /></p>
 </div>
 <div class="tabbed-block">
-<p><img alt="Alt text" src="assets/PackMLFullStateMachine.png" /></p>
+<p><img alt="Alt text" src="assets/PackMLV2StateMachine.png" /></p>
 </div>
 </div>
 </div>

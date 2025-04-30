@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -4405,8 +4405,8 @@ END_VAR
 <span class="gi">+   IO.Energize := TRUE;</span>
 </code></pre></div></td></tr></table></div>
     <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">METHOD Deenergize</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gd">-   _Energize := TRUE;</span>
-<span class="gi">+   IO.Energize := TRUE;</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gd">-   _Energize := FALSE;</span>
+<span class="gi">+   IO.Energize := FALSE;</span>
 </code></pre></div></td></tr></table></div>
     <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Property Energized.Get()</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gd">-   Energized := _Energize;</span>
@@ -4441,7 +4441,7 @@ END_IF
 </li>
 <li>
 <p>Repeat for the Deenergize() method
-<div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Energize()</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Denergize()</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -4484,7 +4484,7 @@ SUPER^.CyclicLogic();
 </code></pre></div></td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Part of the design of the framework is to not process anything within the <code>CyclicLogic()</code> method until the Initialization process is completed. Therefore, we always start with calling the <code>Initialize()` method until it returns TRUE. After which we no longer call the</code>Initialize()``` method.</p>
+<p>Part of the design of the framework is to not process anything within the <code>CyclicLogic()</code> method until the Initialization process is completed. Therefore, we always start with calling the <code>Initialize()</code> method until it returns TRUE. After which we no longer call the <code>Initialize()</code> method.</p>
 </div>
 <p>We set <code>_Busy</code> to FALSE as none of the commands we are currently using will take more than one PLC cycle.</p>
 <p>Finally, we call the <code>CyclicLogic()</code> method of the base class using <code>SUPER^CyclicLogic()</code>. This will ensure that any required code of the framework is also updated.</p>
@@ -4571,7 +4571,7 @@ END_IF
 <li>
 <p>Add the following 4 structures, with the respective variables. Take note that the ST_HMI_ structure contains an instance of the other 3, and the Config structure does not yet contain any variables. It is important to provide unique and descriptive names for each structure type.
     <div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">ST_Command_Solenoid</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>Energize : BOOL:
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>Energize : BOOL;
 Deenergize : BOOL;
 </code></pre></div></td></tr></table></div>
     <div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">ST_Config_Solenoid</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>//None
@@ -4730,12 +4730,16 @@ END_IF
 </code></pre></div></td></tr></table></div>
 <div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Method Implementation</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>HomeIsDeenergized := TRUE;
-SUPER^.Initialize();
+Initialize := SUPER^.Initialize();
 </code></pre></div></td></tr></table></div></p>
 <p>This code sets the value of the property and then calls the method of the base class so that it may handle the initialization of <code>FB_ComponentBase</code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Notice that we are setting the Property <code>HomeIsDeenergized</code> which calls the <code>Set()</code>  method of that property. Internally that will write directly to <code>HMI.Cfg.HomeIsDeenergized</code>. Within the <code>Initialize()</code> method we could also write to <code>HMI.Cfg.HomeIsDeenergized</code>; however, if we do this then we are bypassing any code that could be placed within the <code>Set()</code> method to ensure data integrity and also ensure that the code in the <code>Initialize()</code> method will continue to work properly if the internal name within the <code>HMI.Cfg</code> structure was to change. When making a decision of which variable to write to, it is better to interact with variables that will be external to the component as they will have a tendency to not change as doing so will potentially break the build for everyone using the component.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>While it is conveienient to set the configuration properties in the initialize method, it is also possible to set them in the <code>CyclicLogic()</code> method. This is useful if you want to change the configuration properties at runtime. For example, if you have a solenoid that can be configured to either energize or de-energize when homing, you could set the <code>HomeIsDeenergized</code> property in the <code>CyclicLogic()</code> method based on some external condition.</p>
 </div>
 </li>
 </ol>
@@ -4843,6 +4847,17 @@ END_IF
 </code></pre></div></td></tr></table></div></p>
 </li>
 </ol>
+<p>Additionaly the return value of the method can be checked by the '''IF''' statement
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>IF Solenoid.Home() THEN
+    HomeActive := TRUE;
+ELSE
+    HomeActive := FALSE;
+END_IF
+</code></pre></div></td></tr></table></div></p>
 <h3 id="creating-an-interface">Creating an Interface</h3>
 <p>An interface can be added to allow for proper access from higher level code. The interface(s) should encompass the methods and properties needed to control and monitor the component.  </p>
 <ol>
@@ -4920,7 +4935,7 @@ The method can be called from MAIN using the following, but take notice that we 
     Solenoid.Reset();
 END_IF
 </code></pre></div></td></tr></table></div>
-If we EXTEND the I_Component_Solenoid interface from the I_ComponentBase interface, then the methods and properties of that interface will be available. Double click on the <code>I_Component_Solenoid</code> and modify the declaration to match the following
+If we extend the I_Component_Solenoid interface from the I_ComponentBase interface, then the methods and properties of that interface will be available. Double click on the <code>I_Component_Solenoid</code> and modify the declaration to match the following
 <div class="copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">I_Component_Solenoid</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>INTERFACE I_Component_Solenoid EXTENDS I_ComponentBase
 </code></pre></div></td></tr></table></div>
 Return to MAIN and update the code to use the interface ipSolenoid

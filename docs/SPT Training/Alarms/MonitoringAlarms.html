@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -4187,6 +4187,10 @@ Warning             E_AlarmResponse.NoResponse
 Error               E_AlarmResponse.Abort_ImmediateError
 Critical            E_AlarmResponse.Abort_ImmediateError
 </code></pre></div></td></tr></table></div>
+<details class="note">
+<summary>Severity Levels</summary>
+<p>The severity levels can be a reason to separate components into different EMs. The need for components to respond differently to severity levels could be a reason to separate them into different EMs. For example, if one component needs to respond to a error with an immediate stop, while another component only needs to respond to a critical alarm with an immediate stop, then it may be best to separate them into different EMs. This is not a requirement, but it is something to consider when designing the system.</p>
+</details>
 <p>These defaults are initialized to the array variable <code>_ParentFaultResponseDefinitions</code> in the declaration of <code>FB_ComponentBase</code>. When other responses are required the values of <code>_ParentFaultResponseDefinitions</code> can be modified in your code.
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>

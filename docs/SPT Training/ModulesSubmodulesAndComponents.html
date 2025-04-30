@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -1028,6 +1028,21 @@
       Equipment Modules
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Equipment Modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#here-are-some-things-to-consider-when-deciding-on-the-architecture-of-the-ems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Here are some things to consider when deciding on the architecture of the EMs:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4282,6 +4297,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Equipment Modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#here-are-some-things-to-consider-when-deciding-on-the-architecture-of-the-ems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Here are some things to consider when deciding on the architecture of the EMs:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -4341,7 +4371,7 @@
 The top level of the hierarchy is the Machine Module which we typically refer to as the Machine or Machine Module (MM). The module will extend the <code>FB_PackML_BaseModule</code> from the SPT Base Types library. This will give the Machine function block all the functionality within the methods and properties of <code>FB_PackML_BaseModule</code>. This includes the <code>CyclicLogic()</code> and <code>Initialize()</code> methods which are key parts of the SPT Framework. Within the Machine function block instance, we will declare an instance of each Equipment Module that the Machine is responsible for controlling directly. Likely this will be all of the EMs, but there will be exceptions when Submodules are grouped together under another Equipment Module. The Machine may also directly contain some Components, such as a Stack Light, a pressure switch for machine air, the safety monitoring code, a connection to the recipe database, or many other items that don’t need a state machine that is separate from the Machine Module. </p>
 <p>Because of the way that the SPT Framework works behind the scenes, it is not necessary for each module to have its own method for each state. For example, not all Equipment modules will need a Held state, therefore it does not need to exist only to call its parents method (using Super). However, if the EM needs to do something in addition to what the base class does, then the method can be added to the EM, the unique code can be added, and then the method can call its Super at the end of the method (or any other place depending on what is being done in the code).</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">Note for TwinCAT 4024</p>
 <p>While a method does not need to be added just to call the SUPER, if the FB is going to be inherited again (grandchild), then any method overridden by the grandchild will need to be added to the child and it's SUPER called, in order to allow the grandchild to call the base method of the original class.</p>
 </div>
 <h2 id="controlling-the-ems">Controlling the EMs</h2>
@@ -4381,7 +4411,8 @@ The top level of the hierarchy is the Machine Module which we typically refer to
 <h2 id="components-of-the-mm">Components of the MM</h2>
 <p>Components in general are the building blocks that allow us to make connections between the State Machine and anything that is outside of the PLC. Whether it’s a cylinder, an axis, a stack light, or something non-hardware like a database. The simplest implementation of the SPT Framework would be a Machine Module with a single component, and this will be one of the labs we do early on. Components do not have a state machine defined by the standard, but within the SPT Framework they must extend the <code>FB_ComponentBase</code>. This allows them to be a part of the Framework and provides the minimal <code>CyclicLogic()</code> and <code>Initialize()</code> methods that are necessary. Beyond that the commands, status, and configuration of a component are up to the programmer to implement as needed.</p>
 <h2 id="equipment-modules">Equipment Modules</h2>
-<p>EMs are defined by their mechanical and functional dependencies. It would typically be the way we group a machine. A simple machine might have an Unwind, a Process and an Outfeed. Each of these could be an Equipment Module. But what if the process station is 2 axes, or has a cylinder before the axis? Then it’s possible that the process station EM could have Submodules, or each of these could be an EM of the Machine Module. How do you decide on architecture? The effective solution is the one that considers the state machine needs of the EMs. If all of the stations can and should follow the same state machine, then they could possibly be implemented as Components of a single EM. But if there could be a need for one of them to be in a different state or mode then it should be placed within its own EM. Another consideration is Portability. If there is a possibility that another machine design will need an independent EM, then some thought should be given to how the EM design choices will impact that design. If one machine had a station with a cylinder and an axis that could function under the same state machine, but another machine would need them to be independently controlled, it might make sense to separate them into their own EMs. When they are working together under one state machine, they can both be controlled by commands from the MM.</p>
+<p>EMs are defined by their mechanical and functional dependencies. It would typically be the way we group a machine. A simple machine might have an Infeed, a Process and an Outfeed. Each of these could be an Equipment Module. But what if the process station is 2 axes, or has a cylinder before the axis? Then it’s possible that the process station EM could have Submodules, or each of these could be an EM of the Machine Module. How do you decide on architecture? The effective solution is the one that considers the state machine needs of the EMs. If all of the stations can and should follow the same state machine, then they could possibly be implemented as Components of a single EM. But if there could be a need for one of them to be in a different state or mode then it should be placed within its own EM. Another consideration is Portability. If there is a possibility that another machine design will need an independent EM, then some thought should be given to how the EM design choices will impact that design. If one machine had a station with a cylinder and an axis that could function under the same state machine, but another machine would need them to be independently controlled, it might make sense to separate them into their own EMs. When they are working together under one state machine, they can both be controlled by commands from the MM.</p>
+<h3 id="here-are-some-things-to-consider-when-deciding-on-the-architecture-of-the-ems">Here are some things to consider when deciding on the architecture of the EMs:</h3>
 <details class="question" open="open">
 <summary>Does the component need its own state machine?</summary>
 <p>A component follows the commands of the EM that it is defined within. These commands are driven by the EMs state machine. For example, we might extend a cylinder in <code>Production.Starting</code>, monitor its position in <code>Production.Execute</code>, and retract it in <code>Production.Completing</code>. If another component will always operate within the same state machine as this component, then we could consider placing them both within the same EM. For example, 2 cylinders that operate on the same mechanical assembly. There is no need to look through the components of the machine and try to find ways to group them together, but instead we should consider when separation is necessary and advantageous. It could be that a component has a unique process that will require it to have its own state machine that is separate from any other on the machine. It is possible that a heating component will need to preheat before the other EMs can go into Production mode. By placing the heating component in its own EM, its mode and state can be completely controlled by its own internal state machine while the other EMs remain in <code>Production.Idle</code>, <code>Production.Starting</code>, or any other mode and state.</p>
@@ -4393,6 +4424,10 @@ The top level of the hierarchy is the Machine Module which we typically refer to
 <details class="question" open="open">
 <summary>Will the component or EM need to change modes independently?</summary>
 <p>In addition to a separate state machine, it could also be that a component has need to change modes separately from another component. While components might generally operate together, it could be that in a special case that a component needs to change modes to perform a unique function. In this case it would be suggested to create a separate EM for this component.</p>
+</details>
+<details class="question" open="open">
+<summary>What about alarm severity and the reactions to them?</summary>
+<p>As discussed in the Alarms and Events section, each EM can have it own unique alarm responses to each of the five severity levels. Therefore it might be feasible to separate components into different EMs based on their necessary alarm responses. For example, if a heater component might have a need to stay energized during an alarm that would otherwise remove power, then it should be placed within its own EM. This will allow the programmer to define the alarm response for that EM without having to worry about how it will affect the other EMs.</p>
 </details>
 <h2 id="submodules">SubModules</h2>
 <details class="question" open="open">

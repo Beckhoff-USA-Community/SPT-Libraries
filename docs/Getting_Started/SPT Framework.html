@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -4508,7 +4508,8 @@ ipComponents_Init : ARRAY[1..Parameters_PackML_Base.MAX_NO_OF_COMPONENTS] OF I_C
 <h2 id="overriding-methods-of-the-base-class">Overriding methods of the base class</h2>
 <p>The SPT Framework contains a complete set of function blocks to run the state machine. FB_PackML_BaseModule has a method for each of the PackML states. Each of these methods has the code needed progress the state machine. When adding a new Equipment module that will extend FB_PackML_BaseModule, call the same methods with their unique code and call the method in the base using SUPER^.Method() or SUPER^.Resetting within your Resetting method. The use of SUPER will call the method of the base class and run the code that exists there. The typical implementation would call SUPER at the end of the method in the EM. If a method is not needed by an Equipment Module, then there is no need for the EM to call that method. At the Machine module level unless you need to override the method, DON’T. Just let the CyclicLogic method handle it. Additionally, while it is common to override the CyclicLogic method when inheriting from a library in the base class, it is not required to do so. If you do not override the CyclicLogic method the underlying code for the method will be executed.</p>
 <h3 id="when-to-call-statecomplete-vs-supermethod">When to call StateComplete() vs Super^.Method()</h3>
-<p>//This section needs work, maybe an example</p>
+<!--//This section needs work, maybe an example-->
+
 <p>The Acting states are exited when the StateComplete method is called. This is done in base class for you when you call SUPER^.Method(). It could be that you wish to call the StateComplete method from the EM, and that can also be done. The waiting states are exited when a change state command is given, for example ipModule.ChangeState(Tc3_PackML_V2.E_PMLCommand.ePMLCommand_Stop) or ChangeState(E_PMLCommand.ePMLCommand_Unsuspend)</p>
 <p>If you are not sure, don't call StateComplete(). Call Super^.Method() after your code and let the base class handle it.</p>
 <h3 id="initializing">Initializing</h3>
