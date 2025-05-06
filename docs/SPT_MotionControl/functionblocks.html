@@ -4458,7 +4458,7 @@ MyBasicSlaveAxis.Master1 REF= MyBasicAxis.Axis;
 <p><code>PROPERTY ResetMethod : I_MotionSequence</code></p>
 <p>You can optionally assign an external sequence of events to occur when the <code>Reset()</code> method is called.  This can be useful, for instance, when using an AX5000 or some drive that needs a separate reset routine to be called in addition to MC_Reset.  Assigning a function block which implements <code>I_MotionSequence</code> will automatically assign the axis' <code>AXIS_REF</code> for use in whatever function blocks you choose.  The instantiation of custom reset routine function block should take place in the parent of the <code>FB_BasicAxis</code> instance.  </p>
 <div class="admonition tip">
-<p class="admonition-title">Default Home() Behavior</p>
+<p class="admonition-title">Default Reset() Behavior</p>
 <p>The default behavior is to call <a href="https://infosys.beckhoff.com/english.php?content=../content/1033/tcplclib_tc2_mc2/70050955.html&amp;id=" target="_blank">MC_Reset</a> when this property is not set and the Reset() method is called.</p>
 </div>
 <h4 id="methods">Methods</h4>
