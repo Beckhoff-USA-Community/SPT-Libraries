@@ -4626,6 +4626,81 @@ TYPE E_AlarmResponse : (
 END_TYPE
 </code></pre></div></td></tr></table></div>
 <h3 id="e_pmlunitmode">E_PMLUnitMode</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">SPT V4</label><label for="__tabbed_1_2">SPT V3</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span></pre></div></td><td class="code"><div><pre><span></span><code>TYPE E_PMLUnitMode : (
+        Invalid      := 0,
+        Production   := 1,
+        Maintenance  := 2,
+        Manual       := 3,
+        UserMode1    := 4,
+        UserMode2    := 5,
+        UserMode3    := 6,
+        UserMode4    := 7,
+        UserMode5    := 8,
+        UserMode6    := 9,
+        UserMode7    := 10,
+        UserMode8    := 11,
+        UserMode9    := 12,
+        UserMode10   := 13,
+        UserMode11   := 14,
+        UserMode12   := 15,
+        UserMode13   := 16,
+        UserMode14   := 17,
+        UserMode15   := 18,
+        UserMode16   := 19,
+        UserMode17   := 20,
+        UserMode18   := 21,
+        UserMode19   := 22,
+        UserMode20   := 23,
+        UserMode21   := 24,
+        UserMode22   := 25,
+        UserMode23   := 26,
+        UserMode24   := 27,
+        UserMode25   := 28,
+        UserMode26   := 29,
+        UserMode27   := 30,
+        UserMode28   := 31
+    ) DINT;
+END_TYPE
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -4696,6 +4771,9 @@ END_TYPE
     ) DINT;
 END_TYPE
 </code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 <h2 id="structs">STRUCTs</h2>
 <h3 id="st_componentbase_hmi">ST_ComponentBase_HMI</h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -4790,6 +4868,31 @@ END_TYPE
 END_TYPE
 </code></pre></div></td></tr></table></div>
 <h3 id="st_packmlbasemodule_command">ST_PackMLBaseModule_Command</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">SPT V4</label><label for="__tabbed_2_2">SPT V3</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>TYPE ST_PackMLBaseModule_Command :
+    STRUCT
+        Mode               : E_PMLUnitMode              := Parameters_PackML_Base.UNIT_MODE_DEFAULT;
+        State              : Tc3_PackML_V3.E_PMLCommand := Parameters_PackML_Base.UNIT_STATE_DEFAULT;
+        ActivateStateLog   : BOOL; //HMI requests to enable the module
+        DeactivateStateLog : BOOL; //HMI requests to disable the module
+        ActivateModeLog    : BOOL; //HMI requests to enable the module
+        DeactivatModeLog   : BOOL; //HMI requests to disable the module
+    END_STRUCT
+END_TYPE
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -4810,7 +4913,35 @@ END_TYPE
     END_STRUCT
 END_TYPE
 </code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 <h3 id="st_packmlbasemodule_status">ST_PackMLBaseModule_Status</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">SPT V4</label><label for="__tabbed_3_2">SPT V3</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>TYPE ST_PackMLBaseModule_Status :
+    STRUCT
+        Busy                : BOOL;
+        Error               : BOOL;
+        ErrorID             : UDINT;
+        Mode                : E_PMLUnitMode;
+        State               : Tc3_PackML_V3.E_PMLState;
+        HMIControlAvailable : BOOL;
+    END_STRUCT
+END_TYPE
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -4831,6 +4962,9 @@ END_TYPE
     END_STRUCT
 END_TYPE
 </code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 <h3 id="st_packml_control">ST_PackML_Control</h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>

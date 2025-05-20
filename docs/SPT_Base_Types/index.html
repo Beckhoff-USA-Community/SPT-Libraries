@@ -4326,6 +4326,149 @@ END_IF
 ...code to run once initialization is complete
 </code></pre></div></td></tr></table></div>
 <h1 id="class-diagram-packml-base-module">Class Diagram PackML Base Module</h1>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">SPT V4</label><label for="__tabbed_1_2">SPT V3</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<pre class="mermaid"><code>classDiagram
+    I_PackML_BaseModule --|&gt; I_CyclicFB
+    I_PackML_BaseModule --|&gt; I_PackML_Control
+    I_PackML_BaseModule --o TcEventSeverity
+    I_PackML_BaseModule --o E_AlarmResponse
+
+    I_PackML_Control --o E_PMLUnitMode
+    I_PackML_Control --o E_PMLState
+    I_PackML_Control --o E_PMLCommand
+
+    FB_PackML_BaseModule --|&gt; FB_CyclicFB
+    FB_PackML_BaseModule ..|&gt; I_PackML_BaseModule
+    FB_PackML_BaseModule ..|&gt; I_PackML_Control
+    FB_PackML_BaseModule --o I_PackML_ExternalController
+
+    I_PackML_ExternalController --o I_PackML_Control
+
+
+
+    FB_CyclicFB ..|&gt; I_CyclicFB
+
+    class I_PackML_BaseModule{
+        &lt;&lt;Interface&gt;&gt;
+        +TcEventSeverity CurrentAlarmSeverity
+        +BOOL LogModeChanges
+        +BOOL LogStateChanges
+        +STRING Name
+        +ARRAY[0..4] OF E_AlarmResponse ParentResponseDef
+    }
+
+    class I_PackML_Control{
+        &lt;&lt;Interface&gt;&gt;
+        +E_PMLUnitMode CurrentMode
+        +E_PMLState CurrentState
+        +DINT ModeCommand
+        +E_PMLCommand StateCommand
+        +ChangeMode()
+        +ChangeState()
+    }
+
+    class I_PackML_ExternalController{
+        &lt;&lt;Interface&gt;&gt;
+        +I_PackML_Control Control
+        +ModeChanged()
+        +StateChanged()
+    }
+
+
+    class FB_PackML_BaseModule{
+        &lt;&lt;Abstract&gt;&gt;
+        #AbortImmediate()
+        #AbortImmediateError()
+        #HoldControlled()
+        #HoleImmediate()
+        #StopControlled()
+        #StopImmediate()
+        #SuspendControlled()
+        #SuspendImmediate()
+        #AllowHMIControl()
+        #BlockHMIControl()
+        #HMICommunication()
+        #HMIPermissions()
+        #ComponentMonitor()
+        #SubModuleMonitor()
+        #Aborting()
+        #Aborted()
+        #Clearing()
+        #Completing()
+        #Completed()
+        #Execute()
+        #Holding();
+        #Held()
+        #Idle()
+        #Resetting()
+        #Starting()
+        #Stopping()
+        #Stopped()
+        #Suspending()
+        #Suspended()
+        #Unholding()
+        #Unsuspending()
+        #Undefined()
+
+        -StateControl()
+        -ModeControl()
+
+        #CreateEvents()
+        #Initialize() BOOL
+        #StateComplete()
+        +RegsterExernalController() BOOL
+
+    }
+
+    class FB_CyclicFB{
+        &lt;&lt;SPT Base Types&gt;&gt;
+    }
+    class I_CyclicFB{
+        &lt;&lt;SPT Base Types&gt;&gt;
+    }
+
+    class TcEventSeverity{
+        &lt;&lt;enumeration&gt;&gt;
+        Verbose : 0 
+        Info : 1 
+        Warning : 2
+        Error : 3
+        Critical : 4
+    }
+
+    class E_AlarmResponse{
+        &lt;&lt;enumeration&gt;&gt;
+        Abort_ImmediateError
+        Abort_Immediate
+        Stop_Immediate
+        Stop_Controlled
+        Hold_Immediate
+        Hold_Controlled
+        Suspend_Immediate
+        Suspend_Controlled
+        NoResponse
+    }
+
+    class E_PMLUnitMode{
+        &lt;&lt;enumeration&gt;&gt;
+        Invalid
+        Production
+        Maintenance
+        Manual
+        UserModeN
+    }
+
+    class E_PMLState{
+        &lt;&lt;Tc3_PackML_v3&gt;&gt;
+    }
+
+    class E_PMLCommand{
+        &lt;&lt;Tc3_PackML_v3&gt;&gt;
+    }</code></pre>
+</div>
+<div class="tabbed-block">
 <pre class="mermaid"><code>classDiagram
     I_PackML_BaseModule --|&gt; I_CyclicFB
     I_PackML_BaseModule --|&gt; I_PackML_Control
@@ -4464,6 +4607,9 @@ END_IF
     class E_PMLCommand{
         &lt;&lt;Tc3_PackML_v2&gt;&gt;
     }</code></pre>
+</div>
+</div>
+</div>
 
 
 

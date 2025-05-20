@@ -5008,7 +5008,8 @@ MainPMLControl_Simplified.ResetPermissive :=
 <p><code>METHOD PROTECTED Initialize</code></p>
 <p>The base <code>Initialize()</code> method handles some basic tasks like setting pointers, counting the number of submodules/components, and most importantly ensuring any children are completely initialized before itself returning <code>TRUE</code>.</p>
 <p>When creating an Equipment Module, override this method and implement your own routine.  Many times it makes sense to use a state machine to make sure things are called in order and only as required.  In fact, the base <code>Initialize()</code> does this using the predefined local <code>SequenceState</code> as the indexer.  A second predefined local <code>DescendantSequenceState</code> can be used for indexing a state machine in your overridden <code>Initialize()</code>.</p>
-<p>!!!! example
+<div class="admonition example">
+<p class="admonition-title">Example</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -5120,7 +5121,8 @@ CASE DescendantSequenceState OF
             Initialize                 := TRUE;
         END_IF
 END_CASE
-</code></pre></div></td></tr></table></div></p>
+</code></pre></div></td></tr></table></div>
+</div>
 <h5 id="registercomponent">RegisterComponent()</h5>
 <p>Prior to v3.2.2, components were added to submodules by iterating through a preinitialized array of <code>I_ComponentBase</code> and adding them another internal array.  This was typically the first step in the submodule initialization process.  <code>RegisterComponent()</code> gives the option to add components to the internal array one at a time.  This can improve readability when the number of components grows large.</p>
 <h5 id="registerexternalcontroller">RegisterExternalController()</h5>
@@ -5330,7 +5332,133 @@ MyEquipmentModule_HMI.Status.Blue  := Blue;
 </tr>
 </tbody>
 </table>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">SPT V4</label><label for="__tabbed_1_2">SPT V3</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <h4 id="primary-acting-states">Primary &amp; Acting States</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Method</strong></th>
+<th><strong>Return Type</strong></th>
+<th><strong>Access</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aborted</td>
+<td>null</td>
+<td>PROTECTED</td>
+<td>Called cyclically according to PackML state; logic/sequence associated with PackML state <code>E_PMLState.Aborted</code></td>
+</tr>
+<tr>
+<td>Completed</td>
+<td>null</td>
+<td>PROTECTED</td>
+<td>Called cyclically according to PackML state; logic/sequence associated with PackML state <code>E_PMLState.Completed</code></td>
+</tr>
+<tr>
+<td>Execute</td>
+<td>null</td>
+<td>PROTECTED</td>
+<td>Called cyclically according to PackML state; logic/sequence associated with PackML state <code>E_PMLState.Execute</code></td>
+</tr>
+<tr>
+<td>Held</td>
+<td>null</td>
+<td>PROTECTED</td>
+<td>Called cyclically according to PackML state; logic/sequence associated with PackML state <code>E_PMLState.Held</code></td>
+</tr>
+<tr>
+<td>Idle</td>
+<td>null</td>
+<td>PROTECTED</td>
+<td>Called cyclically according to PackML state; logic/sequence associated with PackML state <code>E_PMLState.Idle</code></td>
+</tr>
+<tr>
+<td>Stopped</td>
+<td>null</td>
+<td>PROTECTED</td>
+<td>Called cyclically according to PackML state; logic/sequence associated with PackML state <code>E_PMLState.Stopped</code></td>
+</tr>
+<tr>
+<td>Suspended</td>
+<td>null</td>
+<td>PROTECTED</td>
+<td>Called cyclically according to PackML state; logic/sequence associated with PackML state <code>E_PMLState.Suspended</code></td>
+</tr>
+<tr>
+<td>Undefined</td>
+<td>null</td>
+<td>PROTECTED</td>
+<td>Called cyclically according to PackML state; logic/sequence associated with PackML state <code>E_PMLState.Undefined</code>.  Should not normally be called.</td>
+</tr>
+<tr>
+<td>Aborting</td>
+<td>null</td>
+<td>PROTECTED</td>
+<td>Called cyclically according to PackML state; logic/sequence associated with PackML state <code>E_PMLState.Aborting</code></td>
+</tr>
+<tr>
+<td>Clearing</td>
+<td>null</td>
+<td>PROTECTED</td>
+<td>Called cyclically according to PackML state; logic/sequence associated with PackML state <code>E_PMLState.Clearing</code></td>
+</tr>
+<tr>
+<td>Completing</td>
+<td>null</td>
+<td>PROTECTED</td>
+<td>Called cyclically according to PackML state; logic/sequence associated with PackML state <code>E_PMLState.Completing</code></td>
+</tr>
+<tr>
+<td>Holding</td>
+<td>null</td>
+<td>PROTECTED</td>
+<td>Called cyclically according to PackML state; logic/sequence associated with PackML state <code>E_PMLState.Holding</code></td>
+</tr>
+<tr>
+<td>Resetting</td>
+<td>null</td>
+<td>PROTECTED</td>
+<td>Called cyclically according to PackML state; logic/sequence associated with PackML state <code>E_PMLState.Resetting</code></td>
+</tr>
+<tr>
+<td>Starting</td>
+<td>null</td>
+<td>PROTECTED</td>
+<td>Called cyclically according to PackML state; logic/sequence associated with PackML state <code>E_PMLState.Starting</code></td>
+</tr>
+<tr>
+<td>Stopping</td>
+<td>null</td>
+<td>PROTECTED</td>
+<td>Called cyclically according to PackML state; logic/sequence associated with PackML state <code>E_PMLState.Stopping</code></td>
+</tr>
+<tr>
+<td>Suspending</td>
+<td>null</td>
+<td>PROTECTED</td>
+<td>Called cyclically according to PackML state; logic/sequence associated with PackML state <code>E_PMLState.Suspending</code></td>
+</tr>
+<tr>
+<td>Unholding</td>
+<td>null</td>
+<td>PROTECTED</td>
+<td>Called cyclically according to PackML state; logic/sequence associated with PackML state <code>E_PMLState.Unholding</code></td>
+</tr>
+<tr>
+<td>Unsuspending</td>
+<td>null</td>
+<td>PROTECTED</td>
+<td>Called cyclically according to PackML state; logic/sequence associated with PackML state <code>E_PMLState.Unsuspending</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<h4 id="primary-acting-states_1">Primary &amp; Acting States</h4>
 <table>
 <thead>
 <tr>
@@ -5451,6 +5579,9 @@ MyEquipmentModule_HMI.Status.Blue  := Blue;
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+</div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>The private method <code>StateControl</code> will automatically call the method that corresponds with the module's PackML state.  These methods are typically overriden and replaced with customized machine logic.</p>
@@ -5481,7 +5612,9 @@ MyEquipmentModule_HMI.Status.Blue  := Blue;
 <span class="normal">20</span>
 <span class="normal">21</span>
 <span class="normal">22</span>
-<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code>METHOD PROTECTED FINAL Clearing
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code>METHOD PROTECTED FINAL Clearing
 
 CASE SequenceState OF
     0:
@@ -5493,13 +5626,15 @@ CASE SequenceState OF
         SequenceState := SequenceState + 10;
     20:
         // Enable here
-        Axis.Enable();
-
+        IF Axis.Enable() THEN
+            SequenceState := SequenceState + 10;
+        END_IF
+    30:
         // Check enabled here
         IF Axis.Enabled THEN
             SequenceState := SequenceState + 10;
         END_IF
-    30:
+    40:
         StateTasksComplete := TRUE;
 END_CASE
 
