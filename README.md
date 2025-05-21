@@ -1,11 +1,12 @@
-# Coming Soon!!!
-With the relesase of PackML V3 for TwinCAT 3.1.4026, the SPT Libraries will be moving to V4.0 to support the new PackML standard.
-
+# V4 Available
+With the relesase of PackML V3 for TwinCAT 3.1.4026, the SPT Libraries have moved to V4.0 to support the new PackML standard.  
+[V4 Release notes](https://beckhoff-usa-community.github.io/SPT-Libraries/V4%20Release%20Notes/Requirements.html) are available in the documentation, and samples are avaiable in the [SPT V4 Samples](https://github.com/Beckhoff-USA-Community/SPT_V4_Samples) repository.  
+Before installing the [V4 libraries](https://github.com/Beckhoff-USA-Community/SPT-Libraries/tree/V4.0) please see the documentation section about [Pinning libraries](https://beckhoff-usa-community.github.io/SPT-Libraries/V4%20Release%20Notes/PinningLibraries.html) in your V3 projects.
 
 # About This Repository
-These libraries go hand-in-hand with the [VFFS Demo PLC](https://github.com/Beckhoff-USA-Community/PackML_PLC_Example).
+These V3 libraries go hand-in-hand with the [VFFS Demo PLC](https://github.com/Beckhoff-USA-Community/PackML_PLC_Example).
 
-This sample is created by [Beckhoff Automation LLC.](https://www.beckhoff.com/en-us/), and is provided as-is under the MIT license.
+This sample is created by [Beckhoff Automation LLC.](https://www.beckhoff.com/en-us/), and is provided as-is under the MIT license.  
 
 # Documentation
 Please visit our [documentation page](https://beckhoff-usa-community.github.io/SPT-Libraries/) for detailed information on the contents of this framework as well as thoughts on architecture of machine programs.
