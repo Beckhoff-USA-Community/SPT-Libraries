@@ -4846,6 +4846,113 @@ Raises an <strong>event</strong> with optional contextual information.  In actua
 </table>
 <div class="admonition example">
 <p class="admonition-title">CyclicLogic() Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">SPT V4</label><label for="__tabbed_1_2">SPT V3</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span></pre></div></td><td class="code"><div><pre><span></span><code>IF NOT _InitComplete THEN
+    _InitComplete := Initialize();
+    RETURN;
+END_IF
+
+//Copy the module to the local mode and state
+MainPMLControl_Standard.CurrentMode  := ipModule.CurrentMode;
+MainPMLControl_Standard.CurrentState := ipModule.CurrentState;
+FOR i := 1 TO 5 DO
+    MainPMLControl_Standard.ModeNames[i] := F_UnitModeToString(TO_DINT(i));
+END_FOR
+
+//Process requests
+R_HMICommand(CLK := (MainPMLControl_Simplified.ResetPressed XOR MainPMLControl_Simplified.StartPressed XOR MainPMLControl_Simplified.StopPressed) XOR
+                    (MainPMLControl_Standard.StateCommand &lt;&gt; E_PMLCommand.Undefined AND MainPMLControl_Standard.StateCommandLast &lt;&gt; MainPMLControl_Standard.StateCommand) XOR
+                    (MainPMLControl_Standard.ModeCommandLast &lt;&gt; MainPMLControl_Standard.ModeCommand));
+
+IF R_HMICommand.Q THEN
+    MainPMLControl_Standard.ModeCommandLast  := MainPMLControl_Standard.ModeCommand;
+    MainPMLControl_Standard.StateCommandLast := MainPMLControl_Standard.StateCommand;
+    IF MainPMLControl_Simplified.ResetPressed AND MainPMLControl_Simplified.ResetPermissive AND MainPMLControl_Standard.CurrentState = E_PMLState.Aborted THEN
+        ipModule.ChangeState(Tc3_PackML_V3.E_PMLCommand.Clear);
+    ELSIF MainPMLControl_Simplified.ResetPressed AND MainPMLControl_Simplified.ResetPermissive THEN
+        ipModule.ChangeState(Tc3_PackML_V3.E_PMLCommand.Reset);
+    ELSIF MainPMLControl_Simplified.StartPressed AND MainPMLControl_Simplified.StartPermissive THEN
+        IF MainPMLControl_Standard.CurrentState = Tc3_PackML_V3.E_PMLState.Idle THEN
+            ipModule.ChangeState(Tc3_PackML_V3.E_PMLCommand.Start);
+        ELSIF MainPMLControl_Standard.CurrentState = Tc3_PackML_V3.E_PMLState.Held THEN
+            ipModule.ChangeState(Tc3_PackML_V3.E_PMLCommand.Unhold);
+        END_IF
+    ELSIF MainPMLControl_Simplified.StopPressed AND MainPMLControl_Simplified.StopPermissive THEN
+        ipModule.ChangeState(Tc3_PackML_V3.E_PMLCommand.Stop);
+    ELSIF ipModule.StateCommand &lt;&gt; MainPMLControl_Standard.StateCommand THEN
+        ipModule.StateCommand := MainPMLControl_Standard.StateCommand;
+    ELSIF ipModule.ModeCommand &lt;&gt; MainPMLControl_Standard.ModeCommand THEN
+        ipModule.ModeCommand := MainPMLControl_Standard.ModeCommand;
+    END_IF
+END_IF
+
+//Set the permissives for each button
+MainPMLControl_Simplified.StartPermissive :=
+    MainPMLControl_Standard.CurrentState = Tc3_PackML_V3.E_PMLState.Idle OR MainPMLControl_Standard.CurrentState = Tc3_PackML_V3.E_PMLState.Held;
+
+MainPMLControl_Simplified.StopPermissive :=
+    (MainPMLControl_Standard.CurrentState &lt;&gt; Tc3_PackML_V3.E_PMLState.Stopped AND MainPMLControl_Standard.CurrentState &lt;&gt; Tc3_PackML_V3.E_PMLState.Clearing AND
+    MainPMLControl_Standard.CurrentState &lt;&gt; Tc3_PackML_V3.E_PMLState.Aborted AND MainPMLControl_Standard.CurrentState &lt;&gt; Tc3_PackML_V3.E_PMLState.Aborting AND
+    MainPMLControl_Standard.CurrentState &lt;&gt; Tc3_PackML_V3.E_PMLState.Idle AND MainPMLControl_Standard.CurrentState &lt;&gt; Tc3_PackML_V3.E_PMLState.Undefined);
+
+MainPMLControl_Simplified.ResetPermissive :=
+    MainPMLControl_Standard.CurrentState = Tc3_PackML_V3.E_PMLState.Completed OR MainPMLControl_Standard.CurrentState = Tc3_PackML_V3.E_PMLState.Stopped OR
+    MainPMLControl_Standard.CurrentState = Tc3_PackML_V3.E_PMLState.Aborted;
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -4949,6 +5056,9 @@ MainPMLControl_Simplified.ResetPermissive :=
     MainPMLControl_Standard.CurrentState = Tc3_PackML_V2.E_PMLState.ePMLState_Aborted;
 </code></pre></div></td></tr></table></div>
 </div>
+</div>
+</div>
+</div>
 <h2 id="fb_cyclicfb">FB_CyclicFB</h2>
 <p>(abstract, extends <code>FB_BaseFB</code>, implements <code>I_CyclicFB</code>)</p>
 <p>Contains property backers for all <code>I_CyclicFB</code> properties.  <code>CyclicLogic()</code> is introduced as the entry point. </p>
@@ -5033,6 +5143,123 @@ MainPMLControl_Simplified.ResetPermissive :=
 <p>When creating an Equipment Module, override this method and implement your own routine.  Many times it makes sense to use a state machine to make sure things are called in order and only as required.  In fact, the base <code>Initialize()</code> does this using the predefined local <code>SequenceState</code> as the indexer.  A second predefined local <code>DescendantSequenceState</code> can be used for indexing a state machine in your overridden <code>Initialize()</code>.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">SPT V4</label><label for="__tabbed_2_2">SPT V3</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span></pre></div></td><td class="code"><div><pre><span></span><code>METHOD PROTECTED FINAL Initialize : BOOL
+VAR
+    i : UDINT; //Generic iteration value
+END_VAR
+
+CASE DescendantSequenceState OF
+    0:
+        // Define the interfaces to the different subunits (Must take place before SUPER^.initialize call)
+        FOR i := 1 TO SPT_PackMLBase.Parameters_PackML_Base.MAX_NO_OF_SUBMODULES DO
+            ipSubModules[i] := ipSubModules_Init[i];
+        END_FOR
+
+        FOR i := 1 TO SPT_PackMLBase.Parameters_PackML_Base.MAX_NO_OF_COMPONENTS DO
+            ipComponents[i] := ipComponents_Init[i];
+        END_FOR
+
+        LogModuleModeChanges    := FALSE;
+        LogModuleStateChanges   := FALSE;
+        DescendantSequenceState := DescendantSequenceState + 10;
+    10:
+        CustomModes(eMode                          := 4,
+                    sName                          := &#39;My Custom Mode&#39;,
+                    bDisableClearing               := FALSE,
+                    bDisableStarting               := FALSE,
+                    bDisableSuspended              := TRUE,
+                    bDisableStopping               := FALSE,
+                    bDisableAborting               := FALSE,
+                    bDisableHolding                := TRUE,
+                    bDisableHeld                   := TRUE,
+                    bDisableUnholding              := TRUE,
+                    bDisableSuspending             := TRUE,
+                    bDisableUnsuspending           := TRUE,
+                    bDisableResetting              := FALSE,
+                    bDisableIdle                   := FALSE,
+                    bDisableCompleting             := TRUE,
+                    bDisableComplete               := TRUE,
+                    bEnableUnitModeChangeStopped   := TRUE,
+                    bEnableUnitModeChangeIdle      := TRUE,
+                    bEnableUnitModeChangeSuspended := FALSE,
+                    bEnableUnitModeChangeExecute   := TRUE,
+                    bEnableUnitModeChangeAborted   := TRUE,
+                    bEnableUnitModeChangeHeld      := FALSE,
+                    bEnableUnitModeChangeComplete  := FALSE,
+                    bError                         =&gt;,
+                    nErrorId                       =&gt;);
+    20:
+        FOR i := 1 TO 4 DO
+            ModeNames[i] := F_PMLUnitModeToString(UDINT_TO_DINT(i));
+        END_FOR
+
+        DescendantSequenceState := DescendantSequenceState + 10;
+    30:
+        IF SUPER^.Initialize() THEN
+            Initialize                 := TRUE;
+        END_IF
+END_CASE
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -5145,6 +5372,9 @@ CASE DescendantSequenceState OF
         END_IF
 END_CASE
 </code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 </div>
 <h5 id="registercomponent">RegisterComponent()</h5>
 <p>Prior to v3.2.2, components were added to submodules by iterating through a preinitialized array of <code>I_ComponentBase</code> and adding them another internal array.  This was typically the first step in the submodule initialization process.  <code>RegisterComponent()</code> gives the option to add components to the internal array one at a time.  This can improve readability when the number of components grows large.</p>
@@ -5355,7 +5585,7 @@ MyEquipmentModule_HMI.Status.Blue  := Blue;
 </tr>
 </tbody>
 </table>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">SPT V4</label><label for="__tabbed_1_2">SPT V3</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">SPT V4</label><label for="__tabbed_3_2">SPT V3</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <h4 id="primary-acting-states">Primary &amp; Acting States</h4>

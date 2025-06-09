@@ -1032,6 +1032,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#custom-modes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom modes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#command-and-status-down-and-up" class="md-nav__link">
     <span class="md-ellipsis">
       Command and Status, down and up
@@ -4479,6 +4488,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#custom-modes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom modes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#command-and-status-down-and-up" class="md-nav__link">
     <span class="md-ellipsis">
       Command and Status, down and up
@@ -4587,11 +4605,11 @@ Start to get to execute and run the belt.  Nothing more is required. </p>
 <p>Even though there are only 4 states a second mode other that producing may be required.  For example, there’s a calibration mode, where a series of self tests are completed.  Accidentally receiving parts in this calibration mode could be very problematic and almost certainly result in a false calibration.   Sure in Execute an “if calibrate, stop motor” is possible, but the whole idea of states and modes is to ensure there is no accidental way to perform a function from one mode that must not happen in another mode.  Switching to a calibration mode, helps to ensure different code is called and sequences for the calibration function cannot occur during production and production cannot occur during calibration.  </p>
 <p>A labelling machine likely needs at least one more state, Held.  Labels/Ink are not infinite and often require refilling from an operator.  As indicated earlier, stop and particularly abort mean different things to the line controller.  A labeller that is without label cannot be in execute but it also does not require to enter stopped state, a held state should be used here.  The machine is “held” when it is out of labels, but when refilled can immediately restart operation without running through resetting.  A suspend may still not be required as if no products show up no labels are place.  </p>
 <p>If machine should offer a low power state that if no products are arriving or an output buffer is full, then a suspend state is beneficial the machine can enter/exit suspending without operator intervention. </p>
-<p>Add as many states/modes as necessary to fulfil all machine functions but states can be eliminated when they are not necessary. 
-1.1.1   Internal modes 
-For sub devices, such as equipment modules and components it may be desirable to make even smaller state modes.  The minimum state set is for machine modes at the top layer.  Below that, TR88.00.02 has no influence.  It makes sense to use modes and states with equipment modules but an even smaller subset of states can be used. </p>
-<p>For example Aborted Idle Execute Completed might be enough.  If faulted, Clear to get to idle, to perform a function Start and execute, when the function is finished go to completed, to trigger another sequence reset to get back to idle. </p>
-<p>Why can’t I simply have Idle, Execute and aborted?  Prior to the 2022 version of the standard this was problematic.   Execute automatically completes and issues a state change, if completed doesn’t exist, it goes right back to ide.  Sounds like it does exactly what I want, however:   When you command start, you are in idle, and when you check again you are in idle.  Now the question is, is the device in Idle because it performed the function or is it in idle because execute has not started yet?  In TR88.00.02-2022 this was addressed getting out of Execute can now be accomplished with the command complete.  This now gives the full handshake necessary.  Command Start, Wait for execute, Command Complete, wait for Idle, and then command start again.  Aborted, Execute Idle will function without any other handshakes required, switching the command from Start to Complete and the state changes from Idle to Execute completes the handshake.  State Idle with Command complete means the last cycle finished.  </p>
+<p>Add as many states/modes as necessary to fulfil all machine functions but states can be eliminated when they are not necessary. </p>
+<h2 id="custom-modes_1">Custom modes</h2>
+<p>For sub devices, such as equipment modules it may be desirable to make even smaller state machines.  The minimum state set is for machine modes at the top layer.  Below that, TR88.00.02 has no influence.  It makes sense to use modes and states with equipment modules but an even smaller subset of states can be used. </p>
+<p>For example Aborted, Idle, Execute, and Completed might be enough.  If faulted, Clear to get to Idle, to perform a function Start and Execute, when the function is finished go to Completed, to trigger another sequence Reset to get back to Idle.</p>
+<p>Why can’t I simply have Idle, Execute and Aborted?  Prior to the 2022 version of the standard this was problematic.   Execute automatically completes and issues a state change, if Completed doesn’t exist, it goes right back to Idle.  Sounds like it does exactly what I want, however:   When you command Start, you are in Idle, and when you check again you are in Idle.  Now the question is, is the device in Idle because it performed the function or is it in Idle because Execute has not started yet?  In TR88.00.02-2022 this was addressed getting out of Execute can now be accomplished with the command Complete.  This now gives the full handshake necessary.  Command Start, wait for Execute, command Complete, wait for Idle, and then command Start again.  Aborted, Execute and Idle will function without any other handshakes required, switching the command from Start to Complete and the state changes from Idle to Execute completes the handshake.  State Idle with command Complete means the last cycle finished.</p>
 <figure>
 <p><img alt="Alt text" src="assets/PackMLCmdStat.png" />
   </p>

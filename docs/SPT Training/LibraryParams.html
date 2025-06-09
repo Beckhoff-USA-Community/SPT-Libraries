@@ -4416,7 +4416,34 @@
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>    COMPONENT_BASE_ALARM_COUNT : UINT := 2; // Max array size for base alarms
     INHIBIT_SIMULATION_WARNING : BOOL := FALSE; // Disables simulation warning messages
 </code></pre></div></td></tr></table></div></p>
-<p>Parameters_PackML_Base:
+<p>Parameters_PackML_Base:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">SPT V4</label><label for="__tabbed_1_2">SPT V3</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>    MAX_NO_OF_SUBMODULES              : UDINT                      := 20; //Max array size for submodules
+    MAX_NO_OF_COMPONENTS              : UDINT                      := 32; //Max array size for components
+    MAX_NO_OF_EXTERNAL_CONTROLLERS    : UDINT                      := 10; //Max array size for external controllers
+    UNIT_MODE_DEFAULT                 : E_PMLUnitMode              := E_PMLUnitMode.Production; //Mode default for power on
+    UNIT_STATE_DEFAULT                : Tc3_PackML_V3.E_PMLCommand := E_PMLCommand.Abort; // State default for power on
+    CONCAT_SUBMODULE_NAME_WITH_PARENT : BOOL                       := FALSE; // Concatenate submodule name with parent name
+    CONCAT_COMPONENT_NAME_WITH_PARENT : BOOL                       := TRUE; // Concatenate component name with parent name
+    SUBMODULE_NAME_DELIMETER          : STRING(10)                 := &#39; &#39;; // Delimeter for submodule name
+    COMPONENT_NAME_DELIMETER          : STRING(10)                 := &#39; &#39;; // Delimeter for component name
+    STATELOGGER_DISABLED              : BOOL                       := FALSE; // When FALSE, all PackML State Changes will be logged
+    RESET_COMPONENTS_WITHOUT_ERROR    : BOOL                       := FALSE; // When TRUE, all components will be reset even if no error is present
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -4438,7 +4465,10 @@
     COMPONENT_NAME_DELIMETER          : STRING(10)                 := &#39; &#39;; // Delimeter for component name
     STATELOGGER_DISABLED              : BOOL                       := FALSE; // When FALSE, all PackML State Changes will be logged
     RESET_COMPONENTS_WITHOUT_ERROR    : BOOL                       := FALSE; // When TRUE, all components will be reset even if no error is present
-</code></pre></div></td></tr></table></div></p>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 <p>Parameters_Tracing:
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
