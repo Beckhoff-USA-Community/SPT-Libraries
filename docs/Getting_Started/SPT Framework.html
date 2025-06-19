@@ -4710,36 +4710,49 @@ The framework also makes use of Cyclic method calls to update the parts of the c
 <h3 id="registering-an-em-or-component-with-its-higher-level-module">Registering an EM or Component with its higher-level Module</h3>
 <p>In order for the Cyclic updates to happen properly, a SubModule or Component must be registered with its higher-level Machine Module, or Submodule. The Variable name of each, that is declared must be passed into an array that will initialize it with the module.</p>
 <h3 id="creating-the-array-of-interfaces-for-submodules-and-components">Creating the array of interfaces for submodules and components</h3>
-<p>Registering Modules and Components is done using an array of interfaces. Within each Machine and Submodule there will exist the declaration of the SubModules and Components of that Module. Each of these instance variables will be used as the initial value of an index within the array.
-For example, this Machine Module contains three Equipment Modules referred to as SubModules in the code.</p>
+<p>Registering Modules and Components is done using their interfaces. Within each Machine and Submodule there will exist the declaration of the SubModules and Components of that Module. Each of these instance variables will be passed into the methods for RegisterModule or RegisterComponent. For example, this Machine Module contains three Equipment Modules referred to as SubModules in the code.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>FUNCTION_BLOCK FB_Machine EXTENDS FB_PackML_BaseModule
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>FUNCTION_BLOCK FB_Machine EXTENDS FB_PackML_BaseModule
 // Sub Modules
-PullWheels : FB_PullWheel;
-Sealer : FB_Sealer;
-Unwind : FB_Unwind;
-//Initial List of SubModules
-ipSubModules_Init : ARRAY[1..Parameters_PackML_Base.MAX_NO_OF_SUBMODULES] OF I_PackML_BaseModule := [PullWheels, Sealer, Unwind];
+PullWheels  : FB_PullWheel;
+Sealer      : FB_Sealer;
+Unwind      : FB_Unwind;
 </code></pre></div></td></tr></table></div>
-<p>The three modules (PullWheels, Sealer, and Unwind) are all function blocks that extend the FB_PackML_BaseModule which Implements the I_PackML_BaseModule; therefore, they can be passed into the array of I_PackML_BaseModule as initial values. Understanding how this works internally is not important, what is important is remembering to place each instance variable name in the array initialization.
-When creating components, the same process is used, the only difference is that the components Extend FB_ComponentBase which Implements I_ComponentBase and the array is of type I_ComponentBase.</p>
+<p>The three modules (PullWheels, Sealer, and Unwind) are all function blocks that extend the FB_PackML_BaseModule which Implements the I_PackML_BaseModule; therefore, they can be passed into the method RegisterSubmodule. Understanding how this works internally is not important, what is important is remembering to register each instance variable using the appropriate method.
+When creating components, the same process is used, the only difference is that the components Extend FB_ComponentBase which Implements I_ComponentBase and the method is RegisterComponent.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>FUNCTION_BLOCK FB_PullWheel EXTENDS FB_PackML_BaseModule
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>FUNCTION_BLOCK FB_PullWheel EXTENDS FB_PackML_BaseModule
 LeftPullWheel : FB_Component_BasicSlaveAxis := (Name := &#39;Left&#39;);
-ipComponents_Init : ARRAY[1..Parameters_PackML_Base.MAX_NO_OF_COMPONENTS] OF I_ComponentBase := [LeftPullWheel];
 </code></pre></div></td></tr></table></div>
 <h2 id="overriding-methods-of-the-base-class">Overriding methods of the base class</h2>
 <p>The SPT Framework contains a complete set of function blocks to run the state machine. FB_PackML_BaseModule has a method for each of the PackML states. Each of these methods has the code needed progress the state machine. When adding a new Equipment module that will extend FB_PackML_BaseModule, call the same methods with their unique code and call the method in the base using SUPER^.Method() or SUPER^.Resetting within your Resetting method. The use of SUPER will call the method of the base class and run the code that exists there. The typical implementation would call SUPER at the end of the method in the EM. If a method is not needed by an Equipment Module, then there is no need for the EM to call that method. At the Machine module level unless you need to override the method, DON’T. Just let the CyclicLogic method handle it. Additionally, while it is common to override the CyclicLogic method when inheriting from a library in the base class, it is not required to do so. If you do not override the CyclicLogic method the underlying code for the method will be executed.</p>
 <h3 id="when-to-call-statecomplete-vs-supermethod">When to call StateComplete() vs Super^.Method()</h3>
 <!--//This section needs work, maybe an example-->
 
-<p>The Acting states are exited when the StateComplete method is called. This is done in base class for you when you call SUPER^.Method(). It could be that you wish to call the StateComplete method from the EM, and that can also be done. The waiting states are exited when a change state command is given, for example ipModule.ChangeState(Tc3_PackML_V2.E_PMLCommand.ePMLCommand_Stop) or ChangeState(E_PMLCommand.ePMLCommand_Unsuspend)</p>
+<p>The Acting states are exited when the StateComplete method is called. This is done in base class for you when you call SUPER^.Method(). It could be that you wish to call the StateComplete method from the EM, and that can also be done. The waiting states are exited when a change state command is given, for example:  </p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">SPT V4</label><label for="__tabbed_1_2">SPT V3</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>ipModule.ChangeState(Tc3_PackML_V3.E_PMLCommand.Stop) 
+or
+ChangeState(E_PMLCommand.Unsuspend)
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>ipModule.ChangeState(Tc3_PackML_V2.E_PMLCommand.ePMLCommand_Stop)
+or
+ChangeState(E_PMLCommand.ePMLCommand_Unsuspend)
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 <p>If you are not sure, don't call StateComplete(). Call Super^.Method() after your code and let the base class handle it.</p>
 <h3 id="initializing">Initializing</h3>
 <p>Each Machine and Equipment module has a CyclicLogic method, and that method should call the method of the base class using Super^.CyclicLogic(). An Initialize method is also required. The first lines of code in the CyclicLogic method are to call to the Initialize method if it has not completed.</p>
@@ -4754,6 +4767,35 @@ ipComponents_Init : ARRAY[1..Parameters_PackML_Base.MAX_NO_OF_COMPONENTS] OF I_C
 END_IF
 </code></pre></div></td></tr></table></div>
 <p>The Initialize method is used to register the submodules and components to the internals of the framework. A CASE statement is used to ensure that everything happens in the proper order.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">SPT V3.2.3 or later</label><label for="__tabbed_2_2">SPT V3.2.2 or earlier</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>METHOD PROTECTED Initialize
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>Initialize := FALSE;
+CASE DescendantSequenceState OF
+    0:
+        //Register each Submodule with the Machine Module
+        RegisterSubModule(PullWheels);
+        RegisterSubModule(Sealer);
+        RegisterSubModule(Unwind);
+
+        _LogModeChanges         := FALSE;
+        _LogStateChanges        := FALSE;
+        DescendantSequenceState := DescendantSequenceState + 10;
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>METHOD PROTECTED Initialize
 </code></pre></div></td></tr></table></div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -4786,6 +4828,9 @@ CASE DescendantSequenceState OF
         _LogStateChanges        := FALSE;
         DescendantSequenceState := DescendantSequenceState + 10;
 </code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 <p>The SUPER^.Initialize method must also be called as the last step of the CASE statement.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -4826,7 +4871,26 @@ In the below example ControlSource_HMI is the instance name of the control sourc
 <h2 id="testing-the-code-and-the-state-machine">Testing the code and the state machine</h2>
 <p>At this point it should be possible to Activate Configuration, Restart TwinCAT in Run Mode, and test the code for proper functionality.</p>
 <p>Once the PLC is running you can login and check a few online values.
-Within MAIN, expand the declaration of your FB_Machine and check the values of the following variables:
+Within MAIN, expand the declaration of your FB_Machine and check the values of the following variables:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">SPT V4</label><label for="__tabbed_3_2">SPT V3</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>VFFSDemo : FB_Machine := (Name := &#39;VFFS Demo&#39;);
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>_CurrentMode        Production
+_CurrentState       Aborted
+NumberOfSubModules  //This value should be equal to the number of Submodules declared within your instance of FB_Machine. If not then check the declaration of the ipSubModules_Init ARRAY
+NumberOfComponents  //This value should be equal to the number of Components declared within your instance of FB_Machine. If not then check the declaration of the ipComponents_Init ARRAY
+InitComplete        TRUE
+</code></pre></div></td></tr></table></div></p>
+</div>
+<div class="tabbed-block">
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>VFFSDemo : FB_Machine := (Name := &#39;VFFS Demo&#39;);
+</code></pre></div></td></tr></table></div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -4836,8 +4900,11 @@ _CurrentState       ePMLState_Aborted
 NumberOfSubModules  //This value should be equal to the number of Submodules declared within your instance of FB_Machine. If not then check the declaration of the ipSubModules_Init ARRAY
 NumberOfComponents  //This value should be equal to the number of Components declared within your instance of FB_Machine. If not then check the declaration of the ipComponents_Init ARRAY
 InitComplete        TRUE
-</code></pre></div></td></tr></table></div>
-Once those values have been confirmed you can use your Control Source the test the state machine.</p>
+</code></pre></div></td></tr></table></div></p>
+</div>
+</div>
+</div>
+<p>Once those values have been confirmed you can use your Control Source the test the state machine.</p>
 <h2 id="adding-parameters-recipe-values">Adding Parameters / Recipe Values</h2>
 <p>Parameters and Recipe values can be declared and passed to SubModules or Components through the use of Properties. Starting with a local variable of a Component that is read adn written by a Property, the Component can then use the local variable name as if it was the actual value. When a SubModule creates an instance of the Component the SubModule is then responsible for setting the value of the Property in the Component. </p>
 <h2 id="adding-more-equipment-modules-submodules">Adding more Equipment Modules (SubModules)</h2>
@@ -4852,8 +4919,8 @@ Add the Local variables and Properties needed for parameters
 Add the Methods needed for the Acting and Waiting states
 Add the Cyclic Logic method if needed
 Add the Initialize Method
-Within the EM declare any Components and add them to the  ipComponents_Init ARRAY
-Within MAIN, declare an instance of the new EM and add it to the ipSubModules_Init ARRAY
+Within the EM declare any Components and use the RegisterComponents method within the EMs Initialize method
+Within MAIN, declare an instance of the new EM and use the RegisterSubModule method to register it with the Machine Module
 </code></pre></div></td></tr></table></div>
 <h2 id="creating-components">Creating Components</h2>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
