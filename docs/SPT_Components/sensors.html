@@ -2375,6 +2375,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4579,6 +4588,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4756,6 +4774,13 @@ END_TYPE
     END_STRUCT
 END_TYPE
 </code></pre></div></td></tr></table></div>
+<h3 id="examples">Examples</h3>
+<p>E_DebounceMode.EdgeDetectFilter  </p>
+<p><img alt="Edge Detect Filter" src="Assets/EdgeFilter.png" title="Edge Detect Filter" /></p>
+<p>The blue line represents the hardware input which bounces both when rising and falling. The green line is the output of the filter which detects the initial change and then ignores the bounces for the duration specified by <code>DebounceTime</code>. This is useful for preventing a 'double-tap' that could occur when a button is pressed.</p>
+<p>E_DebounceMode.SimpleFlickerFilter</p>
+<p><img alt="Simple Flicker Filter" src="Assets/FlickerFilter.png" title="Simple Flicker Filter" /></p>
+<p>The blue line represents the hardware input which bounces both when rising and falling. The green line is the output of the filter which monitors the input and only changes state when the input has been stable for the time specified by <code>DebounceTime</code>. This is useful for preventing false triggers from noise, dust or other rapid changes in the input signal.</p>
 
 
 
