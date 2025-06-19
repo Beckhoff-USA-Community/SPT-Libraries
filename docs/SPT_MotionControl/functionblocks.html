@@ -5237,6 +5237,11 @@ END_IF
 </details>
 <details class="example">
 <summary>Change To Different Table</summary>
+<details class="note">
+<summary>Switching Tables vs Modifying Points</summary>
+<p>The behavior of the internal code is to modify the running table's points if the axis is already cammed in. Once the tables have been defined in the array ST_CamParameters.CamTable[1..10], setting the property ST_CamParameters.TableSelect will cause the internal table with ID = 1 to be modified to match the selected table. This means that the two tables must contain the same number of points. If not, an error will occur. (0x4A13 - 18963 - Line Index Not Allowed). For this reason the sample code provided includes a FOR loop to fill the table with 'Ignore' points.  </p>
+<p>If the axes are not coupled when changing tables, then the new table can be of a different size.</p>
+</details>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -5246,7 +5251,7 @@ IF Slave.RunningTable = 2 THEN
 END_IF
 </code></pre></div></td></tr></table></div>
 <p><strong>Result</strong>
-<img alt="image" src="232135919-654071f3-e8a5-46ce-aded-8040f7c68d83.png" /></p>
+  <img alt="image" src="232135919-654071f3-e8a5-46ce-aded-8040f7c68d83.png" /></p>
 </details>
 <div class="admonition tip">
 <p class="admonition-title">Pre-Couple Sync Behavior</p>
