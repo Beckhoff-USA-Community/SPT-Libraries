@@ -4728,7 +4728,8 @@ END_VAR
 <span class="normal">11</span>
 <span class="normal">12</span>
 <span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code>MyAxis.CyclicLogic();
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code>MyAxis.CyclicLogic();
 
 CASE State OF
   0:
@@ -4740,7 +4741,8 @@ CASE State OF
       State := State + 10;
     END_IF
   20:
-    //Do things 
+    // Continue
+    ... 
 END_CASE
 </code></pre></div></td></tr></table></div>
 </details>
@@ -4760,7 +4762,8 @@ END_CASE
 <span class="normal">12</span>
 <span class="normal">13</span>
 <span class="normal">14</span>
-<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code>CASE State OF
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code>CASE State OF
   0:
     MyAxis.Velocity := 10;
     IF MyAxis.MoveAbsolute(100, FALSE) THEN
@@ -4773,7 +4776,8 @@ END_CASE
     END_IF
 
   20:
-    //More things
+    //Continue
+    ...
 END_CASE
 </code></pre></div></td></tr></table></div>
 </details>
@@ -4793,7 +4797,8 @@ END_CASE
 <span class="normal">12</span>
 <span class="normal">13</span>
 <span class="normal">14</span>
-<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code>CASE State OF
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code>CASE State OF
   0:
     IF MyAxis.MoveVelocity(100, FALSE) THEN
       State := State + 10;
@@ -4806,7 +4811,8 @@ END_CASE
     END_IF
 
   20:
-    //More things
+    //Continue
+    ...
 END_CASE
 </code></pre></div></td></tr></table></div>
 </details>
@@ -4833,7 +4839,10 @@ END_CASE
 <span class="normal">17</span>
 <span class="normal">18</span>
 <span class="normal">19</span>
-<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code>CASE State OF
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code>CASE State OF
   0:
     //Move is issued to both axes--okay
     IF MyAxis.MoveRelative(10, FALSE) AND MyOtherAxis.MoveRelative(5, FALSE) THEN
@@ -4850,8 +4859,11 @@ END_CASE
   20:
     //You may or may not ever get here...
     IF NOT MyAxis.Busy AND NOT MyOtherAxis.Busy THEN
-    State := State + 10;
+      State := State + 10;
     END_IF
+  30:
+    //Continue
+    ...
 END_CASE
 </code></pre></div></td></tr></table></div>
 <strong>Result</strong></p>
@@ -4883,7 +4895,10 @@ END_CASE
 <span class="normal">24</span>
 <span class="normal">25</span>
 <span class="normal">26</span>
-<span class="normal">27</span></pre></div></td><td class="code"><div><pre><span></span><code>CASE State OF
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code>CASE State OF
   0:
     IF MyAxis.MoveRelative(10, FALSE) THEN
       State := State + 10;
@@ -4909,6 +4924,9 @@ END_CASE
     IF NOT MyAxis.Busy AND NOT MyOtherAxis.Busy THEN
       State := State + 10;
     END_IF
+  60:
+    //Continue
+    ...
 END_CASE
 </code></pre></div></td></tr></table></div>
 <strong>Result</strong></p>
@@ -4936,7 +4954,10 @@ END_CASE
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code>CASE State OF
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code>CASE State OF
   0:
     MySlaveAxis.Master1 REF= MyMasterAxis.Axis;
     MySlaveAxis.RatioMaster1 := 1.0;
@@ -4948,6 +4969,9 @@ END_CASE
     IF MySlaveAxis.InGear THEN
       State := State + 10;
     END_IF
+  20:
+    //Continue
+    ...
 END_CASE
 </code></pre></div></td></tr></table></div>
 </details>
@@ -4976,7 +5000,10 @@ END_CASE
 <span class="normal">21</span>
 <span class="normal">22</span>
 <span class="normal">23</span>
-<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code>CASE State OF
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div><pre><span></span><code>CASE State OF
   0:
     MySlaveAxis.Master1 REF= MyMasterAxis.Axis;
     MySlaveAxis.RatioMaster1 := 1.0;
@@ -4999,6 +5026,9 @@ END_CASE
       MySlaveAxis.RatioMaster1 := 5.0;
       State := State + 10;
     END_IF  
+  40:
+    //Continue
+    ...
 END_CASE
 </code></pre></div></td></tr></table></div>
 <p><strong>Result</strong></p>
@@ -5042,7 +5072,10 @@ END_CASE
 <span class="normal">33</span>
 <span class="normal">34</span>
 <span class="normal">35</span>
-<span class="normal">36</span></pre></div></td><td class="code"><div><pre><span></span><code>CASE State OF
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span></pre></div></td><td class="code"><div><pre><span></span><code>CASE State OF
   0:
     MySlaveAxis.Master1 REF= MyMasterAxis.Axis;
     MySlaveAxis.Master2 REF= MyPhaseAdjustAxis.Axis;
@@ -5077,6 +5110,9 @@ END_CASE
         State := State + 10;
       END_IF            
     END_IF
+  50:
+    //Continue
+    ... 
 END_CASE
 </code></pre></div></td></tr></table></div></p>
 <p><strong>Result</strong>
@@ -5176,7 +5212,10 @@ CamParameters.CamTable[1].NumberOfPoints              := 3;
 <span class="normal">24</span>
 <span class="normal">25</span>
 <span class="normal">26</span>
-<span class="normal">27</span></pre></div></td><td class="code"><div><pre><span></span><code>CASE SequenceState OF
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code>CASE SequenceState OF
     10:
         IF Master.Enable() THEN
             SequenceState := 11;
@@ -5202,6 +5241,9 @@ CamParameters.CamTable[1].NumberOfPoints              := 3;
         IF Master.MoveVelocity(100, FALSE) THEN
             SequenceState := 23;
         END_IF
+    23:
+      //Continue
+      ...
 END_CASE
 </code></pre></div></td></tr></table></div>
 <strong>Result</strong>

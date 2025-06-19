@@ -4569,15 +4569,18 @@
 </li>
 <li>
 <p>Start Interpreter
-    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>50:
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code>50:
     IF Nci.InterpreterStart() THEN
         CIRSeq := CIRSeq + 10;
     END_IF
@@ -4586,6 +4589,9 @@
     IF Nci.InterpreterState &gt;= NCI_INTERPRETER_RUNNING AND NOT Nci.Busy AND NOT Nci.Error THEN
         CIRSeq := CIRSeq + 10;
     END_IF
+70:
+    //Continue
+    ...
 </code></pre></div></td></tr></table></div></p>
 </li>
 </ol>

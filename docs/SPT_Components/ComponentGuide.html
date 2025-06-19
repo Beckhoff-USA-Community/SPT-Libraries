@@ -4682,7 +4682,10 @@ MyCommand1 := TRUE;
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>    CASE SequenceState OF
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code>    CASE SequenceState OF
         0: // Trigger Command
             IF MyComponent.MyCommand1() THEN
                 SequenceState := SequenceState + 10;
@@ -4692,6 +4695,9 @@ MyCommand1 := TRUE;
             IF NOT MyComponent.Busy AND NOT MyComponent.Error THEN
                 SequenceState := SequenceState + 10;
             END_IF
+
+        20: // Next Command
+            ...
     END_CASE
 </code></pre></div></td></tr></table></div>
 </details>
